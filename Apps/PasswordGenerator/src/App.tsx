@@ -3,12 +3,17 @@ import Header from "./components/Header";
 import Result from "./components/Result";
 import LengthOption from "./components/LengthOption";
 import ToggleOptions from "./components/ToggleOptions";
+import GenerateButton from "./components/GenerateButton";
 
 const AppContainer = styled(Box)({
-  height: "70rem",
+  padding: "0 6rem",
+  display: "flex",
+  flexDirection: "column",
+  alignItems: "center",
+  height: "58rem",
   width: "40rem",
-  borderRadius: "2rem",
-  background: "rgba(0,0,0,0.7)",
+  borderRadius: "3rem",
+  background: "rgba(0,0,0,0.6)",
   boxShadow: "0 0 10px 5px rgba(0,0,0,0.5)",
 });
 
@@ -29,6 +34,7 @@ function App() {
         <Result />
         <LengthOption />
         <ToggleOptions />
+        <GenerateButton />
       </AppContainer>
     </Box>
   );

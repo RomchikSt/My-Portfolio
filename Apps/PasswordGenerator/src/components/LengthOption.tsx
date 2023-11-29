@@ -1,29 +1,67 @@
-import { Box, IconButton, Typography } from "@mui/material";
+import { Box, Button, Typography } from "@mui/material";
+
+import RemoveIcon from "@mui/icons-material/Remove";
+import AddIcon from "@mui/icons-material/Add";
+
 import Slider from "@mui/material/Slider";
-import AddCircleRoundedIcon from "@mui/icons-material/AddCircleRounded";
-import RemoveCircleOutlineRoundedIcon from "@mui/icons-material/RemoveCircleOutlineRounded";
+import { styled } from "@mui/material/styles";
+
+const PrettoSlider = styled(Slider)({
+  color: "#52af77",
+  height: 12,
+  "& .MuiSlider-track": {
+    border: "none",
+  },
+  "& .MuiSlider-thumb": {
+    height: 18,
+    width: 18,
+    backgroundColor: "#fff",
+    border: "2px solid currentColor",
+    "&:focus, &:hover, &.Mui-active, &.Mui-focusVisible": {
+      boxShadow: "inherit",
+    },
+    "&:before": {
+      display: "none",
+    },
+  },
+});
 
 function LengthOption() {
   return (
-    <Box>
-      <Typography variant="h5">Password Length</Typography>
-      <Typography variant="h4">16</Typography>
-      <Box>
-        <IconButton>
-          <RemoveCircleOutlineRoundedIcon />
-        </IconButton>
-        <Slider
-          disabled={false}
-          marks={false}
+    <Box width={"100%"} textAlign={"center"} mt={"1rem"}>
+      <Typography variant="h5" color={"#fff"}>
+        Password Length
+      </Typography>
+      <Typography variant="h4" color={"#fff"}>
+        16
+      </Typography>
+      <Box display={"flex"} mt={"1rem"}>
+        <Button
+          variant="outlined"
+          sx={{
+            minWidth: "1rem",
+            marginRight: "1rem",
+            borderRadius: "1rem",
+          }}
+        >
+          <RemoveIcon />
+        </Button>
+        <PrettoSlider
+          aria-label="custom thumb label"
           defaultValue={16}
+          min={1}
           max={32}
-          min={0}
-          size="medium"
-          valueLabelDisplay="auto"
         />
-        <IconButton aria-label="delete">
-          <AddCircleRoundedIcon />
-        </IconButton>
+        <Button
+          variant="contained"
+          sx={{
+            minWidth: "2rem",
+            marginLeft: "1rem",
+            borderRadius: "1rem",
+          }}
+        >
+          <AddIcon />
+        </Button>
       </Box>
     </Box>
   );

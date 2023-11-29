@@ -8,7 +8,7 @@ const StyledImg = styled("img")({
 
 function Header() {
   return (
-    <Box display={"flex"} alignItems={"center"}>
+    <Box display={"flex"} alignItems={"center"} margin={"4rem auto"}>
       <StyledImg src="logo.svg" alt="lock logo" />
       <Typography variant="h4" color={"#fff"}>
         Password Generator
