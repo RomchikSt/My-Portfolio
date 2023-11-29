@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Text Encryptor</title>
+
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="script.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Text Encryptor <span>(Eng)</span></h1>
+      <label for="message">Message :</label>
+      <textarea
+        id="messageInput"
+        rows="5"
+        cols="50"
+        placeholder="This is a secret message to encrypt!"
+      ></textarea>
+      <label for="cipherMethod">Cipher Method:</label>
+      <select id="cipherMethod">
+        <option value="caesar">Caesar</option>
+        <option value="reverse">Reverse</option>
+        <option value="substitution">Substitution</option>
+        <option value="atbash">Atbash</option>
+        <option value="vigenere">Vigenère</option>
+      </select>
+      <div class="buttons">
+        <button id="enc-btn">Encrypt</button>
+        <button id="dec-btn">Decrypt</button>
+      </div>
+
+      <h2>Result :</h2>
+      <textarea id="messageResult" rows="5" cols="50"></textarea>
+    </div>
+  </body>
+</html>
