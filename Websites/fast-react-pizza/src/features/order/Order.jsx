@@ -9,11 +9,8 @@ import {
 import { useEffect } from "react";
 import UpdateOrder from "./UpdateOrder";
 
-// Test ID: IIDSAT
-
 function Order() {
   const order = useLoaderData();
-
   const fetcher = useFetcher();
 
   useEffect(
@@ -23,7 +20,6 @@ function Order() {
     [fetcher],
   );
 
-  // Everyone can search for all orders, so for privacy reasons we're gonna gonna exclude names or address, these are only for the restaurant staff
   const {
     id,
     status,
