@@ -17,7 +17,6 @@ const StyledTestWindow = styled.div`
   align-items: center;
   justify-content: ${(props) => props.$justifyContent || ""};
   width: 70rem;
-  /* height: 90rem; */
 `;
 
 const FixedButtons = styled.div`

@@ -1,7 +1,5 @@
-
 import { async } from "regenerator-runtime";
 import { API_URL, RES_PER_PAGE, KEY } from "./config.js";
-//import { getJSON, sendJSON } from "./helpers.js";
 import { AJAX } from "./helpers.js";
 
 export const state = {
@@ -88,22 +86,14 @@ const persistBookmarks = function () {
 };
 
 export const addBookmark = function (recipe) {
-  //Add bookmark
   state.bookmarks.push(recipe);
-
-  //Mark current recipe as bookmark
   if (recipe.id === state.recipe.id) state.recipe.bookmarked = true;
-
   persistBookmarks();
 };
 
 export const deleteBookmark = function (id) {
-  //delete bookmark
-
   const index = state.bookmarks.findIndex((el) => el.id === id);
   state.bookmarks.splice(index, 1);
-
-  //Mark current recipe as NOT bookmarked
   if (id === state.recipe.id) state.recipe.bookmarked = false;
 
   persistBookmarks();
@@ -119,21 +109,17 @@ const clearBookmarks = function () {
   localStorage.clear("bookmarks");
 };
 
-//clearBookmarks();
 export const uploadRecipe = async function (newRecipe) {
   try {
     const ingredients = Object.entries(newRecipe)
       .filter((entry) => entry[0].startsWith("ingredient") && entry[1] !== "")
       .map((ing) => {
-        //const ingArr = ing[1].replaceAll(" ", "").split(",");
         const ingArr = ing[1].split(",").map((el) => el.trim());
         if (ingArr.length !== 3)
           throw new Error(
             "Wrong ingredient format! Please use the correct form :)"
           );
-
         const [quantity, unit, description] = ingArr;
-
         return { quantity: quantity ? +quantity : null, unit, description };
       });
 

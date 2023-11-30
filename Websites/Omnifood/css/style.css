@@ -61,7 +61,6 @@
   border: none;
   background: none;
   cursor: pointer;
-
   display: none;
 }
 
@@ -75,7 +74,6 @@
   display: none;
 }
 
-/* STICKY NAVIGATION */
 .sticky .header {
   position: fixed;
   top: 0;
@@ -226,7 +224,6 @@
 .step-img-box::before {
   width: 60%;
   padding-bottom: 60%;
-
   background-color: #fdf2e9;
   z-index: -2;
 }
