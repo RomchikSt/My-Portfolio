@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import Button from "./Button";
 
 const StyledHome = styled.div`
@@ -37,6 +37,36 @@ const StyledTextBox = styled.div`
   padding-bottom: 4rem;
 `;
 
+const scrollAnimation = keyframes`
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(46px);
+  }
+`;
+
+const StyledScrollMouse = styled.div`
+  position: absolute;
+  width: 40px;
+  height: 70px;
+  box-shadow: inset 0 0 0 1px #fff;
+  border-radius: 25px;
+
+  &:before {
+    content: "";
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: #fff;
+    left: 40%;
+    top: 8px;
+    border-radius: 4px;
+    animation: ${scrollAnimation} 1.5s infinite;
+  }
+`;
+
 function Home() {
   return (
     <StyledHome>
@@ -46,7 +76,8 @@ function Home() {
         <h4>and I'm</h4>
         <h2>Front-End Web Developer</h2>
       </StyledTextBox>
-      <Button>{"Contact me!"}</Button>
+      <Button>{"My Projects"}</Button>
+      {/* <StyledScrollMouse /> */}
     </StyledHome>
   );
 }

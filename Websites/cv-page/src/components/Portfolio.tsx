@@ -5,6 +5,7 @@ const StyledPortfolio = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  background-color: red;
 `;
 
 function Portfolio() {

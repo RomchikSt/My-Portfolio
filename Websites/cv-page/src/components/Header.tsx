@@ -10,15 +10,30 @@ const StyledHeader = styled.div`
   position: fixed;
 `;
 
+const StyledList = styled.ul`
+  color: var(--tx-color1);
+  font-weight: 400;
+  font-size: 1.6rem;
+  text-align: center;
+
+  li {
+    padding: 1.6rem;
+  }
+
+  li:not(:last-child) {
+    border-bottom: 1px solid var(--tx-color1);
+  }
+`;
+
 function Header() {
   return (
     <StyledHeader>
-      <ul>
+      <StyledList>
         <li>Home</li>
         <li>About</li>
         <li>Portfolio</li>
         <li>Contact</li>
-      </ul>
+      </StyledList>
     </StyledHeader>
   );
 }
