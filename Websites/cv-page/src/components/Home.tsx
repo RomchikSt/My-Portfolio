@@ -3,18 +3,12 @@ import Button from "./Button";
 
 const StyledHome = styled.div`
   height: 100vh;
+  width: 100%;
+  padding-left: 20rem;
   display: flex;
   flex-direction: column;
-  padding-left: 40rem;
   justify-content: center;
-
-  h1,
-  h2 {
-    background: var(--bg-liner-gradiend);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
+  position: relative;
 
   h1 {
     font-size: 8rem;
@@ -25,7 +19,7 @@ const StyledHome = styled.div`
     font-size: 4rem;
   }
 
-  h4 {
+  p {
     color: var(--tx-color1);
     font-size: 2rem;
     margin-bottom: 0.5rem;
@@ -34,34 +28,42 @@ const StyledHome = styled.div`
 `;
 
 const StyledTextBox = styled.div`
-  padding-bottom: 4rem;
+  padding-bottom: 5rem;
 `;
 
 const scrollAnimation = keyframes`
   0% {
     opacity: 1;
+    transform: translateY(0);
+    
   }
   100% {
     opacity: 0;
-    transform: translateY(46px);
+    transform: translateY(25px);
+    
+    
   }
 `;
 
 const StyledScrollMouse = styled.div`
   position: absolute;
-  width: 40px;
-  height: 70px;
-  box-shadow: inset 0 0 0 1px #fff;
+  width: 30px;
+  height: 50px;
+  box-shadow: inset 0 0 0 1px var(--tx-color1);
   border-radius: 25px;
+  left: 50%;
+  bottom: 4rem;
+  transform: translateX(-50%);
 
   &:before {
     content: "";
     position: absolute;
-    width: 8px;
-    height: 8px;
-    background: #fff;
+    width: 6px;
+    height: 6px;
+    background: var(--border-color);
     left: 40%;
-    top: 8px;
+    top: 10px;
+    transform: translateX(-50%);
     border-radius: 4px;
     animation: ${scrollAnimation} 1.5s infinite;
   }
@@ -71,13 +73,13 @@ function Home() {
   return (
     <StyledHome>
       <StyledTextBox>
-        <h4>Hi, my name is</h4>
+        <p>Hi, my name is</p>
         <h1>Roma Stakhiv</h1>
-        <h4>and I'm</h4>
+        <p>and I'm</p>
         <h2>Front-End Web Developer</h2>
       </StyledTextBox>
       <Button>{"My Projects"}</Button>
-      {/* <StyledScrollMouse /> */}
+      <StyledScrollMouse />
     </StyledHome>
   );
 }

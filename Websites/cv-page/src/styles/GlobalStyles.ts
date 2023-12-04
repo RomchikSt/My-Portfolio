@@ -2,10 +2,10 @@ import { createGlobalStyle } from "styled-components";
 
 const GlobalStyles = createGlobalStyle`
 :root{
-    --bg-color-main:#1d1d1d;
-    --bg-color-header:#181818;
+    --bg-color-main:#181818;
+    --bg-color-header:#1d1d1d;
     --tx-color1: #fffbeb;
-    --tx-color2:#fff7ed;
+    --tx-color2:#f59e0b;
     --border-color: #b45309;
     --bg-liner-gradiend: linear-gradient(to bottom right, #dc2626, #facc15);
 }
@@ -21,12 +21,20 @@ const GlobalStyles = createGlobalStyle`
 html{
     font-size: 62.5%;
     background-color: var(--bg-color-header);
+    color: var(--tx-color1);
 }
 
 body {
     font-family: "Roboto", sans-serif;
     
 }
+
+h1, h2, h3, h4, h5 {
+    background: var(--bg-liner-gradiend);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
 
 input,
 button,
@@ -36,7 +44,8 @@ select {
   color: inherit;
 }
 
-button {
+button,
+a {
   cursor: pointer;
 }
 
