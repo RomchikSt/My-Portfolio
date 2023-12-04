@@ -13,10 +13,12 @@ const StyledHome = styled.div`
   h1 {
     font-size: 8rem;
     margin-bottom: 0.5rem;
+    color: var(--tx-color3);
   }
 
   h2 {
     font-size: 4rem;
+    color: var(--tx-color3) !important;
   }
 
   p {

@@ -2,12 +2,13 @@ import { createGlobalStyle } from "styled-components";
 
 const GlobalStyles = createGlobalStyle`
 :root{
-    --bg-color-main:#181818;
-    --bg-color-header:#1d1d1d;
-    --tx-color1: #fffbeb;
-    --tx-color2:#f59e0b;
-    --border-color: #b45309;
-    --bg-liner-gradiend: linear-gradient(to bottom right, #dc2626, #facc15);
+    --bg-color-main:#122e40;
+    --bg-color-header:#091930;
+    --tx-color1: #f0fdf4;
+    --tx-color2:#64ffda;
+    --border-color: #64ffda;
+    --tx-color3:#4ade80;
+    --bg-liner-gradiend: linear-gradient(to bottom right, #4ade80, #65a30d);
 }
 
 *,
@@ -29,7 +30,7 @@ body {
     
 }
 
-h1, h2, h3, h4, h5 {
+ h3, h4, h5 {
     background: var(--bg-liner-gradiend);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -44,8 +45,7 @@ select {
   color: inherit;
 }
 
-button,
-a {
+button,a {
   cursor: pointer;
 }
 

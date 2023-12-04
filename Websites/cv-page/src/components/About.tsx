@@ -28,11 +28,15 @@ const AboutIntroduction = styled.div`
   h2 {
     font-size: 4rem;
     margin-bottom: 0.5rem;
-    padding: 1.5rem;
-    padding-bottom: 0.2rem;
-    border-bottom: 2px solid var(--border-color);
-    border-radius: 1rem;
+    padding-top: 1.5rem;
+  }
+
+  div {
+    background-color: #4ade80;
+    width: 20rem;
+    height: 4px;
     margin-bottom: 2rem;
+    border-radius: 10rem;
   }
 
   p {
@@ -101,7 +105,7 @@ const BackStack = styled.div`
   }
 `;
 const ReactStack = styled.div`
-  background-color: #181818;
+  background-color: var(--bg-color-main);
   margin-top: 2rem;
   padding: 1rem;
   border-radius: 2rem;
@@ -195,6 +199,7 @@ function About() {
     <StyledAbout>
       <AboutIntroduction>
         <h2>About Me</h2>
+        <div></div>
         <p>
           Here you will find more information about me, what I do, and my
           current skills mostly in terms of programming and technology
