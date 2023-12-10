@@ -1,4 +1,4 @@
-import { SiPostman } from "react-icons/si";
+import { SiPostman, SiVite } from "react-icons/si";
 import { RiSupabaseFill } from "react-icons/ri";
 import {
   BiLogoNodejs,
@@ -9,6 +9,7 @@ import {
   BiLogoJavascript,
   BiLogoTypescript,
 } from "react-icons/bi";
+import { FaGitAlt } from "react-icons/fa6";
 
 function AboutSection() {
   const frontStack = [
@@ -50,6 +51,14 @@ function AboutSection() {
     {
       logo: <BiLogoDocker size={60} />,
       name: "Docker",
+    },
+    {
+      logo: <SiVite size={60} />,
+      name: "Vite",
+    },
+    {
+      logo: <FaGitAlt size={60} />,
+      name: "Git",
     },
   ];
 
