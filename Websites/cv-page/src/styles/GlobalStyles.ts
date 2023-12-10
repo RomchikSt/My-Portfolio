@@ -2,12 +2,13 @@ import { createGlobalStyle } from "styled-components";
 
 const GlobalStyles = createGlobalStyle`
 :root{
-    --bg-color-main:#122e40;
-    --bg-color-header:#091930;
+    --bg-color-main:#111111;
+    --bg-color-header:#111111;
     --tx-color1: #f0fdf4;
-    --tx-color2:#64ffda;
+    --tx-color2:#f59e0b;
     --border-color: #64ffda;
-    --tx-color3:#4ade80;
+    --tx-color3:#fff;
+   /*  --bg-liner-gradiend: linear-gradient(to bottom right, #4ade80, #65a30d); */
     --bg-liner-gradiend: linear-gradient(to bottom right, #4ade80, #65a30d);
 }
 
@@ -31,10 +32,11 @@ body {
 }
 
  h3, h4, h5 {
-    background: var(--bg-liner-gradiend);
+    /* background: var(--bg-liner-gradiend);
     -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    -webkit-text-fill-color: transparent; */
     background-clip: text;
+    color: var(--tx-color3);
   }
 
 input,

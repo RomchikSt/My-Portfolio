@@ -51,7 +51,7 @@ const StyledScrollMouse = styled.div`
   position: absolute;
   width: 30px;
   height: 50px;
-  box-shadow: inset 0 0 0 1px var(--tx-color1);
+  box-shadow: inset 0 0 0 1px #fff;
   border-radius: 25px;
   left: 50%;
   bottom: 4rem;
@@ -62,7 +62,7 @@ const StyledScrollMouse = styled.div`
     position: absolute;
     width: 6px;
     height: 6px;
-    background: var(--border-color);
+    background: #fff;
     left: 40%;
     top: 10px;
     transform: translateX(-50%);
