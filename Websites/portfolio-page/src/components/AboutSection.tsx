@@ -10,6 +10,7 @@ import {
   BiLogoTypescript,
 } from "react-icons/bi";
 import { FaGitAlt } from "react-icons/fa6";
+import { TbBrandVite } from "react-icons/tb";
 
 function AboutSection() {
   const frontStack = [
@@ -41,11 +42,11 @@ function AboutSection() {
       name: "Node.js",
     },
     {
-      logo: <RiSupabaseFill size={50} className="mt-2.5" />,
+      logo: <RiSupabaseFill size={50} className="mt-2.5 pb-1" />,
       name: "Supabase",
     },
     {
-      logo: <SiPostman size={50} className="mt-2.5" />,
+      logo: <SiPostman size={50} className="mt-2.5 pb-1" />,
       name: "Postman",
     },
     {
@@ -53,12 +54,12 @@ function AboutSection() {
       name: "Docker",
     },
     {
-      logo: <SiVite size={60} />,
-      name: "Vite",
+      logo: <FaGitAlt size={55} className="mt-1.5 pb-1.5" />,
+      name: "Git",
     },
     {
-      logo: <FaGitAlt size={60} />,
-      name: "Git",
+      logo: <SiVite size={50} className="mt-2.5 pb-1.5" />,
+      name: "Vite",
     },
   ];
 
@@ -81,7 +82,7 @@ function AboutSection() {
   ];
 
   return (
-    <div className="w-full my-20 text-center pl-[8rem] flex flex-col items-center">
+    <div className="w-full mt-10 text-center pl-[8rem] flex flex-col items-center">
       <h2 className="inline-block text-5xl font-bold p-4 pb-4 border-b-4 border-custom-green">
         About
       </h2>
@@ -113,15 +114,23 @@ function AboutSection() {
           </h3>
           <div className="flex justify-center gap-10 mt-8">
             {frontStack.map((tech) => (
-              <div key={tech.name}>
-                {tech.logo} <p>{tech.name}</p>
+              <div
+                key={tech.name}
+                className="flex flex-col items-center text-center"
+              >
+                <div className="flex justify-center">{tech.logo}</div>{" "}
+                <p>{tech.name}</p>
               </div>
             ))}
           </div>
           <div className="flex justify-center gap-10 mt-8">
             {backStack.map((tech) => (
-              <div key={tech.name}>
-                {tech.logo} <p>{tech.name}</p>
+              <div
+                key={tech.name}
+                className="flex flex-col items-center text-center"
+              >
+                <div className="flex justify-center">{tech.logo}</div>
+                <p>{tech.name}</p>
               </div>
             ))}
           </div>
