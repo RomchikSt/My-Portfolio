@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Link } from "react-scroll";
 
 function StartSection() {
   return (
@@ -35,15 +36,16 @@ function StartSection() {
       >
         Front-End Web Developer
       </motion.h2>
-      <motion.button
-        className="pointer-events-auto my-14 w-44 h-12 bg-transparent border rounded-xl border-custom-green ml-1"
-        initial={{ y: "50%", opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.5, delay: 0.5 }}
-      >
-        <p>My Projects</p>
-      </motion.button>
-
+      <Link to="portfolio" smooth duration={500}>
+        <motion.button
+          className="pointer-events-auto my-14 w-44 h-12 bg-transparent border rounded-xl border-custom-green ml-1"
+          initial={{ y: "50%", opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.5, delay: 0.5 }}
+        >
+          <p>My Projects</p>
+        </motion.button>
+      </Link>
       <motion.div
         className="ml-[4rem] scroll-mouse absolute w-[30px] h-[50px] shadow-[inset_0_0_0_1px_white] rounded-full left-1/2 bottom-[4rem] -translate-x-1/2"
         initial={{ y: "50%", opacity: 0 }}

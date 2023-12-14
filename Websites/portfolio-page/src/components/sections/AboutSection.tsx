@@ -12,6 +12,7 @@ import {
 import { FaGitAlt } from "react-icons/fa6";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+import { Link } from "react-scroll";
 
 function AboutSection() {
   const [refHeader, inViewHeader] = useInView({
@@ -139,7 +140,12 @@ function AboutSection() {
             I'm a Front-End Web Developer building the Front-End of Websites and
             Web Applications that leads to the success of the overall product.
             Check out some of my work in the{" "}
-            <a className=" text-custom-green">Portfolio</a> section.
+            <Link to="portfolio" smooth duration={500}>
+              <span className=" text-custom-green cursor-pointer">
+                Portfolio
+              </span>
+            </Link>{" "}
+            section.
           </motion.p>
           <motion.p
             className="mt-4 text-l text-start"
@@ -151,7 +157,11 @@ function AboutSection() {
             I'm open to Job opportunities where I can contribute, learn and
             grow. If you have a good opportunity that matches my skills and
             experience then don't hesitate to{" "}
-            <a className=" text-custom-green">contact me</a>.
+            <Link to="contact" smooth duration={500}>
+              <span className=" text-custom-green cursor-pointer">
+                contact me
+              </span>
+            </Link>
           </motion.p>
         </div>
         <div className="flex-col w-5/12">
