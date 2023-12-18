@@ -35,20 +35,19 @@ function PortfolioSection() {
     },
     {
       id: 1,
-      title: "Wild Oasis",
-      description:
-        "This is a full-stack hotel management application, with the backend powered by Supabase. Designed to streamline the intricate tasks of hotel operations, this platform facilitates real-time room tracking, swift guest reservations, check-in and check-out processes, and generates insightful statistics about room occupancy and guest behavior.",
-      stack: ["JS", "React", "Styled-Components", "Supabase", "Vite"],
+      title: "TopKolesa",
+      description: "TopKolesa.",
+      stack: ["TS", "React", "i18-next", "M Ui", "Framer Motion"],
       githubLink: "",
-      externalLink: "",
+      link: "",
       video: "./video/WildOasisTrailer.mp4",
     },
     {
       id: 2,
-      title: "Forkify",
+      title: "Wild Oasis",
       description:
-        "Forkify is a recipe finder wich a convenient and user-friendly web application that allows users to search for a variety of recipes. Powered by the Forkify API, the site offers a rich collection of dishes to explore. Not only can users browse through available recipes, but they can also get detailed instructions, adjust servings, bookmark their favorites, and even add their own unique recipes!",
-      stack: ["HTML", "CSS", "JS", "SASS", "Parcel"],
+        "This is a full-stack hotel management application, with the backend powered by Supabase. Designed to streamline the intricate tasks of hotel operations, this platform facilitates real-time room tracking, swift guest reservations, check-in and check-out processes, and generates insightful statistics about room occupancy and guest behavior.",
+      stack: ["JS", "React", "Styled-Components", "Supabase", "Vite"],
       githubLink: "",
       externalLink: "",
       video: "./video/WildOasisTrailer.mp4",
