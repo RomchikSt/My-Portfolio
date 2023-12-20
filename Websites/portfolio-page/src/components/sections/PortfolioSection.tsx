@@ -4,31 +4,62 @@ import { RiGithubFill } from "react-icons/ri";
 import { FiExternalLink } from "react-icons/fi";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+import styled from "styled-components";
+import { HiOutlineExternalLink } from "react-icons/hi";
+import OpenInNewRoundedIcon from "@mui/icons-material/OpenInNewRounded";
 
-function PortfolioSection() {
+type PlayingStatus = {
+  [key: number]: { playing: boolean; animate: boolean };
+};
+
+const ReactIcon = styled.div<{ $color?: string; $hoverColor?: string }>`
+  svg {
+    fill: ${({ $color }) => $color ?? "#f0fdf4"};
+    transition: all 0.3s ease-in-out;
+    transform: translateY(0);
+  }
+  svg:hover {
+    fill: ${({ $hoverColor }) => $hoverColor ?? "#0aff9d"};
+    transform: translateY(-5px);
+  }
+`;
+
+function PortfolioSection({ ref }: { ref: any }) {
   const [isMounted, setIsMounted] = useState<boolean>(false);
-  const [isPlaying1, setIsPlaying1] = useState(false);
-  const [isPlaying2, setIsPlaying2] = useState(false);
-
+  const [playingStatus, setPlayingStatus] = useState<PlayingStatus>({});
   const [refHeader, inViewHeader] = useInView({
     triggerOnce: true,
     threshold: 0.25,
   });
   const [refVideo, inViewVideo] = useInView({
     triggerOnce: true,
-    threshold: 0.25,
+    threshold: 0.01,
   });
 
   useEffect(() => {
     setIsMounted(true);
   }, []);
 
+  const handleMouseEnter = (id: number) => {
+    setPlayingStatus({
+      ...playingStatus,
+      [id]: { playing: true, animate: true },
+    });
+  };
+
+  const handleMouseLeave = (id: number) => {
+    setPlayingStatus({
+      ...playingStatus,
+      [id]: { playing: false, animate: false },
+    });
+  };
+
   const PortfolioProjects = [
     {
       id: 0,
       title: "Portfolio",
-      description: "Portfolio.",
-      stack: ["TS", "React", "Next.js", "Tailwind", "Framer Motion"],
+      description: "Portfolio",
+      stack: ["TS", "React", "Next.js", "Tailwind", "Framer Motion", "Docker"],
       githubLink: "",
       link: "",
       video: "./video/WildOasisTrailer.mp4",
@@ -37,7 +68,7 @@ function PortfolioSection() {
       id: 1,
       title: "TopKolesa",
       description: "TopKolesa.",
-      stack: ["TS", "React", "i18-next", "M Ui", "Framer Motion"],
+      stack: ["TS", "React", "i18-next", "M Ui", "MySQL"],
       githubLink: "",
       link: "",
       video: "./video/WildOasisTrailer.mp4",
@@ -77,90 +108,174 @@ function PortfolioSection() {
           created with each project containing full description
         </motion.p>
       </div>
-      {isMounted &&
-        PortfolioProjects.map((project) =>
-          project.id % 2 === 0 ? (
-            <div key={project.id} className="w-full mt-32 relative px-40">
-              <div className="flex">
-                <div
-                  className="flex justify-end"
-                  onMouseEnter={() => setIsPlaying1(true)}
-                  onMouseLeave={() => setIsPlaying1(false)}
+      <motion.div
+        className="mb-16 w-full"
+        ref={refVideo}
+        initial={{ y: "10%", opacity: 0 }}
+        animate={inViewVideo ? { y: 0, opacity: 1 } : {}}
+        transition={{ duration: 0.75, delay: 0.3 }}
+      >
+        {isMounted &&
+          PortfolioProjects.map((project) =>
+            project.id % 2 === 0 ? (
+              <div key={project.id} className="w-full mt-32 relative px-40">
+                <div className="flex">
+                  <motion.div
+                    className="flex justify-end"
+                    onMouseEnter={() => handleMouseEnter(project.id)}
+                    onMouseLeave={() => handleMouseLeave(project.id)}
+                    initial={{ x: "-60%", opacity: 0 }}
+                    animate={inViewVideo ? { x: 0, opacity: 1 } : {}}
+                    transition={{ duration: 0.75, delay: 0.3 }}
+                  >
+                    <ReactPlayer
+                      url="./video/WildOasisTrailer.mp4"
+                      playing={playingStatus[project.id]?.playing}
+                    />
+                  </motion.div>
+                </div>
+                <motion.div
+                  className="absolute top-[0%] right-[25%] w-5/12  border-custom-green p-6  transform -translate-x-[30%] -translate-y-[54%] "
+                  animate={{
+                    x: playingStatus[project.id]?.animate ? "50%" : "30%",
+                  }}
+                  transition={{ duration: 0.5 }}
                 >
-                  <ReactPlayer
-                    url="./video/WildOasisTrailer.mp4"
-                    playing={isPlaying1}
-                  />
-                </div>
+                  <motion.h3
+                    className="p-6 text-2xl text-custom-green font-semibold text-right"
+                    initial={{ x: "60%", y: "5%", opacity: 0 }}
+                    animate={inViewVideo ? { x: 0, y: 0, opacity: 1 } : {}}
+                    transition={{ duration: 0.5, delay: 0.5 }}
+                  >
+                    {project.title}
+                  </motion.h3>
+                  <motion.p
+                    className="bg-custom-black rounded-3xl p-6 h-3/12 text-right"
+                    initial={{ x: "60%", opacity: 0 }}
+                    animate={inViewVideo ? { x: 0, opacity: 1 } : {}}
+                    transition={{ duration: 0.5, delay: 0.3 }}
+                  >
+                    {project.description}
+                  </motion.p>
+                  <div className="flex flex-row m-3 gap-6 justify-end">
+                    {project.stack.map((tech) => (
+                      <motion.p
+                        key={tech}
+                        className="text-custom-green"
+                        initial={{ y: "90%", opacity: 0 }}
+                        animate={inViewVideo ? { y: 0, opacity: 1 } : {}}
+                        transition={{
+                          duration: 0.5,
+                          delay: 0.6 + project.stack.indexOf(tech) / 10,
+                        }}
+                      >
+                        {tech}
+                      </motion.p>
+                    ))}
+                  </div>
+                  <div className="flex flex-row m-3 gap-3 justify-end">
+                    <motion.div
+                      initial={{ y: "80%", opacity: 0 }}
+                      animate={inViewVideo ? { y: 0, opacity: 1 } : {}}
+                      transition={{ duration: 0.5, delay: 0.9 }}
+                    >
+                      <ReactIcon>
+                        <RiGithubFill size={30} />
+                      </ReactIcon>
+                    </motion.div>
+                    <motion.div
+                      initial={{ y: "80%", opacity: 0 }}
+                      animate={inViewVideo ? { y: 0, opacity: 1 } : {}}
+                      transition={{ duration: 0.5, delay: 1 }}
+                    >
+                      <ReactIcon>
+                        <OpenInNewRoundedIcon style={{ fontSize: "30px" }} />
+                      </ReactIcon>
+                    </motion.div>
+                  </div>
+                </motion.div>
               </div>
-              <motion.div
-                className="absolute top-[0%] right-[25%] w-5/12  border-custom-green p-6  transform -translate-x-[30%] -translate-y-[54%] "
-                animate={{
-                  x: isPlaying1 ? "50%" : "30%",
-                }}
-                transition={{ duration: 0.5 }}
-              >
-                <h3 className="p-6 text-2xl text-custom-green font-semibold text-right">
-                  {project.title}
-                </h3>
-                <p className="bg-custom-black rounded-3xl p-6 h-3/12 text-right">
-                  {project.description}
-                </p>
-                <div className="flex flex-row m-3 gap-6 justify-end">
-                  {project.stack.map((tech) => (
-                    <p key={tech} className="text-custom-green">
-                      {tech}
-                    </p>
-                  ))}
+            ) : (
+              <div key={project.id} className="w-full mt-32 relative px-40">
+                <div className="flex justify-end">
+                  <motion.div
+                    className="flex justify-end"
+                    onMouseEnter={() => handleMouseEnter(project.id)}
+                    onMouseLeave={() => handleMouseLeave(project.id)}
+                    initial={{ x: "60%", opacity: 0 }}
+                    animate={inViewVideo ? { x: 0, opacity: 1 } : {}}
+                    transition={{ duration: 0.5, delay: 0.3 }}
+                  >
+                    <ReactPlayer
+                      url="./video/WildOasisTrailer.mp4"
+                      playing={playingStatus[project.id]?.playing}
+                    />
+                  </motion.div>
                 </div>
-                <div className="flex flex-row m-3 gap-3 justify-end">
-                  <RiGithubFill size={30} />
-                  <FiExternalLink size={30} />
-                </div>
-              </motion.div>
-            </div>
-          ) : (
-            <div key={project.id} className="w-full mt-32 relative px-40">
-              <div className="flex justify-end">
-                <div
-                  className="flex justify-end"
-                  onMouseEnter={() => setIsPlaying2(true)}
-                  onMouseLeave={() => setIsPlaying2(false)}
+                <motion.div
+                  className="absolute top-[0%] left-[25%] w-5/12  border-custom-green p-6  transform -translate-x-[30%] -translate-y-[54%] "
+                  animate={{
+                    x: playingStatus[project.id]?.animate ? "-50%" : "-30%",
+                  }}
+                  transition={{ duration: 0.5 }}
                 >
-                  <ReactPlayer
-                    url="./video/WildOasisTrailer.mp4"
-                    playing={isPlaying2}
-                  />
-                </div>
+                  <motion.h3
+                    className="p-6 text-2xl text-custom-green font-semibold"
+                    initial={{ x: "-60%", y: "-5%", opacity: 0 }}
+                    animate={inViewVideo ? { x: 0, y: 0, opacity: 1 } : {}}
+                    transition={{ duration: 0.5, delay: 0.6 }}
+                  >
+                    {project.title}
+                  </motion.h3>
+                  <motion.p
+                    className="bg-custom-black rounded-3xl p-6 h-3/12"
+                    initial={{ x: "-60%", y: "-5%", opacity: 0 }}
+                    animate={inViewVideo ? { x: 0, y: 0, opacity: 1 } : {}}
+                    transition={{ duration: 0.5, delay: 0.4 }}
+                  >
+                    {project.description}
+                  </motion.p>
+                  <div className="flex flex-row m-3 gap-6 ">
+                    {project.stack.map((tech) => (
+                      <motion.p
+                        key={tech}
+                        className="text-custom-green"
+                        initial={{ y: "90%", opacity: 0 }}
+                        animate={inViewVideo ? { y: 0, opacity: 1 } : {}}
+                        transition={{
+                          duration: 0.5,
+                          delay: 0.6 + project.stack.indexOf(tech) / 10,
+                        }}
+                      >
+                        {tech}
+                      </motion.p>
+                    ))}
+                  </div>
+                  <div className="flex flex-row m-3 gap-3">
+                    <motion.div
+                      initial={{ y: "80%", opacity: 0 }}
+                      animate={inViewVideo ? { y: 0, opacity: 1 } : {}}
+                      transition={{ duration: 0.5, delay: 0.6 }}
+                    >
+                      <ReactIcon>
+                        <RiGithubFill size={30} />
+                      </ReactIcon>
+                    </motion.div>
+                    <motion.div
+                      initial={{ y: "80%", opacity: 0 }}
+                      animate={inViewVideo ? { y: 0, opacity: 1 } : {}}
+                      transition={{ duration: 0.5, delay: 0.7 }}
+                    >
+                      <ReactIcon>
+                        <OpenInNewRoundedIcon style={{ fontSize: "30px" }} />
+                      </ReactIcon>
+                    </motion.div>
+                  </div>
+                </motion.div>
               </div>
-              <motion.div
-                className="absolute top-[0%] left-[25%] w-5/12  border-custom-green p-6  transform -translate-x-[30%] -translate-y-[54%] "
-                animate={{
-                  x: isPlaying2 ? "-50%" : "-30%",
-                }}
-                transition={{ duration: 0.5 }}
-              >
-                <h3 className="p-6 text-2xl text-custom-green font-semibold">
-                  {project.title}
-                </h3>
-                <p className="bg-custom-black rounded-3xl p-6 h-3/12">
-                  {project.description}
-                </p>
-                <div className="flex flex-row m-3 gap-6 ">
-                  {project.stack.map((tech) => (
-                    <p key={tech} className="text-custom-green">
-                      {tech}
-                    </p>
-                  ))}
-                </div>
-                <div className="flex flex-row m-3 gap-3">
-                  <RiGithubFill size={30} />
-                  <FiExternalLink size={30} />
-                </div>
-              </motion.div>
-            </div>
-          )
-        )}
+            )
+          )}
+      </motion.div>
     </div>
   );
 }

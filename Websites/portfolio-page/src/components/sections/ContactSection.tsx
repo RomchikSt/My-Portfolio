@@ -47,16 +47,43 @@ function ContactSection() {
           interesting offer – don't hesitate to reach out!
         </motion.p>
         <motion.button
-          className="pointer-events-auto my-14 w-44 h-12 bg-transparent border rounded-xl border-custom-green ml-2"
+          className="pointer-events-auto my-14 w-44 h-12 bg-transparent border rounded-xl border-custom-green ml-1 flex items-center justify-center"
           ref={refDesc}
           initial={{ y: "90%", opacity: 0 }}
-          animate={inViewDesc ? { y: 0, opacity: 1 } : {}}
-          transition={{ duration: 0.5, delay: 0.3 }}
+          animate={
+            inViewDesc
+              ? { y: 0, opacity: 1, transition: { duration: 0.5, delay: 0.35 } }
+              : {}
+          }
+          whileHover={{
+            backgroundColor: "#0aff9d",
+            scale: 1.05,
+            transition: { duration: 0.3 },
+          }}
+          transition={{
+            backgroundColor: { duration: 0.3 },
+            scale: { duration: 0.3 },
+          }}
         >
-          <a>Say Hello!</a>
+          <motion.a
+            href="mailto:roma.stakhiv@gmail.com"
+            className="m-0 absolute top-0 left-0 w-full h-full text-center flex items-center justify-center"
+            initial={{ color: "#FFFFFF" }}
+            whileHover={{ color: "#111111" }}
+          >
+            Say Hello!
+          </motion.a>
         </motion.button>
       </div>
-      <p className="pb-8 text-sm">Designed & Built by Roma Stakhiv</p>
+      <motion.p
+        className="pb-8 text-sm"
+        ref={refDesc}
+        initial={{ y: "30%", opacity: 0 }}
+        animate={inViewDesc ? { y: 0, opacity: 1 } : {}}
+        transition={{ duration: 0.5, delay: 0.5 }}
+      >
+        Designed & Built by Roma Stakhiv
+      </motion.p>
     </div>
   );
 }

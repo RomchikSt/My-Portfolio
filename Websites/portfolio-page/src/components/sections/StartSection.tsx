@@ -3,23 +3,6 @@ import Image from "next/image";
 import { Link } from "react-scroll";
 import styled from "styled-components";
 
-const StyledImageContainer = styled.div`
-  overflow: hidden;
-  position: relative;
-  display: inline-block;
-
-  &::after {
-    content: "";
-    box-shadow: inset 0 0 40px 30px #111111;
-    bottom: 0;
-    left: 0;
-    position: absolute;
-    right: 0;
-    top: 0;
-    z-index: 10;
-  }
-`;
-
 function StartSection() {
   return (
     <div className="flex">
@@ -57,16 +40,40 @@ function StartSection() {
           >
             Front-End Web Developer
           </motion.h2>
-          <Link to="portfolio" smooth duration={500}>
-            <motion.button
-              className="pointer-events-auto my-14 w-44 h-12 bg-transparent border rounded-xl border-custom-green ml-1"
-              initial={{ y: "50%", opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{ duration: 0.5, delay: 0.5 }}
-            >
-              <p>My Projects</p>
-            </motion.button>
-          </Link>
+          <div className="flex justify-start">
+            <Link to="portfolio" smooth duration={500}>
+              <div className="inline-block">
+                <div className="inline-block relative">
+                  <motion.button
+                    className="pointer-events-auto my-14 w-44 h-12 bg-transparent border rounded-xl border-custom-green ml-1 flex items-center justify-center"
+                    initial={{ y: "50%", opacity: 0 }}
+                    animate={{
+                      y: 0,
+                      opacity: 1,
+                      transition: { duration: 0.5, delay: 0.5 },
+                    }}
+                    whileHover={{
+                      backgroundColor: "#0aff9d",
+                      scale: 1.05,
+                      transition: { duration: 0.3 },
+                    }}
+                    transition={{
+                      backgroundColor: { duration: 0.3 },
+                      scale: { duration: 0.3 },
+                    }}
+                  >
+                    <motion.p
+                      className="m-0 absolute top-0 left-0 w-full h-full text-center flex items-center justify-center"
+                      initial={{ color: "#FFFFFF" }}
+                      whileHover={{ color: "#111111" }}
+                    >
+                      My Projects
+                    </motion.p>
+                  </motion.button>
+                </div>
+              </div>
+            </Link>
+          </div>
           <motion.div
             className="ml-[4rem] scroll-mouse absolute w-[30px] h-[50px] shadow-[inset_0_0_0_1px_white] rounded-full left-1/2 bottom-[4rem] -translate-x-1/2"
             initial={{ y: "50%", opacity: 0 }}
@@ -81,9 +88,15 @@ function StartSection() {
           </motion.div>
         </div>
       </div>
-      <div className="flex flex-row items-center justify-center">
-        <Image src="/img/me.jpg" alt="fff" width={800} height={495} priority />
-      </div>
+      {/* <div className="flex flex-row items-center justify-center">
+        <Image
+          src="/img/meColor.jpeg"
+          alt="Roma Stakhiv on the photo"
+          width={800}
+          height={495}
+          priority
+        />
+      </div> */}
     </div>
   );
 }
