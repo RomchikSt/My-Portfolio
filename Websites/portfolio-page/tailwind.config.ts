@@ -3,7 +3,8 @@ import type { Config } from "tailwindcss";
 const config: Config = {
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/sections/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/ui/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
@@ -15,6 +16,7 @@ const config: Config = {
       },
       colors: {
         "custom-green": "#0aff9d",
+        "custom-green-play": "rgba(10, 255, 157, 0.75)",
         "custom-black": "#232323",
         "custom-black-main": "#111111",
       },
