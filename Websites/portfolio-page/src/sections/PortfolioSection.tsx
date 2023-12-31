@@ -12,14 +12,14 @@ type PlayingStatus = {
   [key: number]: { playing: boolean; animate: boolean };
 };
 
-const ReactIcon = styled.div<{ $color?: string; $hoverColor?: string }>`
+const ReactIcon = styled.div`
   svg {
-    fill: ${({ $color }) => $color ?? "#f0fdf4"};
+    fill: #f0fdf4;
     transition: all 0.3s ease-in-out;
     transform: translateY(0);
   }
   svg:hover {
-    fill: ${({ $hoverColor }) => $hoverColor ?? "#0aff9d"};
+    fill: #0aff9d;
     transform: translateY(-5px);
   }
 `;
@@ -62,7 +62,9 @@ function PortfolioSection() {
         "This is a full-stack hotel management application, with the backend powered by Supabase. Designed to streamline the intricate tasks of hotel operations, this platform facilitates real-time room tracking, swift guest reservations, check-in and check-out processes, and generates insightful statistics about room occupancy and guest behavior.",
       stack: ["TS", "React", "Next.js", "Tailwind", "Framer Motion"],
       githubLink: "",
+      gitHubIcon: <RiGithubFill size={30} />,
       link: "",
+      externalLinkIcon: <FiExternalLink size={30} />,
       video: "./video/WildOasisTrailer.mp4",
     },
     {
@@ -72,7 +74,9 @@ function PortfolioSection() {
         "This is a full-stack hotel management application, with the backend powered by Supabase. Designed to streamline the intricate tasks of hotel operations, this platform facilitates real-time room tracking, swift guest reservations, check-in and check-out processes, and generates insightful statistics about room occupancy and guest behavior.",
       stack: ["TS", "React", "i18-next", "M Ui", "MySQL"],
       githubLink: "",
+      gitHubIcon: <RiGithubFill size={30} />,
       link: "",
+      externalLinkIcon: <FiExternalLink size={30} />,
       video: "./video/WildOasisTrailer.mp4",
     },
     {

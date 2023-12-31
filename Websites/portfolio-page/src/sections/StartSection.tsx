@@ -47,34 +47,32 @@ function StartSection() {
         ))}
         <div className="flex justify-start mt-14">
           <Link to="portfolio" smooth duration={500}>
-            <div className="inline-block relative">
-              <motion.button
-                className="pointer-events-auto w-44 h-12 bg-transparent border rounded-xl border-custom-green ml-1 flex items-center justify-center"
-                initial={{ y: "50%", opacity: 0 }}
-                animate={{
-                  y: 0,
-                  opacity: 1,
-                  transition: { duration: 0.5, delay: 0.5 },
-                }}
-                whileHover={{
-                  backgroundColor: "#0aff9d",
-                  scale: 1.05,
-                  transition: { duration: 0.3 },
-                }}
-                transition={{
-                  backgroundColor: { duration: 0.3 },
-                  scale: { duration: 0.3 },
-                }}
+            <motion.button
+              className="pointer-events-auto w-44 h-12 bg-transparent border rounded-xl border-custom-green ml-1 flex items-center justify-center"
+              initial={{ y: "50%", opacity: 0 }}
+              animate={{
+                y: 0,
+                opacity: 1,
+                transition: { duration: 0.5, delay: 0.5 },
+              }}
+              whileHover={{
+                backgroundColor: "#0aff9d",
+                scale: 1.05,
+                transition: { duration: 0.3 },
+              }}
+              transition={{
+                backgroundColor: { duration: 0.3 },
+                scale: { duration: 0.3 },
+              }}
+            >
+              <motion.p
+                className="m-0 w-full h-full text-center flex items-center justify-center"
+                initial={{ color: "#FFFFFF" }}
+                whileHover={{ color: "#111111" }}
               >
-                <motion.p
-                  className="m-0 absolute top-0 left-0 w-full h-full text-center flex items-center justify-center"
-                  initial={{ color: "#FFFFFF" }}
-                  whileHover={{ color: "#111111" }}
-                >
-                  My Projects
-                </motion.p>
-              </motion.button>
-            </div>
+                My Projects
+              </motion.p>
+            </motion.button>
           </Link>
         </div>
         <ScrollMouse />

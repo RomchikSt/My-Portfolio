@@ -15,6 +15,10 @@ export default function Home() {
   const [refContact, inViewContact] = useInView({ threshold: 0.5 });
 
   useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+  useEffect(() => {
     if (inViewStart) setActiveSection("home");
     if (inViewAbout) setActiveSection("about");
     if (inViewPortfolio) setActiveSection("portfolio");

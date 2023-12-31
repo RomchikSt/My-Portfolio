@@ -16,3 +16,21 @@
 body {
   background: var(--bg-color-main);
 }
+
+@media (max-width: 1700px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 640px) {
+  html {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  html {
+    font-size: 10px;
+  }
+}

@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import Image from "next/image";
 import { useInView } from "react-intersection-observer";
 
 function ContactSection() {
@@ -9,8 +8,18 @@ function ContactSection() {
   });
   const [refDesc, inViewDesc] = useInView({
     triggerOnce: true,
-    threshold: 0.25,
+    threshold: 0.15,
   });
+
+  const headerAnimation = {
+    initial: { y: "50%", opacity: 0 },
+    animate: inViewHeader ? { y: 0, opacity: 1 } : {},
+  };
+
+  const descAnimation = {
+    initial: { y: "20%", opacity: 0 },
+    animate: inViewDesc ? { y: 0, opacity: 1 } : {},
+  };
 
   return (
     <div className="w-full h-screen pt-14 flex flex-col justify-between items-center">
@@ -18,8 +27,7 @@ function ContactSection() {
         <motion.h2
           className="inline-block text-5xl font-bold py-4 border-b-4 border-custom-green"
           ref={refHeader}
-          initial={{ y: "50%", opacity: 0 }}
-          animate={inViewHeader ? { y: 0, opacity: 1 } : {}}
+          {...headerAnimation}
           transition={{ duration: 0.5, delay: 0.1 }}
         >
           Contact
@@ -27,8 +35,7 @@ function ContactSection() {
         <motion.p
           className="mt-4 text-xl "
           ref={refHeader}
-          initial={{ y: "50%", opacity: 0 }}
-          animate={inViewHeader ? { y: 0, opacity: 1 } : {}}
+          {...headerAnimation}
           transition={{ duration: 0.5, delay: 0.2 }}
         >
           Feel free to Contact with me
@@ -38,8 +45,7 @@ function ContactSection() {
         <motion.p
           className="text-xl w-5/12 text-center"
           ref={refDesc}
-          initial={{ y: "50%", opacity: 0 }}
-          animate={inViewDesc ? { y: 0, opacity: 1 } : {}}
+          {...descAnimation}
           transition={{ duration: 0.5, delay: 0.1 }}
         >
           Feel free to contact me – I'm always open for a chat! Send me an
@@ -50,7 +56,7 @@ function ContactSection() {
         <motion.button
           className="pointer-events-auto my-14 w-44 h-12 bg-transparent border rounded-xl border-custom-green ml-1 flex items-center justify-center"
           ref={refDesc}
-          initial={{ y: "90%", opacity: 0 }}
+          initial={{ y: "50%", opacity: 0 }}
           animate={
             inViewDesc
               ? { y: 0, opacity: 1, transition: { duration: 0.5, delay: 0.35 } }
@@ -78,9 +84,8 @@ function ContactSection() {
       </div>
       <motion.p
         className="pb-8 text-sm"
-        ref={refDesc}
-        initial={{ y: "30%", opacity: 0 }}
-        animate={inViewDesc ? { y: 0, opacity: 1 } : {}}
+        initial={{ y: "50%", opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.5, delay: 0.5 }}
       >
         Designed & Built by Roma Stakhiv
