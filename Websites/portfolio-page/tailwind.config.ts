@@ -20,6 +20,10 @@ const config: Config = {
         "custom-black": "#232323",
         "custom-black-main": "#111111",
       },
+      screens: {
+        "2100px": "2100px",
+        "1700px": "1700px",
+      },
     },
   },
   plugins: [],

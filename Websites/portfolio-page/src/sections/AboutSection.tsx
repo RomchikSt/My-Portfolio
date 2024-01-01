@@ -24,6 +24,7 @@ const ReactIcon = styled.div<ReactIconProps>`
     fill: #f0fdf4;
     transition: all 0.5s ease-in-out;
   }
+
   svg:hover {
     fill: ${(props) => props.$hoverColor};
   }
@@ -146,7 +147,7 @@ function AboutSection() {
   ];
 
   return (
-    <div className="mt-10 text-center flex flex-col items-center">
+    <div className=" m-auto min-h-[60vh] text-center flex flex-col items-center py-[3%]">
       <motion.h2
         className="text-5xl font-bold py-4 border-b-4 border-custom-green"
         ref={refHeader}
@@ -211,8 +212,8 @@ function AboutSection() {
                 <div className="flex flex-col items-center text-center">
                   <motion.div
                     whileHover={{
-                      rotateY: 360,
-                      translateY: "-5px",
+                      rotate: 360,
+                      translateY: "-8px",
                       transition: { duration: 0.6 },
                     }}
                     transition={{ duration: 0.4 }}
@@ -235,13 +236,15 @@ function AboutSection() {
                 <div className="flex flex-col items-center text-center">
                   <motion.div
                     whileHover={{
-                      rotateY: 360,
-                      translateY: "-5px",
+                      rotate: 360,
+                      translateY: "-8px",
                       transition: { duration: 0.6 },
                     }}
                     transition={{ duration: 0.4 }}
                   >
-                    <ReactIcon $hoverColor={tech.color}>{tech.logo}</ReactIcon>
+                    <ReactIcon $hoverColor={tech.color}>
+                      <p>{tech.logo}</p>
+                    </ReactIcon>
                   </motion.div>
                   <p>{tech.name}</p>
                 </div>

@@ -28,7 +28,7 @@ export default function Home() {
   return (
     <>
       <HeaderSection activeSection={activeSection} />
-      <div className=" pl-[8rem] max-w-[100rem] mx-auto">
+      <div className="pl-[8rem] max-w-[100rem] mx-auto">
         <Element name="home">
           <div ref={refStart}>
             <StartSection />

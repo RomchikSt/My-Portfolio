@@ -92,7 +92,7 @@ function PortfolioSection() {
   ];
 
   return (
-    <div className="w-full mt-24">
+    <div className="w-full  py-[3%]">
       <div className="text-center w-full">
         <motion.h2
           className="inline-block text-5xl font-bold py-4 border-b-4 border-custom-green"
@@ -127,7 +127,6 @@ function PortfolioSection() {
               <div key={project.id} className="w-full mt-32 relative px-40">
                 <div className="flex">
                   <motion.div
-                    className="flex justify-end"
                     onMouseEnter={() => handleMouseEnter(project.id)}
                     onMouseLeave={() => handleMouseLeave(project.id)}
                     initial={{ x: "-60%", opacity: 0 }}
@@ -152,7 +151,7 @@ function PortfolioSection() {
                   </motion.div>
                 </div>
                 <motion.div
-                  className="absolute top-[0%] right-[25%] w-5/12  border-custom-green p-6  transform -translate-x-[30%] -translate-y-[54%] "
+                  className="absolute top-[0%] right-[20%] w-5/12  border-custom-green p-6  transform -translate-x-[30%] -translate-y-[54%] 1700px:right-[25%]"
                   animate={{
                     x: playingStatus[project.id]?.animate ? "50%" : "30%",
                   }}
@@ -197,7 +196,7 @@ function PortfolioSection() {
                       transition={{ duration: 0.5, delay: 0.9 }}
                     >
                       <ReactIcon className="cursor-pointer">
-                        <RiGithubFill size={30} />
+                        <RiGithubFill size={"1.8rem"} />
                       </ReactIcon>
                     </motion.div>
                     <motion.div
@@ -206,7 +205,7 @@ function PortfolioSection() {
                       transition={{ duration: 0.5, delay: 1 }}
                     >
                       <ReactIcon className="cursor-pointer">
-                        <OpenInNewRoundedIcon style={{ fontSize: "30px" }} />
+                        <OpenInNewRoundedIcon style={{ fontSize: "1.8rem" }} />
                       </ReactIcon>
                     </motion.div>
                   </div>
@@ -241,7 +240,7 @@ function PortfolioSection() {
                   </motion.div>
                 </div>
                 <motion.div
-                  className="absolute top-[0%] left-[25%] w-5/12  border-custom-green p-6  transform -translate-x-[30%] -translate-y-[54%] "
+                  className="absolute top-[0%] left-[20%] w-5/12  border-custom-green p-6  transform -translate-x-[20%] -translate-y-[54%] 1700px:left-[25%] 1700px:-translate-x-[30%]"
                   animate={{
                     x: playingStatus[project.id]?.animate ? "-50%" : "-30%",
                   }}
@@ -286,7 +285,7 @@ function PortfolioSection() {
                       transition={{ duration: 0.5, delay: 0.6 }}
                     >
                       <ReactIcon className="cursor-pointer">
-                        <RiGithubFill size={30} />
+                        <RiGithubFill size={"1.8rem"} />
                       </ReactIcon>
                     </motion.div>
                     <motion.div
@@ -295,7 +294,7 @@ function PortfolioSection() {
                       transition={{ duration: 0.5, delay: 0.7 }}
                     >
                       <ReactIcon className="cursor-pointer">
-                        <OpenInNewRoundedIcon style={{ fontSize: "30px" }} />
+                        <OpenInNewRoundedIcon style={{ fontSize: "1.8rem" }} />
                       </ReactIcon>
                     </motion.div>
                   </div>

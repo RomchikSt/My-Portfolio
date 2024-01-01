@@ -75,14 +75,16 @@ function StartSection() {
             </motion.button>
           </Link>
         </div>
-        <ScrollMouse />
+        <div>
+          <ScrollMouse />
+        </div>
       </div>
       <div className="flex flex-row items-center justify-center">
         <Image
           src="/img/1111.jpg"
           alt="Roma Stakhiv on the photo"
-          width={900}
-          height={595}
+          width={1100}
+          height={795}
           priority
         />
       </div>

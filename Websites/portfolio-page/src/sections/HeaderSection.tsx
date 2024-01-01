@@ -24,22 +24,22 @@ function HeaderSection({ activeSection }: { activeSection: string }) {
     {
       id: "home",
       text: "Home",
-      icon: <FaHome fill={"#0aff9d"} size={23} />,
+      icon: <FaHome fill={"#0aff9d"} size={"1.4rem"} />,
     },
     {
       id: "about",
       text: "About",
-      icon: <BsFillInfoCircleFill fill={"#0aff9d"} size={23} />,
+      icon: <BsFillInfoCircleFill fill={"#0aff9d"} size={"1.4rem"} />,
     },
     {
       id: "portfolio",
       text: "Portfolio",
-      icon: <FaBriefcase fill={"#0aff9d"} size={23} />,
+      icon: <FaBriefcase fill={"#0aff9d"} size={"1.4rem"} />,
     },
     {
       id: "contact",
       text: "Contact",
-      icon: <IoIosMail fill={"#0aff9d"} size={30} />,
+      icon: <IoIosMail fill={"#0aff9d"} size={"1.8rem"} />,
     },
   ];
 
@@ -47,17 +47,17 @@ function HeaderSection({ activeSection }: { activeSection: string }) {
     {
       id: "LinkedIn",
       link: "https://www.linkedin.com/in/romchik-stakhiv/",
-      icon: <FaLinkedin size={22} />,
+      icon: <FaLinkedin size={"1.4rem"} />,
     },
     {
       id: "GitHub",
       link: "https://github.com/RomchikSt",
-      icon: <FaGithub size={22} />,
+      icon: <FaGithub size={"1.4rem"} />,
     },
     {
       id: "Instagram",
       link: "https://www.instagram.com/romchik_sta/",
-      icon: <FaInstagram size={22} />,
+      icon: <FaInstagram size={"1.4rem"} />,
     },
   ];
 
