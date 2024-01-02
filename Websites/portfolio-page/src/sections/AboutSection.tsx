@@ -147,7 +147,7 @@ function AboutSection() {
   ];
 
   return (
-    <div className=" m-auto min-h-[60vh] text-center flex flex-col items-center py-[3%]">
+    <div className="m-auto min-h-[60vh] text-center flex flex-col items-center py-[3%]">
       <motion.h2
         className="text-5xl font-bold py-4 border-b-4 border-custom-green"
         ref={refHeader}
@@ -171,6 +171,7 @@ function AboutSection() {
         {...headerAnimation}
         transition={{ duration: 0.5, delay: 0.1 }}
       >
+        {/* <div className="w-5/12 flex flex-row justify-around"> */}
         <div className="w-5/12">
           <motion.h3
             className="text-2xl text-custom-green font-semibold"
@@ -276,6 +277,7 @@ function AboutSection() {
             </div>
           </div>
         </div>
+        {/* </div> */}
       </motion.div>
     </div>
   );

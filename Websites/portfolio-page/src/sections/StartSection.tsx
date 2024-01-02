@@ -32,8 +32,8 @@ function StartSection() {
   ];
 
   return (
-    <div className="flex">
-      <div className="w-full min-h-screen flex flex-col justify-center">
+    <div className="flex justify-around">
+      <div className="min-h-screen flex flex-col justify-center">
         {introductionText.map((item, i) => (
           <motion.p
             key={i}
@@ -79,12 +79,12 @@ function StartSection() {
           <ScrollMouse />
         </div>
       </div>
-      <div className="flex flex-row items-center justify-center">
+      <div className="flex items-center">
         <Image
           src="/img/1111.jpg"
           alt="Roma Stakhiv on the photo"
-          width={1100}
-          height={795}
+          width={600}
+          height={495}
           priority
         />
       </div>
