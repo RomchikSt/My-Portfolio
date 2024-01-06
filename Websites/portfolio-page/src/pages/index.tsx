@@ -6,8 +6,10 @@ import ContactSection from "../sections/ContactSection";
 import { Element } from "react-scroll";
 import { useInView } from "react-intersection-observer";
 import { useEffect, useState, useRef, use } from "react";
+import MobileNavSection from "@/sections/MobileNavSection";
 
 export default function Home() {
+  const [isOpenMobileNav, setIsOpenMobileNav] = useState<boolean>(false);
   const [activeSection, setActiveSection] = useState<string>("home");
   const [refStart, inViewStart] = useInView({ threshold: 0.5 });
   const [refAbout, inViewAbout] = useInView({ threshold: 0.5 });
@@ -25,16 +27,26 @@ export default function Home() {
     if (inViewContact) setActiveSection("contact");
   }, [inViewStart, inViewAbout, inViewPortfolio, inViewContact]);
 
+  const handleChangeMobileNav = (isOpenMobileNav: boolean) => {
+    setIsOpenMobileNav(isOpenMobileNav);
+  };
+
   return (
     <>
-      <HeaderSection activeSection={activeSection} />
-      <div className="pl-[8rem] max-w-[100rem] mx-auto">
-        <Element name="home">
-          <div ref={refStart}>
-            <StartSection />
-          </div>
-        </Element>
-        <Element name="about">
+      <MobileNavSection
+        isOpenMobileNav={isOpenMobileNav}
+        handleChangeMobileNav={handleChangeMobileNav}
+      />
+      <>
+        <HeaderSection activeSection={activeSection} />
+
+        <div className="max-w-[100rem] mx-auto 1024px:pl-[8rem]">
+          <Element name="home">
+            <div ref={refStart}>
+              <StartSection />
+            </div>
+          </Element>
+          {/* <Element name="about">
           <div ref={refAbout}>
             <AboutSection />
           </div>
@@ -48,8 +60,9 @@ export default function Home() {
           <div ref={refContact}>
             <ContactSection />
           </div>
-        </Element>
-      </div>
+        </Element> */}
+        </div>
+      </>
     </>
   );
 }
