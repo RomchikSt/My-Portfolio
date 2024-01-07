@@ -33,7 +33,7 @@ function PortfolioSection() {
   });
   const [refVideo, inViewVideo] = useInView({
     triggerOnce: true,
-    threshold: 0.1,
+    threshold: 0.05,
   });
 
   useEffect(() => {
@@ -57,10 +57,10 @@ function PortfolioSection() {
   const PortfolioProjects = [
     {
       id: 0,
-      title: "Portfolio",
+      title: "TopKolesa",
       description:
         "This is a full-stack hotel management application, with the backend powered by Supabase. Designed to streamline the intricate tasks of hotel operations, this platform facilitates real-time room tracking, swift guest reservations, check-in and check-out processes, and generates insightful statistics about room occupancy and guest behavior.",
-      stack: ["TS", "React", "Next.js", "Tailwind", "Framer Motion"],
+      stack: ["TS", "React", "i18-next", "M Ui", "MySQL"],
       githubLink: "",
       gitHubIcon: <RiGithubFill size={30} />,
       link: "",
@@ -69,10 +69,10 @@ function PortfolioSection() {
     },
     {
       id: 1,
-      title: "TopKolesa",
+      title: "Portfolio v.1",
       description:
         "This is a full-stack hotel management application, with the backend powered by Supabase. Designed to streamline the intricate tasks of hotel operations, this platform facilitates real-time room tracking, swift guest reservations, check-in and check-out processes, and generates insightful statistics about room occupancy and guest behavior.",
-      stack: ["TS", "React", "i18-next", "M Ui", "MySQL"],
+      stack: ["TS", "React", "Next.js", "Tailwind", "Framer Motion"],
       githubLink: "",
       gitHubIcon: <RiGithubFill size={30} />,
       link: "",
@@ -92,10 +92,10 @@ function PortfolioSection() {
   ];
 
   return (
-    <div className="w-full  py-[3%]">
-      <div className="text-center w-full">
+    <>
+      <div className="mx-auto mt-6 mb-16 text-center flex flex-col items-center py-[5%] ">
         <motion.h2
-          className="inline-block text-5xl font-bold py-4 border-b-4 border-custom-green"
+          className="text-5xl font-bold py-4 border-b-4 border-custom-green"
           ref={refHeader}
           initial={{ y: "50%", opacity: 0 }}
           animate={inViewHeader ? { y: 0, opacity: 1 } : {}}
@@ -104,7 +104,7 @@ function PortfolioSection() {
           Portfolio
         </motion.h2>
         <motion.p
-          className="mt-4 text-xl w-5/12 mx-auto"
+          className="mt-4 text-xl w-3/5 1300px:w-5/12"
           ref={refHeader}
           initial={{ y: "50%", opacity: 0 }}
           animate={inViewHeader ? { y: 0, opacity: 1 } : {}}
@@ -115,7 +115,7 @@ function PortfolioSection() {
         </motion.p>
       </div>
       <motion.div
-        className="mb-16 w-full"
+        className="mb-16 flex flex-col m-auto max-w-[940px] gap-32 "
         ref={refVideo}
         initial={{ y: "10%", opacity: 0 }}
         animate={inViewVideo ? { y: 0, opacity: 1 } : {}}
@@ -124,9 +124,13 @@ function PortfolioSection() {
         {isMounted &&
           PortfolioProjects.map((project) =>
             project.id % 2 === 0 ? (
-              <div key={project.id} className="w-full mt-32 relative px-40">
+              <div
+                key={project.id}
+                className="relative flex flex-col justify-center items-center 1300px:block"
+              >
                 <div className="flex">
                   <motion.div
+                    className="flex w-[540px] 1700px:w-[640px]"
                     onMouseEnter={() => handleMouseEnter(project.id)}
                     onMouseLeave={() => handleMouseLeave(project.id)}
                     initial={{ x: "-60%", opacity: 0 }}
@@ -134,7 +138,7 @@ function PortfolioSection() {
                     transition={{ duration: 0.75, delay: 0.3 }}
                   >
                     <motion.div
-                      className="absolute top-0 right-0 left-0 bottom-0 z-10 bg-custom-green-play"
+                      className="absolute top-[28px] right-0 left-0 bottom-0 z-10 bg-custom-green-play h-[305px] 1700px:top-0 1700px:h-full"
                       initial={{ opacity: 1, scale: 1 }}
                       whileHover={{ opacity: 0, scale: 1.1 }}
                       transition={{ duration: 0.5 }}
@@ -151,9 +155,9 @@ function PortfolioSection() {
                   </motion.div>
                 </div>
                 <motion.div
-                  className="absolute top-[0%] right-[20%] w-5/12  border-custom-green p-6  transform -translate-x-[30%] -translate-y-[54%] 1700px:right-[25%]"
+                  className="relative 1300px:absolute top-[0] right-[25%] w-[36rem] border-custom-green p-6  transform -translate-x-[30%] -translate-y-[54%] 1700px:right-[13%]"
                   animate={{
-                    x: playingStatus[project.id]?.animate ? "50%" : "30%",
+                    x: playingStatus[project.id]?.animate ? "70%" : "20rem",
                   }}
                   transition={{ duration: 0.5 }}
                 >
@@ -212,10 +216,13 @@ function PortfolioSection() {
                 </motion.div>
               </div>
             ) : (
-              <div key={project.id} className="w-full mt-32 relative px-40">
-                <div className="flex justify-end">
+              <div
+                key={project.id}
+                className="relative flex flex-col justify-center items-center 1300px:block"
+              >
+                <div className="flex 1300px:justify-end">
                   <motion.div
-                    className="flex justify-end"
+                    className="flex w-[540px] 1700px:w-[640px]"
                     onMouseEnter={() => handleMouseEnter(project.id)}
                     onMouseLeave={() => handleMouseLeave(project.id)}
                     initial={{ x: "60%", opacity: 0 }}
@@ -223,7 +230,7 @@ function PortfolioSection() {
                     transition={{ duration: 0.5, delay: 0.3 }}
                   >
                     <motion.div
-                      className="absolute top-0 right-0 left-0 bottom-0 z-10 bg-custom-green-play"
+                      className="absolute top-[28px] right-0 left-0 bottom-0 z-10 bg-custom-green-play h-[305px] 1700px:top-0 1700px:h-full"
                       initial={{ opacity: 1, scale: 1 }}
                       whileHover={{ opacity: 0, scale: 1.1 }}
                       transition={{ duration: 0.5 }}
@@ -240,9 +247,9 @@ function PortfolioSection() {
                   </motion.div>
                 </div>
                 <motion.div
-                  className="absolute top-[0%] left-[20%] w-5/12  border-custom-green p-6  transform -translate-x-[20%] -translate-y-[54%] 1700px:left-[25%] 1700px:-translate-x-[30%]"
+                  className="relative m-auto 1300px:absolute top-[0%] left-[25%] w-[36rem]  border-custom-green p-6  transform -translate-x-[20%] -translate-y-[54%] 1700px:left-[13%]"
                   animate={{
-                    x: playingStatus[project.id]?.animate ? "-50%" : "-30%",
+                    x: playingStatus[project.id]?.animate ? "-68%" : "-50%",
                   }}
                   transition={{ duration: 0.5 }}
                 >
@@ -303,7 +310,7 @@ function PortfolioSection() {
             )
           )}
       </motion.div>
-    </div>
+    </>
   );
 }
 

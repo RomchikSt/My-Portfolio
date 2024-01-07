@@ -48,10 +48,10 @@ function ContactSection() {
           {...descAnimation}
           transition={{ duration: 0.5, delay: 0.1 }}
         >
-          Feel free to contact me – I'm always open for a chat! Send me an
-          email, or find me on LinkedIn or Instagram if that's more convenient
-          for you. If you have a question, want to collaborate, or have an
-          interesting offer – don't hesitate to reach out!
+          Feel free to contact me – I&apos;m always open for a chat! Send me an
+          email, or find me on LinkedIn or Instagram if that&apos;s more
+          convenient for you. If you have a question, want to collaborate, or
+          have an interesting offer – don&apos;t hesitate to reach out!
         </motion.p>
         <motion.button
           className="pointer-events-auto my-14 w-44 h-12 bg-transparent border rounded-xl border-custom-green ml-1 flex items-center justify-center"

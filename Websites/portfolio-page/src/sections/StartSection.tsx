@@ -6,6 +6,18 @@ import { useEffect, useState } from "react";
 import { Link } from "react-scroll";
 
 function StartSection() {
+  const [imgWidth, setImgWidth] = useState<number>(500);
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth < 1300) setImgWidth(430);
+      if (window.innerWidth > 1300) setImgWidth(500);
+    };
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   const introductionText = [
     {
       text: "Hi, my name is",
@@ -86,10 +98,9 @@ function StartSection() {
         <Image
           src="/img/1111.jpg"
           alt="Roma Stakhiv on the photo"
-          width={600}
+          width={imgWidth}
           height={400}
           priority
-          style={{ width: "auto", height: "auto" }}
         />
       </motion.div>
     </div>

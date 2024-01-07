@@ -13,7 +13,7 @@ export default function Home() {
   const [activeSection, setActiveSection] = useState<string>("home");
   const [refStart, inViewStart] = useInView({ threshold: 0.5 });
   const [refAbout, inViewAbout] = useInView({ threshold: 0.5 });
-  const [refPortfolio, inViewPortfolio] = useInView({ threshold: 0.5 });
+  const [refPortfolio, inViewPortfolio] = useInView({ threshold: 0.45 });
   const [refContact, inViewContact] = useInView({ threshold: 0.5 });
 
   useEffect(() => {
@@ -49,11 +49,11 @@ export default function Home() {
             <AboutSection />
           </div>
         </Element>
-        {/* <Element name="portfolio">
+        <Element name="portfolio">
           <div ref={refPortfolio}>
             <PortfolioSection />
           </div>
-        </Element> */}
+        </Element>
         {/* <Element name="contact">
           <div ref={refContact}>
             <ContactSection />
