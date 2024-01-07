@@ -33,36 +33,33 @@ export default function Home() {
 
   return (
     <>
+      <HeaderSection activeSection={activeSection} />
       <MobileNavSection
         isOpenMobileNav={isOpenMobileNav}
         handleChangeMobileNav={handleChangeMobileNav}
       />
-      <>
-        <HeaderSection activeSection={activeSection} />
-
-        <div className="max-w-[100rem] mx-auto 1024px:pl-[8rem]">
-          <Element name="home">
-            <div ref={refStart}>
-              <StartSection />
-            </div>
-          </Element>
-          {/* <Element name="about">
+      <div className="max-w-[100rem] mx-auto 1024px:pl-[8rem]">
+        <Element name="home">
+          <div ref={refStart}>
+            <StartSection />
+          </div>
+        </Element>
+        <Element name="about">
           <div ref={refAbout}>
             <AboutSection />
           </div>
         </Element>
-        <Element name="portfolio">
+        {/* <Element name="portfolio">
           <div ref={refPortfolio}>
             <PortfolioSection />
           </div>
-        </Element>
-        <Element name="contact">
+        </Element> */}
+        {/* <Element name="contact">
           <div ref={refContact}>
             <ContactSection />
           </div>
         </Element> */}
-        </div>
-      </>
+      </div>
     </>
   );
 }

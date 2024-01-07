@@ -1,187 +1,9 @@
-import styled from "styled-components";
 import { motion } from "framer-motion";
 
 type MobileNavSectionProps = {
   isOpenMobileNav: boolean;
   handleChangeMobileNav: (isOpenMobileNav: boolean) => void;
 };
-
-const Label = styled(motion.label)`
-  position: absolute;
-  height: 50px;
-  width: 50px;
-  top: 20px;
-  right: 20px;
-  text-align: center;
-  background-color: #0aff9d;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-  z-index: 51;
-`;
-
-const NavIcon = styled.div<{ isOpen: boolean }>`
-  width: 30px;
-  height: 25px;
-  position: relative;
-  -webkit-transform: rotate(0deg);
-  -moz-transform: rotate(0deg);
-  -o-transform: rotate(0deg);
-  transform: rotate(0deg);
-  -webkit-transition: 0.5s ease-in-out;
-  -moz-transition: 0.5s ease-in-out;
-  -o-transition: 0.5s ease-in-out;
-  transition: 0.5s ease-in-out;
-  cursor: pointer;
-
-  span {
-    display: block;
-    position: absolute;
-    height: 5px;
-    width: 50%;
-    background: #111111;
-    opacity: 1;
-    -webkit-transform: rotate(0deg);
-    -moz-transform: rotate(0deg);
-    -o-transform: rotate(0deg);
-    transform: rotate(0deg);
-    -webkit-transition: 0.25s ease-in-out;
-    -moz-transition: 0.25s ease-in-out;
-    -o-transition: 0.25s ease-in-out;
-    transition: 0.25s ease-in-out;
-  }
-
-  span:nth-child(even) {
-    left: 50%;
-    border-radius: 0 9px 9px 0;
-  }
-
-  span:nth-child(odd) {
-    left: 0px;
-    border-radius: 9px 0 0 9px;
-  }
-
-  span:nth-child(1),
-  span:nth-child(2) {
-    top: 0px;
-  }
-
-  span:nth-child(3),
-  span:nth-child(4) {
-    top: 9px;
-  }
-
-  span:nth-child(5),
-  span:nth-child(6) {
-    top: 18px;
-  }
-
-  ${({ isOpen }) =>
-    isOpen &&
-    `
-    span:nth-child(2),span:nth-child(5) {
-      -webkit-transform: rotate(-45deg);
-      -moz-transform: rotate(-45deg);
-      -o-transform: rotate(-45deg);
-      transform: rotate(-45deg);
-    }
-    span:nth-child(1) {
-      left: 5px;
-      top: 7px;
-      -webkit-transform: rotate(45deg);
-      -moz-transform: rotate(45deg);
-      -o-transform: rotate(45deg);
-      transform: rotate(45deg);
-      transform: rotate(45deg);
-    }
-    span:nth-child(2) {
-      left: calc(50% - 3px);
-      top: 5px;
-    }
-    span:nth-child(3) {
-      left: 50%;
-      opacity: 0;
-      
-    }
-    span:nth-child(4) {
-      left: 100%;
-      opacity: 0;
-      
-    }
-    span:nth-child(5) {
-      left: 5px;
-      top: 15px;
-    }
-    span:nth-child(6) {
-      left: calc(50% - 5px);
-      -webkit-transform: rotate(45deg);
-      -moz-transform: rotate(45deg);
-      -o-transform: rotate(45deg);
-      transform: rotate(45deg);
-      top: 15px;
-    }
-  `}
-`;
-
-const Wrapper = styled(motion.div)`
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  background: #fff;
-  clip-path: circle(25px at calc(100% - 45px) 45px);
-  transition: all 0.3s ease-in-out;
-  z-index: 50;
-`;
-
-const MenuItems = styled.ul`
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  list-style: none;
-  text-align: center;
-`;
-
-const MenuItem = styled(motion.li)`
-  margin: 15px 0;
-`;
-
-const MenuLink = styled.a`
-  color: none;
-  text-decoration: none;
-  font-size: 30px;
-  font-weight: 500;
-  padding: 5px 30px;
-  color: #fff;
-  border-radius: 50px;
-  background: #000;
-  position: relative;
-  line-height: 50px;
-  transition: all 0.3s ease;
-  &:hover {
-    color: #fff;
-  }
-  &:hover:after {
-    transform: scaleY(1);
-  }
-  &:after {
-    position: absolute;
-    content: "";
-    background: #0aff9d;
-    width: 104%;
-    height: 110%;
-    left: -2%;
-    top: -5%;
-    border-radius: 50px;
-    transform: scaleY(0);
-    z-index: -1;
-    transition: transform 0.3s ease;
-  }
-`;
 
 const menuVariants = {
   open: { clipPath: "circle(75% at 50% 50%)" },
@@ -192,8 +14,66 @@ function MobileNavSection({
   isOpenMobileNav,
   handleChangeMobileNav,
 }: MobileNavSectionProps) {
+  const MENU_ITEMS = ["Home", "About", "Portfolio", "Contact"];
+  const burgeSpans = [
+    {
+      id: "firstL",
+      position: "top-0 right-0",
+      animate: {
+        rotate: isOpenMobileNav ? -45 : 0,
+        top: isOpenMobileNav ? 3 : 0,
+        transition: { duration: 0.2 },
+      },
+    },
+    {
+      id: "firstR",
+      position: "top-0 left-0",
+      animate: {
+        rotate: isOpenMobileNav ? 45 : 0,
+        top: isOpenMobileNav ? 3 : 0,
+        transition: { duration: 0.2 },
+      },
+    },
+    {
+      id: "secondL",
+      position: "top-[9px] right-0",
+      animate: {
+        opacity: isOpenMobileNav ? 0 : 1,
+        x: isOpenMobileNav ? 10 : 0,
+        transition: { duration: 0.3 },
+      },
+    },
+    {
+      id: "secondR",
+      position: "top-[9px] left-0",
+      animate: {
+        opacity: isOpenMobileNav ? 0 : 1,
+        x: isOpenMobileNav ? -10 : 0,
+        transition: { duration: 0.3 },
+      },
+    },
+    {
+      id: "thirdL",
+      position: "top-[18px] right-0",
+      animate: {
+        rotate: isOpenMobileNav ? 45 : 0,
+        top: isOpenMobileNav ? 15 : 18,
+        transition: { duration: 0.2 },
+      },
+    },
+    {
+      id: "thirdR",
+      position: "top-[18px] left-0",
+      animate: {
+        rotate: isOpenMobileNav ? -45 : 0,
+        top: isOpenMobileNav ? 15 : 18,
+        transition: { duration: 0.2 },
+      },
+    },
+  ];
+
   return (
-    <div className="1024px:hidden">
+    <div className="fixed top-[30px] right-[80px] 1024px:hidden z-50">
       <input
         type="checkbox"
         id="active"
@@ -202,41 +82,43 @@ function MobileNavSection({
         onChange={() => handleChangeMobileNav(!isOpenMobileNav)}
         className="z-50"
       />
-      <Label
+      <motion.label
+        className="absolute h-[50px] w-[50px] text-center bg-[#0aff9d] rounded-full flex justify-center items-center cursor-pointer z-[51]"
         htmlFor="active"
-        initial={{ x: "100%", opacity: 0 }}
+        initial={{ x: "40%", opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}
         transition={{ duration: 1.1, delay: 0.3 }}
       >
-        <NavIcon isOpen={isOpenMobileNav}>
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
-        </NavIcon>
-      </Label>
-      <Wrapper
-        initial="closed"
-        animate={isOpenMobileNav ? "open" : "closed"}
-        variants={menuVariants}
+        <motion.div className="w-[30px] h-[23px] relative">
+          {burgeSpans.map((item) => (
+            <motion.span
+              key={item.id}
+              className={`block absolute h-[5px] w-[60%] bg-[#111111] rounded-[9px] ${item.position}`}
+              animate={item.animate}
+            />
+          ))}
+        </motion.div>
+      </motion.label>
+      <motion.div
+        className="fixed top-0 left-0 w-full h-full bg-custom-green-play z-[50]"
+        initial={{ opacity: isOpenMobileNav ? 1 : 0 }}
+        animate={{
+          clipPath: isOpenMobileNav
+            ? "circle(75% at 50% 50%)"
+            : "circle(25px at calc(100% - 45px) 45px)",
+          opacity: isOpenMobileNav ? 1 : 0,
+        }}
       >
-        <MenuItems>
-          <MenuItem whileHover={{ scale: 1.1 }}>
-            <MenuLink href="#">Home</MenuLink>
-          </MenuItem>
-          <MenuItem whileHover={{ scale: 1.1 }}>
-            <MenuLink href="#">About</MenuLink>
-          </MenuItem>
-          <MenuItem whileHover={{ scale: 1.1 }}>
-            <MenuLink href="#">Portfolio</MenuLink>
-          </MenuItem>
-          <MenuItem whileHover={{ scale: 1.1 }}>
-            <MenuLink href="#">Contact</MenuLink>
-          </MenuItem>
-        </MenuItems>
-      </Wrapper>
+        <ul className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex flex-col items-center justify-center gap-10 z-50">
+          {MENU_ITEMS.map((item, i) => (
+            <motion.li key={i} whileHover={{ scale: 1.1 }}>
+              <a className="bg-black text-[24px] py-[6px] px-[32px] rounded-[50px] text-white transition-all z-50">
+                {item}
+              </a>
+            </motion.li>
+          ))}
+        </ul>
+      </motion.div>
     </div>
   );
 }
