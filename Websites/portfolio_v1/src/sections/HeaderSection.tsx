@@ -7,6 +7,10 @@ import { BsFillInfoCircleFill } from "react-icons/bs";
 import { FaBriefcase } from "react-icons/fa";
 import { IoIosMail } from "react-icons/io";
 
+type HeaderSectionProps = {
+  activeSection: string;
+};
+
 const ReactIcon = styled.div`
   svg {
     fill: #f0fdf4;
@@ -19,7 +23,7 @@ const ReactIcon = styled.div`
   }
 `;
 
-function HeaderSection({ activeSection }: { activeSection: string }) {
+function HeaderSection({ activeSection }: HeaderSectionProps) {
   const headerListItems = [
     {
       id: "home",
@@ -64,7 +68,7 @@ function HeaderSection({ activeSection }: { activeSection: string }) {
   return (
     <motion.div
       className="hidden w-32 fixed min-h-screen flex-row justify-center items-center border-r border-custom-green 1024px:flex"
-      initial={{ x: "-90%" }}
+      initial={{ x: -200 }}
       animate={{ x: 0 }}
       transition={{ duration: 0.5, delay: 0.1 }}
     >
@@ -75,14 +79,14 @@ function HeaderSection({ activeSection }: { activeSection: string }) {
             className={`pointer-events-auto p-3 ${
               i !== headerListItems.length - 1 ? "border-b" : ""
             }`}
-            initial={{ x: "-50%" }}
+            initial={{ x: -100 }}
             animate={{ x: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
             <Link to={item.id} smooth duration={900}>
               <motion.button
                 className="flex items-center justify-center w-16 h-6 relative"
-                initial={{ x: "-50%" }}
+                initial={{ x: -100 }}
                 animate={{ x: 0 }}
                 transition={{ duration: 0.5, delay: 0.3 + i / 10 }}
               >
@@ -119,7 +123,7 @@ function HeaderSection({ activeSection }: { activeSection: string }) {
       </ul>
       <motion.div
         className="absolute flex justify-around bottom-8 w-full p-4"
-        initial={{ x: "-50%" }}
+        initial={{ x: -100 }}
         animate={{ x: 0 }}
         transition={{ duration: 0.5, delay: 0.9 }}
       >
