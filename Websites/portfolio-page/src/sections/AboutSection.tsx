@@ -13,22 +13,6 @@ import { FaGitAlt } from "react-icons/fa6";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { Link } from "react-scroll";
-import styled from "styled-components";
-
-type ReactIconProps = {
-  $hoverColor?: string;
-};
-
-const ReactIcon = styled.div<ReactIconProps>`
-  svg {
-    fill: #f0fdf4;
-    transition: all 0.5s ease-in-out;
-  }
-
-  svg:hover {
-    fill: ${(props) => props.$hoverColor};
-  }
-`;
 
 function AboutSection() {
   const [refHeader, inViewHeader] = useInView({
@@ -69,27 +53,22 @@ function AboutSection() {
     {
       logo: <BiLogoHtml5 size={"4rem"} />,
       name: "HTML",
-      color: "#E34F26",
     },
     {
       logo: <BiLogoCss3 size={"4rem"} />,
       name: "CSS",
-      color: "#1572B6",
     },
     {
       logo: <BiLogoJavascript size={"4rem"} />,
       name: "JavaScript",
-      color: "#F7DF1E",
     },
     {
       logo: <BiLogoTypescript size={"4rem"} />,
       name: "TypeScript",
-      color: "#007ACC",
     },
     {
       logo: <BiLogoReact size={"4rem"} />,
       name: "React",
-      color: "#61DAFB",
     },
   ];
 
@@ -97,32 +76,26 @@ function AboutSection() {
     {
       logo: <BiLogoNodejs size={"4rem"} />,
       name: "Node.js",
-      color: "#339933",
     },
     {
       logo: <RiSupabaseFill size={"3.4rem"} className="mt-2.5 pb-1" />,
       name: "Supabase",
-      color: "#3ECF8E",
     },
     {
       logo: <SiPostman size={"3.4rem"} className="mt-2.5 pb-2.5" />,
       name: "Postman",
-      color: "#FF6C37",
     },
     {
       logo: <BiLogoDocker size={"4rem"} />,
       name: "Docker",
-      color: "#2496ED",
     },
     {
       logo: <FaGitAlt size={"3.6rem"} className="mt-1.5 pb-1.5" />,
       name: "Git",
-      color: "#F05032",
     },
     {
       logo: <SiVite size={"3.4rem"} className="mt-2 pb-1.5" />,
       name: "Vite",
-      color: "#646CFF",
     },
   ];
 
@@ -209,18 +182,7 @@ function AboutSection() {
                   transition={{ duration: 0.5, delay: 0.1 + i / 10 }}
                 >
                   <div className="flex flex-col items-center text-center">
-                    <motion.div
-                      whileHover={{
-                        rotate: 360,
-                        translateY: "-8px",
-                        transition: { duration: 0.6 },
-                      }}
-                      transition={{ duration: 0.4 }}
-                    >
-                      <ReactIcon $hoverColor={tech.color}>
-                        {tech.logo}
-                      </ReactIcon>
-                    </motion.div>
+                    <div>{tech.logo}</div>
                     <p>{tech.name}</p>
                   </div>
                 </motion.div>
@@ -235,18 +197,7 @@ function AboutSection() {
                   transition={{ duration: 0.5, delay: 0.1 + i / 10 }}
                 >
                   <div className="flex flex-col items-center text-center">
-                    <motion.div
-                      whileHover={{
-                        rotate: 360,
-                        translateY: "-8px",
-                        transition: { duration: 0.6 },
-                      }}
-                      transition={{ duration: 0.4 }}
-                    >
-                      <ReactIcon $hoverColor={tech.color}>
-                        <p>{tech.logo}</p>
-                      </ReactIcon>
-                    </motion.div>
+                    <div>{tech.logo}</div>
                     <p>{tech.name}</p>
                   </div>
                 </motion.div>

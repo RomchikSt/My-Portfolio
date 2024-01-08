@@ -17,6 +17,7 @@ const config: Config = {
       colors: {
         "custom-green": "#0aff9d",
         "custom-green-play": "rgba(10, 255, 157, 0.75)",
+        "custom-green-menu": "rgba(10, 255, 157, 0.8)",
         "custom-black": "#232323",
         "custom-black-main": "#111111",
       },

@@ -5,11 +5,6 @@ type MobileNavSectionProps = {
   handleChangeMobileNav: (isOpenMobileNav: boolean) => void;
 };
 
-const menuVariants = {
-  open: { clipPath: "circle(75% at 50% 50%)" },
-  closed: { clipPath: "circle(25px at calc(100% - 45px) 45px)" },
-};
-
 function MobileNavSection({
   isOpenMobileNav,
   handleChangeMobileNav,
@@ -100,7 +95,7 @@ function MobileNavSection({
         </motion.div>
       </motion.label>
       <motion.div
-        className="fixed top-0 left-0 w-full h-full bg-custom-green-play z-[50]"
+        className="fixed top-0 left-0 w-full h-full bg-custom-green-play z-[50] shadow-lg"
         initial={{ opacity: isOpenMobileNav ? 1 : 0 }}
         animate={{
           clipPath: isOpenMobileNav
@@ -109,10 +104,10 @@ function MobileNavSection({
           opacity: isOpenMobileNav ? 1 : 0,
         }}
       >
-        <ul className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex flex-col items-center justify-center gap-10 z-50">
+        <ul className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex flex-col items-center justify-center gap-20 z-50">
           {MENU_ITEMS.map((item, i) => (
             <motion.li key={i} whileHover={{ scale: 1.1 }}>
-              <a className="bg-black text-[24px] py-[6px] px-[32px] rounded-[50px] text-white transition-all z-50">
+              <a className="bg-black text-6xl py-2 px-10 rounded-[50px] text-white transition-all z-50">
                 {item}
               </a>
             </motion.li>
