@@ -119,7 +119,7 @@ function HeaderSection({ activeSection }: { activeSection: string }) {
       </ul>
       <motion.div
         className="absolute flex justify-around bottom-8 w-full p-4"
-        initial={{ x: -100 }}
+        initial={{ x: -150 }}
         animate={{ x: 0 }}
         transition={{ duration: 0.5, delay: 0.9 }}
       >
