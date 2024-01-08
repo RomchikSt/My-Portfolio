@@ -27,6 +27,7 @@ const ReactIcon = styled.div`
 function PortfolioSection() {
   const [isMounted, setIsMounted] = useState<boolean>(false);
   const [playingStatus, setPlayingStatus] = useState<PlayingStatus>({});
+  const [textAbsolute, setTextAbsolute] = useState<boolean>(true);
   const [refHeader, inViewHeader] = useInView({
     triggerOnce: true,
     threshold: 0.25,
@@ -38,6 +39,16 @@ function PortfolioSection() {
 
   useEffect(() => {
     setIsMounted(true);
+  }, []);
+
+  useEffect(() => {
+    const handleChangeText = () => {
+      if (window.innerWidth < 1300) setTextAbsolute(false);
+      if (window.innerWidth > 1300) setTextAbsolute(true);
+    };
+    handleChangeText();
+    window.addEventListener("resize", handleChangeText);
+    return () => window.removeEventListener("resize", handleChangeText);
   }, []);
 
   const handleMouseEnter = (id: number) => {
@@ -93,7 +104,7 @@ function PortfolioSection() {
 
   return (
     <>
-      <div className="mx-auto mt-6 mb-16 text-center flex flex-col items-center py-[5%] ">
+      <div className="mx-auto mt-6 text-center flex flex-col items-center py-[5%] 1300px:mb-16">
         <motion.h2
           className="text-5xl font-bold py-4 border-b-4 border-custom-green"
           ref={refHeader}
@@ -115,7 +126,7 @@ function PortfolioSection() {
         </motion.p>
       </div>
       <motion.div
-        className="mb-16 flex flex-col m-auto max-w-[940px] gap-32 "
+        className="mb-16 flex flex-col m-auto max-w-[940px] gap-32"
         ref={refVideo}
         initial={{ y: "10%", opacity: 0 }}
         animate={inViewVideo ? { y: 0, opacity: 1 } : {}}
@@ -128,6 +139,14 @@ function PortfolioSection() {
                 key={project.id}
                 className="relative flex flex-col justify-center items-center 1300px:block"
               >
+                <motion.h3
+                  className="text-4xl font-semibold 1300px:hidden 1300px:p-6"
+                  initial={{ x: "-60%", opacity: 0 }}
+                  animate={inViewVideo ? { x: 0, opacity: 1 } : {}}
+                  transition={{ duration: 0.5, delay: 0 }}
+                >
+                  {project.title}
+                </motion.h3>
                 <div className="flex">
                   <motion.div
                     className="flex w-[540px] 1700px:w-[640px]"
@@ -155,14 +174,16 @@ function PortfolioSection() {
                   </motion.div>
                 </div>
                 <motion.div
-                  className="relative 1300px:absolute top-[0] right-[25%] w-[36rem] border-custom-green p-6  transform -translate-x-[30%] -translate-y-[54%] 1700px:right-[13%]"
+                  className="block 1300px:absolute top-[0] right-[25%] w-[42rem] border-custom-green px-6  transform -translate-x-[30%] -translate-y-[54%] 1300px:w-[36rem] 1300px:p-6 1700px:right-[13%]"
                   animate={{
-                    x: playingStatus[project.id]?.animate ? "70%" : "20rem",
+                    x: playingStatus[project.id]?.animate
+                      ? "70%"
+                      : `${textAbsolute ? "20rem" : "0rem"}`,
                   }}
                   transition={{ duration: 0.5 }}
                 >
                   <motion.h3
-                    className="p-6 text-2xl text-custom-green font-semibold text-right"
+                    className="hidden p-6 text-2xl text-custom-green font-semibold text-right 1300px:block"
                     initial={{ x: "60%", y: "5%", opacity: 0 }}
                     animate={inViewVideo ? { x: 0, y: 0, opacity: 1 } : {}}
                     transition={{ duration: 0.5, delay: 0.5 }}
@@ -170,14 +191,14 @@ function PortfolioSection() {
                     {project.title}
                   </motion.h3>
                   <motion.p
-                    className="bg-custom-black rounded-3xl p-6 h-3/12 text-right"
+                    className="text-left bg-custom-black rounded-3xl p-6 1300px:text-right"
                     initial={{ x: "60%", opacity: 0 }}
                     animate={inViewVideo ? { x: 0, opacity: 1 } : {}}
                     transition={{ duration: 0.5, delay: 0.3 }}
                   >
                     {project.description}
                   </motion.p>
-                  <div className="flex flex-row m-3 gap-6 justify-end">
+                  <div className="flex flex-row justify-center m-3 gap-6 1300px:justify-end">
                     {project.stack.map((tech) => (
                       <motion.p
                         key={tech}
@@ -193,7 +214,7 @@ function PortfolioSection() {
                       </motion.p>
                     ))}
                   </div>
-                  <div className="flex flex-row m-3 gap-3 justify-end">
+                  <div className="flex flex-row justify-center m-3 gap-3 1300px:justify-end">
                     <motion.div
                       initial={{ y: "80%", opacity: 0 }}
                       animate={inViewVideo ? { y: 0, opacity: 1 } : {}}
@@ -220,6 +241,14 @@ function PortfolioSection() {
                 key={project.id}
                 className="relative flex flex-col justify-center items-center 1300px:block"
               >
+                <motion.h3
+                  className="text-4xl font-semibold 1300px:hidden 1300px:p-6"
+                  initial={{ x: "-60%", opacity: 0 }}
+                  animate={inViewVideo ? { x: 0, opacity: 1 } : {}}
+                  transition={{ duration: 0.5, delay: 0 }}
+                >
+                  {project.title}
+                </motion.h3>
                 <div className="flex 1300px:justify-end">
                   <motion.div
                     className="flex w-[540px] 1700px:w-[640px]"
@@ -247,14 +276,16 @@ function PortfolioSection() {
                   </motion.div>
                 </div>
                 <motion.div
-                  className="relative m-auto 1300px:absolute top-[0%] left-[25%] w-[36rem]  border-custom-green p-6  transform -translate-x-[20%] -translate-y-[54%] 1700px:left-[13%]"
+                  className="block m-auto 1300px:absolute top-[0%] left-[25%] w-[42rem] border-custom-green px-6  transform -translate-x-[20%] -translate-y-[54%] 1300px:w-[36rem] 1700px:left-[13%]"
                   animate={{
-                    x: playingStatus[project.id]?.animate ? "-68%" : "-50%",
+                    x: playingStatus[project.id]?.animate
+                      ? "-70%"
+                      : `${textAbsolute ? "-20rem" : "0rem"}`,
                   }}
                   transition={{ duration: 0.5 }}
                 >
                   <motion.h3
-                    className="p-6 text-2xl text-custom-green font-semibold"
+                    className="hidden p-6 text-2xl text-custom-green font-semibold 1300px:block"
                     initial={{ x: "-60%", y: "-5%", opacity: 0 }}
                     animate={inViewVideo ? { x: 0, y: 0, opacity: 1 } : {}}
                     transition={{ duration: 0.5, delay: 0.6 }}
@@ -262,14 +293,14 @@ function PortfolioSection() {
                     {project.title}
                   </motion.h3>
                   <motion.p
-                    className="bg-custom-black rounded-3xl p-6 h-3/12"
+                    className="bg-custom-black rounded-3xl p-6 h-3/12 "
                     initial={{ x: "-60%", y: "-5%", opacity: 0 }}
                     animate={inViewVideo ? { x: 0, y: 0, opacity: 1 } : {}}
                     transition={{ duration: 0.5, delay: 0.4 }}
                   >
                     {project.description}
                   </motion.p>
-                  <div className="flex flex-row m-3 gap-6 ">
+                  <div className="flex flex-row justify-center m-3 gap-6 1300px:justify-start ">
                     {project.stack.map((tech) => (
                       <motion.p
                         key={tech}
@@ -285,7 +316,7 @@ function PortfolioSection() {
                       </motion.p>
                     ))}
                   </div>
-                  <div className="flex flex-row m-3 gap-3">
+                  <div className="flex flex-row justify-center m-3 gap-3 1300px:justify-start">
                     <motion.div
                       initial={{ y: "80%", opacity: 0 }}
                       animate={inViewVideo ? { y: 0, opacity: 1 } : {}}

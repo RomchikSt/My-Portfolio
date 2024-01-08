@@ -49,11 +49,11 @@ export default function Home() {
             <AboutSection />
           </div>
         </Element>
-        {/* <Element name="portfolio">
+        <Element name="portfolio">
           <div ref={refPortfolio}>
             <PortfolioSection />
           </div>
-        </Element> */}
+        </Element>
         {/* <Element name="contact">
           <div ref={refContact}>
             <ContactSection />
