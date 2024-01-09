@@ -1,4 +1,4 @@
-import { SiPostman, SiVite } from "react-icons/si";
+import { SiRedux, SiVite } from "react-icons/si";
 import { RiSupabaseFill } from "react-icons/ri";
 import {
   BiLogoNodejs,
@@ -82,8 +82,8 @@ function AboutSection() {
       name: "Supabase",
     },
     {
-      logo: <SiPostman size={"3.4rem"} className="mt-2.5 pb-2.5" />,
-      name: "Postman",
+      logo: <SiRedux size={"3.4rem"} className="mt-2.5 pb-2.5" />,
+      name: "Redux",
     },
     {
       logo: <BiLogoDocker size={"4rem"} />,
