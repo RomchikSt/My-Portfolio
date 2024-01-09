@@ -33,7 +33,7 @@ function ExpSection() {
   ];
 
   return (
-    <div className="w-full pt-14 flex flex-col items-center 2100px:h-[60rem]">
+    <div className="w-full pt-14 flex flex-col items-center min-h-[50vh]">
       <div className="text-center flex flex-col items-center w-5/12 mb-12">
         <motion.h2
           className="inline-block text-5xl font-bold py-4 border-b-4 border-custom-green"

@@ -149,7 +149,7 @@ function AboutSection() {
         {...headerAnimation}
         transition={{ duration: 0.5, delay: 0.1 }}
       >
-        <div className="flex flex-col items-start gap-20 1300px:flex-row 1300px:justify-center 1400px:justify-around 1400px:gap-0">
+        <div className="flex flex-col items-center 1300px:items-start gap-20 1300px:flex-row 1300px:justify-center 1400px:justify-around 1400px:gap-0">
           <div className="w-9/12 837px:w-3/5 flex flex-col justify-center 1300px:w-5/12">
             <motion.h3
               className="text-2xl text-custom-green font-semibold mb-6"

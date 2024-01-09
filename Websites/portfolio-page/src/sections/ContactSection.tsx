@@ -79,15 +79,14 @@ function ContactSection() {
           Feel free to contact with me
         </motion.p>
       </div>
-      <div className="flex flex-col items-center mt-24">
+      <div className="flex flex-col items-center mt-4">
         <motion.p
           className="text-xl w-8/12 1300px:w-5/12 text-center"
           ref={refDesc}
           {...descAnimation}
           transition={{ duration: 0.5, delay: 0.1 }}
         >
-          {`Feel free to contact me – I'm always open for a chat! If you have a question, want to collaborate, or
-          have an interesting offer – don't hesitate to reach out!`}
+          {`Let's Connect! If you're interested in web development collaborations, have questions, or just want to exchange ideas, feel free to reach out. I'm open to discussing projects that challenge and expand the boundaries of web technology, and I'm always eager to connect with like-minded individuals. Contact me here or through my social media channels – I'm looking forward to our conversation and the opportunity to collaborate on exciting projects.`}
         </motion.p>
         <motion.button
           className="pointer-events-auto mt-14 mb-8 w-44 h-12 bg-transparent border rounded-xl border-custom-green ml-1 flex items-center justify-center"
