@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+/* import { motion } from "framer-motion";
 
 function ScrollMouse() {
   return (
@@ -14,6 +14,69 @@ function ScrollMouse() {
         transition={{ repeat: Infinity, duration: 1.5 }}
       />
     </motion.div>
+  );
+}
+
+export default ScrollMouse; */
+import styled, { keyframes } from "styled-components";
+
+const appear = keyframes`
+  from {
+    opacity: 0;
+    transform: translateY(50%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+`;
+
+const scroll = keyframes`
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+`;
+
+const ScrollMouseContainer = styled.div`
+  display: none;
+  @media (min-width: 1200px) {
+    display: block;
+  }
+  position: absolute;
+  margin-left: 3rem;
+  width: 30px;
+  height: 50px;
+  box-shadow: inset 0 0 3px 1px white;
+  border-radius: 16px;
+  left: 50%;
+  bottom: 3rem;
+  transform: translateX(-50%);
+  z-index: 50;
+  animation: ${appear} 0.5s 0.6s forwards;
+`;
+
+const ScrollCircle = styled.div`
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background-color: #0aff9d;
+  left: 40%;
+  top: 9px;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  animation: ${scroll} 1.6s infinite;
+`;
+
+function ScrollMouse() {
+  return (
+    <ScrollMouseContainer>
+      <ScrollCircle />
+    </ScrollMouseContainer>
   );
 }
 
