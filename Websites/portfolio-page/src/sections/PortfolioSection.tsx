@@ -31,7 +31,7 @@ function PortfolioSection() {
   const [videoSize, setVideoSize] = useState<number>(360);
   const [refHeader, inViewHeader] = useInView({
     triggerOnce: true,
-    threshold: 0.25,
+    threshold: 0.45,
   });
   const [refVideo, inViewVideo] = useInView({
     triggerOnce: true,

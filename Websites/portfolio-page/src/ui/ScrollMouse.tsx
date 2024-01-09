@@ -9,7 +9,7 @@ function ScrollMouse() {
       transition={{ duration: 0.5, delay: 0.6 }}
     >
       <motion.div
-        className="absolute w-[6px] h-[6px] bg-custom-green left-[40%] top-[10px] -translate-x-1/2 rounded-full"
+        className="absolute w-[6px] h-[6px] bg-custom-green left-[40%] top-[9px] -translate-x-1/2 rounded-full"
         animate={{ y: [0, 25], opacity: [1, 0] }}
         transition={{ repeat: Infinity, duration: 1.5 }}
       />

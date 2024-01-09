@@ -17,7 +17,7 @@ function ExpSection() {
   };
 
   const descAnimation = {
-    initial: { y: "20%", opacity: 0 },
+    initial: { y: "40%", opacity: 0 },
     animate: inViewDesc ? { y: 0, opacity: 1 } : {},
   };
 
@@ -33,7 +33,7 @@ function ExpSection() {
   ];
 
   return (
-    <div className="w-full min-h-[50vh] pt-14 flex flex-col items-center 2100px:h-[60rem]">
+    <div className="w-full pt-14 flex flex-col items-center 2100px:h-[60rem]">
       <div className="text-center flex flex-col items-center w-5/12 mb-12">
         <motion.h2
           className="inline-block text-5xl font-bold py-4 border-b-4 border-custom-green"
@@ -52,7 +52,12 @@ function ExpSection() {
           Explore my professional journey
         </motion.p>
       </div>
-      <div className="flex m-4 gap-2 flex-col items-start border rounded-3xl border-custom-green mt-8 p-6 bg-custom-black w-9/12 837px:w-3/5 1300px:w-[50rem] shadow-[0_0px_8px_1px_#0aff9d]">
+      <motion.div
+        className="flex m-4 gap-2 flex-col items-start border rounded-3xl border-custom-green mt-8 p-6 bg-custom-black w-9/12 837px:w-3/5 1300px:w-[50rem] shadow-[0_0px_8px_1px_#0aff9d]"
+        ref={refDesc}
+        {...descAnimation}
+        transition={{ duration: 0.5, delay: 0.3 }}
+      >
         <div className="flex justify-between w-full">
           <p className="text-2xl font-semibold">Freelance</p>
           <p className="text-xl font-semibold">2023-present</p>
@@ -81,7 +86,7 @@ function ExpSection() {
             </motion.div>
           ))}
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 }
