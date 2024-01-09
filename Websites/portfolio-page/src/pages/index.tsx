@@ -3,7 +3,7 @@ import HeaderSection from "../sections/HeaderSection";
 import AboutSection from "../sections/AboutSection";
 import PortfolioSection from "../sections/PortfolioSection";
 import ContactSection from "../sections/ContactSection";
-import { Element } from "react-scroll";
+import { Element, scroller } from "react-scroll";
 import { useInView } from "react-intersection-observer";
 import { useEffect, useState, useRef, use } from "react";
 import MobileNavSection from "@/sections/MobileNavSection";
@@ -20,11 +20,11 @@ export default function Home() {
   const startRef = useRef(null);
 
   useEffect(() => {
-    window.scrollTo(0, 0);
-    const homeElement = document.getElementById("home");
-    if (homeElement) {
-      homeElement.scrollIntoView({ behavior: "smooth", block: "start" });
-    }
+    scroller.scrollTo("home", {
+      duration: 0,
+      delay: 0,
+      smooth: "easeInOutQuart",
+    });
   }, []);
 
   useEffect(() => {
@@ -55,7 +55,7 @@ export default function Home() {
       />
       <div className="max-w-[100rem] mx-auto 1024px:pl-[8rem]">
         <Element name="home">
-          <div id="home" ref={refStart}>
+          <div ref={refStart}>
             <StartSection />
           </div>
         </Element>
