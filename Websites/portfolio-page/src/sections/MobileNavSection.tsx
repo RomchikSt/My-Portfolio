@@ -125,8 +125,8 @@ function MobileNavSection({
       <motion.label
         className={`absolute h-[50px] w-[50px] text-center bg-[#0aff9d] rounded-full flex justify-center items-center cursor-pointer z-[51] ${
           isOpenMobileNav
-            ? "shadow-[0px_0px_2rem_2px_#111111]"
-            : "shadow-[0px_0px_2rem_2px_#0aff9d]"
+            ? "shadow-[0px_0px_1px_2px_#111111]"
+            : "shadow-[0px_0px_1rem_2px_#0aff9d]"
         }`}
         htmlFor="active"
         initial={{ x: "40%", opacity: 0 }}
@@ -144,7 +144,7 @@ function MobileNavSection({
         </motion.div>
       </motion.label>
       <motion.div
-        className="fixed top-0 left-0 w-full h-full bg-custom-green-play z-[50] shadow-lg"
+        className="fixed top-0 left-0 w-full h-full border-2 border-custom-green bg-[#111111] z-[50] shadow-lg"
         initial={{ opacity: isOpenMobileNav ? 1 : 0 }}
         animate={{
           clipPath: isOpenMobileNav
@@ -162,7 +162,7 @@ function MobileNavSection({
                 duration={900}
                 onClick={handleCloseMobileNav}
               >
-                <p className="text-6xl text-black font-bold transition-all z-50">
+                <p className="text-6xl font-bold transition-all z-50">
                   {activeSection === `${item.id}` ? item.icon : item.text}
                 </p>
               </Link>

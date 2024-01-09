@@ -164,7 +164,7 @@ function PortfolioSection() {
                 </motion.h3>
                 <div className="flex">
                   <motion.div
-                    className="flex w-[250px] 450px:w-[355px] 700px:w-[540px] 1700px:w-[640px] 1700px:transition-all hover:shadow-[0px_0px_40px_1px_#0aff9d] 1300px:hover:shadow-[0px_0px_80px_1px_#0aff9d]"
+                    className="flex w-[250px] 450px:w-[355px] 700px:w-[540px] 1700px:w-[640px] 1700px:transition-all hover:shadow-[0px_0px_10px_1px_#0aff9d] 1300px:hover:shadow-[0px_0px_15px_1px_#0aff9d]"
                     onMouseEnter={() => handleMouseEnter(project.id)}
                     onMouseLeave={() => handleMouseLeave(project.id)}
                     initial={{ opacity: 0 }}
@@ -172,7 +172,7 @@ function PortfolioSection() {
                     transition={{ duration: 0.75, delay: 0.3 }}
                   >
                     <motion.div
-                      className="absolute w-[250px] h-[140px] 1300px:left-0 1300px:bottom-0 z-10 bg-custom-green-play 450px:h-[200px] 450px:w-[355px] 700px:w-[540px] 1700px:w-[640px] 700px:h-[305px] shadow-[0_0_20px_1px_#0aff9d] 1300px:shadow-[4px_4px_20px_1px_#0aff9d] hover:shadow-none 1700px:top-0 1700px:h-full"
+                      className="absolute w-[250px] h-[140px] 1300px:left-0 1300px:bottom-0 z-10 bg-custom-green-play 450px:h-[200px] 450px:w-[355px] 700px:w-[540px] 1700px:w-[640px] 700px:h-[305px] shadow-[0_0_5px_1px_#0aff9d] 1300px:shadow-[0_0_10px_1px_#0aff9d] hover:shadow-none 1700px:top-0 1700px:h-full"
                       initial={{ opacity: 1, scale: 1 }}
                       whileHover={{ opacity: 0, scale: 1.1 }}
                       transition={{ duration: 0.5 }}
@@ -207,7 +207,7 @@ function PortfolioSection() {
                     {project.title}
                   </motion.h3>
                   <motion.p
-                    className="text-left bg-custom-black rounded-3xl p-6 1300px:text-right shadow-[0_0px_8px_1px_#0aff9d]"
+                    className="text-left bg-custom-black rounded-3xl p-6 1300px:text-right shadow-[0_0px_4px_1px_#0aff9d]"
                     initial={{ opacity: 0 }}
                     animate={inViewVideo ? { opacity: 1 } : {}}
                     transition={{ duration: 0.5, delay: 0.3 }}
@@ -267,7 +267,7 @@ function PortfolioSection() {
                 </motion.h3>
                 <div className="flex 1300px:justify-end">
                   <motion.div
-                    className="flex w-[250px] 450px:w-[355px] 700px:w-[540px] 1700px:w-[640px] 1700px:transition-all hover:shadow-[0px_0px_40px_1px_#0aff9d] 1300px:hover:shadow-[0px_0px_80px_1px_#0aff9d]"
+                    className="flex w-[250px] 450px:w-[355px] 700px:w-[540px] 1700px:w-[640px] 1700px:transition-all hover:shadow-[0px_0px_10px_1px_#0aff9d] 1300px:hover:shadow-[0px_0px_15px_1px_#0aff9d]"
                     onMouseEnter={() => handleMouseEnter(project.id)}
                     onMouseLeave={() => handleMouseLeave(project.id)}
                     initial={{ opacity: 0 }}
@@ -275,7 +275,7 @@ function PortfolioSection() {
                     transition={{ duration: 0.5, delay: 0.3 }}
                   >
                     <motion.div
-                      className="absolute w-[250px] h-[140px] 1300px:right-0 1300px:bottom-0 z-10 bg-custom-green-play 450px:w-[355px] 450px:h-[200px] 700px:w-[540px] 1700px:w-[640px] 700px:h-[305px] shadow-[0_0_20px_1px_#0aff9d] 1300px:shadow-[4px_4px_20px_1px_#0aff9d] hover:shadow-none 1700px:top-0 1700px:h-full"
+                      className="absolute w-[250px] h-[140px] 1300px:right-0 1300px:bottom-0 z-10 bg-custom-green-play 450px:w-[355px] 450px:h-[200px] 700px:w-[540px] 1700px:w-[640px] 700px:h-[305px] shadow-[0_0_5px_1px_#0aff9d] 1300px:shadow-[0_0_10px_1px_#0aff9d] hover:shadow-none 1700px:top-0 1700px:h-full"
                       initial={{ opacity: 1, scale: 1 }}
                       whileHover={{ opacity: 0, scale: 1.1 }}
                       transition={{ duration: 0.5 }}
@@ -310,7 +310,7 @@ function PortfolioSection() {
                     {project.title}
                   </motion.h3>
                   <motion.p
-                    className="bg-custom-black rounded-3xl p-6 shadow-[0_0px_8px_1px_#0aff9d]"
+                    className="bg-custom-black rounded-3xl p-6 shadow-[0_0px_4px_1px_#0aff9d]"
                     initial={{ y: "-5%", opacity: 0 }}
                     animate={inViewVideo ? { x: 0, y: 0, opacity: 1 } : {}}
                     transition={{ duration: 0.5, delay: 0.4 }}

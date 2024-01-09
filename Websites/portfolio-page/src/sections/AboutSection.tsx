@@ -212,7 +212,7 @@ function AboutSection() {
                 </motion.div>
               ))}
             </div>
-            <div className="flex flex-col justify-center border rounded-3xl border-custom-green mt-8 p-6 bg-custom-black w-full shadow-[0_0px_8px_1px_#0aff9d]">
+            <div className="flex flex-col justify-center border rounded-3xl border-custom-green mt-8 p-6 bg-custom-black w-full shadow-[0_0px_4px_1px_#0aff9d]">
               <motion.h4
                 className="text-xl text-custom-green font-semibold text-start mb-4"
                 ref={refSkill}
