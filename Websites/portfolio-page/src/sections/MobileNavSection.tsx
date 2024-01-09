@@ -1,15 +1,26 @@
 import { motion } from "framer-motion";
+import { useEffect } from "react";
 import { Link } from "react-scroll";
 
 type MobileNavSectionProps = {
   isOpenMobileNav: boolean;
   handleChangeMobileNav: (isOpenMobileNav: boolean) => void;
+  handleCloseMobileNav: () => void;
 };
 
 function MobileNavSection({
   isOpenMobileNav,
   handleChangeMobileNav,
+  handleCloseMobileNav,
 }: MobileNavSectionProps) {
+  useEffect(() => {
+    if (isOpenMobileNav) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+  }, [isOpenMobileNav]);
+
   const MENU_ITEMS = [
     {
       id: "home",
@@ -128,12 +139,13 @@ function MobileNavSection({
       >
         <ul className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex flex-col items-center justify-center gap-20 z-50">
           {MENU_ITEMS.map((item, i) => (
-            <motion.li
-              key={i}
-              className="cursor-pointer"
-              onClick={() => setTimeout(() => handleChangeMobileNav(false), 10)}
-            >
-              <Link to={item.id} smooth duration={900}>
+            <motion.li key={i} className="cursor-pointer">
+              <Link
+                to={item.id}
+                smooth
+                duration={900}
+                onClick={handleCloseMobileNav}
+              >
                 <p className="bg-black text-6xl py-2 px-10 rounded-[50px] text-white transition-all z-50">
                   {item.text}
                 </p>

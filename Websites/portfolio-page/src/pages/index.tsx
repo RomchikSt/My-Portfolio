@@ -13,7 +13,7 @@ export default function Home() {
   const [activeSection, setActiveSection] = useState<string>("home");
   const [refStart, inViewStart] = useInView({ threshold: 0.5 });
   const [refAbout, inViewAbout] = useInView({ threshold: 0.5 });
-  const [refPortfolio, inViewPortfolio] = useInView({ threshold: 0.45 });
+  const [refPortfolio, inViewPortfolio] = useInView({ threshold: 0.25 });
   const [refContact, inViewContact] = useInView({ threshold: 0.5 });
 
   useEffect(() => {
@@ -31,12 +31,17 @@ export default function Home() {
     setIsOpenMobileNav(!isOpenMobileNav);
   };
 
+  const handleCloseMobileNav = () => {
+    setIsOpenMobileNav(false);
+  };
+
   return (
     <>
       <HeaderSection activeSection={activeSection} />
       <MobileNavSection
         isOpenMobileNav={isOpenMobileNav}
         handleChangeMobileNav={handleChangeMobileNav}
+        handleCloseMobileNav={handleCloseMobileNav}
       />
       <div className="max-w-[100rem] mx-auto 1024px:pl-[8rem]">
         <Element name="home">
