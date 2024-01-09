@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Link } from "react-scroll";
 
 type MobileNavSectionProps = {
   isOpenMobileNav: boolean;
@@ -9,7 +10,24 @@ function MobileNavSection({
   isOpenMobileNav,
   handleChangeMobileNav,
 }: MobileNavSectionProps) {
-  const MENU_ITEMS = ["Home", "About", "Portfolio", "Contact"];
+  const MENU_ITEMS = [
+    {
+      id: "home",
+      text: "Home",
+    },
+    {
+      id: "about",
+      text: "About",
+    },
+    {
+      id: "portfolio",
+      text: "Portfolio",
+    },
+    {
+      id: "contact",
+      text: "Contact",
+    },
+  ];
   const burgeSpans = [
     {
       id: "firstL",
@@ -74,11 +92,15 @@ function MobileNavSection({
         id="active"
         style={{ display: "none" }}
         checked={isOpenMobileNav}
-        onChange={() => handleChangeMobileNav(!isOpenMobileNav)}
+        onChange={() => handleChangeMobileNav(isOpenMobileNav)}
         className="z-50"
       />
       <motion.label
-        className="absolute h-[50px] w-[50px] text-center bg-[#0aff9d] rounded-full flex justify-center items-center cursor-pointer z-[51]"
+        className={`absolute h-[50px] w-[50px] text-center bg-[#0aff9d] rounded-full flex justify-center items-center cursor-pointer z-[51] ${
+          isOpenMobileNav
+            ? "shadow-[0px_0px_2rem_2px_#111111]"
+            : "shadow-[0px_0px_2rem_2px_#0aff9d]"
+        }`}
         htmlFor="active"
         initial={{ x: "40%", opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}
@@ -106,10 +128,16 @@ function MobileNavSection({
       >
         <ul className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex flex-col items-center justify-center gap-20 z-50">
           {MENU_ITEMS.map((item, i) => (
-            <motion.li key={i} whileHover={{ scale: 1.1 }}>
-              <a className="bg-black text-6xl py-2 px-10 rounded-[50px] text-white transition-all z-50">
-                {item}
-              </a>
+            <motion.li
+              key={i}
+              className="cursor-pointer"
+              onClick={() => setTimeout(() => handleChangeMobileNav(false), 10)}
+            >
+              <Link to={item.id} smooth duration={900}>
+                <p className="bg-black text-6xl py-2 px-10 rounded-[50px] text-white transition-all z-50">
+                  {item.text}
+                </p>
+              </Link>
             </motion.li>
           ))}
         </ul>

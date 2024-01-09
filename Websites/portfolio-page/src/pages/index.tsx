@@ -28,7 +28,7 @@ export default function Home() {
   }, [inViewStart, inViewAbout, inViewPortfolio, inViewContact]);
 
   const handleChangeMobileNav = (isOpenMobileNav: boolean) => {
-    setIsOpenMobileNav(isOpenMobileNav);
+    setIsOpenMobileNav(!isOpenMobileNav);
   };
 
   return (
@@ -54,11 +54,11 @@ export default function Home() {
             <PortfolioSection />
           </div>
         </Element>
-        {/* <Element name="contact">
+        <Element name="contact">
           <div ref={refContact}>
             <ContactSection />
           </div>
-        </Element> */}
+        </Element>
       </div>
     </>
   );

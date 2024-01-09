@@ -156,8 +156,8 @@ function PortfolioSection() {
               >
                 <motion.h3
                   className="text-4xl font-semibold 1300px:hidden 1300px:p-6"
-                  initial={{ x: "-60%", opacity: 0 }}
-                  animate={inViewVideo ? { x: 0, opacity: 1 } : {}}
+                  initial={{ opacity: 0 }}
+                  animate={inViewVideo ? { opacity: 1 } : {}}
                   transition={{ duration: 0.5, delay: 0 }}
                 >
                   {project.title}
@@ -167,12 +167,12 @@ function PortfolioSection() {
                     className="flex w-[250px] 450px:w-[355px] 700px:w-[540px] 1700px:w-[640px] 1700px:transition-all hover:shadow-[0px_0px_40px_1px_#0aff9d] 1300px:hover:shadow-[0px_0px_80px_1px_#0aff9d]"
                     onMouseEnter={() => handleMouseEnter(project.id)}
                     onMouseLeave={() => handleMouseLeave(project.id)}
-                    initial={{ x: "-60%", opacity: 0 }}
-                    animate={inViewVideo ? { x: 0, opacity: 1 } : {}}
+                    initial={{ opacity: 0 }}
+                    animate={inViewVideo ? { opacity: 1 } : {}}
                     transition={{ duration: 0.75, delay: 0.3 }}
                   >
                     <motion.div
-                      className="absolute top-[0px] right-0 left-0 bottom-0 z-10 bg-custom-green-play 700px:h-[305px] shadow-[0_0_20px_1px_#0aff9d] 1300px:shadow-[4px_4px_20px_1px_#0aff9d] hover:shadow-none 1700px:top-0 1700px:h-full"
+                      className="absolute w-[250px] h-[140px] 1300px:left-0 1300px:bottom-0 z-10 bg-custom-green-play 450px:h-[200px] 450px:w-[355px] 700px:w-[540px] 1700px:w-[640px] 700px:h-[305px] shadow-[0_0_20px_1px_#0aff9d] 1300px:shadow-[4px_4px_20px_1px_#0aff9d] hover:shadow-none 1700px:top-0 1700px:h-full"
                       initial={{ opacity: 1, scale: 1 }}
                       whileHover={{ opacity: 0, scale: 1.1 }}
                       transition={{ duration: 0.5 }}
@@ -190,7 +190,7 @@ function PortfolioSection() {
                   </motion.div>
                 </div>
                 <motion.div
-                  className="block 1300px:absolute top-[0] right-[25%] w-11/12 450px:w-[38rem] 600px:w-[42rem] border-custom-green px-6  transform -translate-x-[30%] -translate-y-[54%] 1300px:w-[36rem] 1300px:p-6 1700px:right-[13%]"
+                  className="block 1300px:absolute top-[0] right-[25%] w-11/12 450px:w-[38rem] 600px:w-[42rem] border-custom-green px-6  transform -translate-x-[30%] -translate-y-[54%] 1300px:w-[36rem] 1300px:p-6 1700px:right-[13%] z-[11]"
                   animate={{
                     x: playingStatus[project.id]?.animate
                       ? `${textAbsolute ? "70%" : "0rem"}`
@@ -200,16 +200,16 @@ function PortfolioSection() {
                 >
                   <motion.h3
                     className="hidden p-6 text-2xl text-custom-green font-semibold text-right 1300px:block"
-                    initial={{ x: "60%", y: "5%", opacity: 0 }}
-                    animate={inViewVideo ? { x: 0, y: 0, opacity: 1 } : {}}
+                    initial={{ y: "5%", opacity: 0 }}
+                    animate={inViewVideo ? { y: 0, opacity: 1 } : {}}
                     transition={{ duration: 0.5, delay: 0.5 }}
                   >
                     {project.title}
                   </motion.h3>
                   <motion.p
                     className="text-left bg-custom-black rounded-3xl p-6 1300px:text-right shadow-[0_0px_8px_1px_#0aff9d]"
-                    initial={{ x: "60%", opacity: 0 }}
-                    animate={inViewVideo ? { x: 0, opacity: 1 } : {}}
+                    initial={{ opacity: 0 }}
+                    animate={inViewVideo ? { opacity: 1 } : {}}
                     transition={{ duration: 0.5, delay: 0.3 }}
                   >
                     {project.description}
@@ -259,8 +259,8 @@ function PortfolioSection() {
               >
                 <motion.h3
                   className="text-4xl font-semibold 1300px:hidden 1300px:p-6"
-                  initial={{ x: "-60%", opacity: 0 }}
-                  animate={inViewVideo ? { x: 0, opacity: 1 } : {}}
+                  initial={{ opacity: 0 }}
+                  animate={inViewVideo ? { opacity: 1 } : {}}
                   transition={{ duration: 0.5, delay: 0 }}
                 >
                   {project.title}
@@ -270,12 +270,12 @@ function PortfolioSection() {
                     className="flex w-[250px] 450px:w-[355px] 700px:w-[540px] 1700px:w-[640px] 1700px:transition-all hover:shadow-[0px_0px_40px_1px_#0aff9d] 1300px:hover:shadow-[0px_0px_80px_1px_#0aff9d]"
                     onMouseEnter={() => handleMouseEnter(project.id)}
                     onMouseLeave={() => handleMouseLeave(project.id)}
-                    initial={{ x: "60%", opacity: 0 }}
-                    animate={inViewVideo ? { x: 0, opacity: 1 } : {}}
+                    initial={{ opacity: 0 }}
+                    animate={inViewVideo ? { opacity: 1 } : {}}
                     transition={{ duration: 0.5, delay: 0.3 }}
                   >
                     <motion.div
-                      className="absolute top-[0px] right-0 left-0 bottom-0 z-10 bg-custom-green-play 700px:h-[305px] shadow-[0_0_20px_1px_#0aff9d] 1300px:shadow-[4px_4px_20px_1px_#0aff9d] hover:shadow-none 1700px:top-0 1700px:h-full"
+                      className="absolute w-[250px] h-[140px] 1300px:right-0 1300px:bottom-0 z-10 bg-custom-green-play 450px:w-[355px] 450px:h-[200px] 700px:w-[540px] 1700px:w-[640px] 700px:h-[305px] shadow-[0_0_20px_1px_#0aff9d] 1300px:shadow-[4px_4px_20px_1px_#0aff9d] hover:shadow-none 1700px:top-0 1700px:h-full"
                       initial={{ opacity: 1, scale: 1 }}
                       whileHover={{ opacity: 0, scale: 1.1 }}
                       transition={{ duration: 0.5 }}
@@ -293,7 +293,7 @@ function PortfolioSection() {
                   </motion.div>
                 </div>
                 <motion.div
-                  className="block m-auto 1300px:absolute top-[0] left-[25%] w-11/12 450px:w-[38rem] 600px:w-[42rem] border-custom-green px-6 transform -translate-x-[30%] -translate-y-[54%] 1300px:w-[36rem] 1300px:p-6 1700px:left-[13%]"
+                  className="block m-auto 1300px:absolute top-[0] left-[25%] w-11/12 450px:w-[38rem] 600px:w-[42rem] border-custom-green px-6 transform -translate-x-[30%] -translate-y-[54%] 1300px:w-[36rem] 1300px:p-6 1700px:left-[13%] z-[11]"
                   animate={{
                     x: playingStatus[project.id]?.animate
                       ? `${textAbsolute ? "-70%" : "0rem"}`
@@ -303,7 +303,7 @@ function PortfolioSection() {
                 >
                   <motion.h3
                     className="hidden p-6 text-2xl text-custom-green font-semibold 1300px:block"
-                    initial={{ x: "-60%", y: "-5%", opacity: 0 }}
+                    initial={{ y: "-5%", opacity: 0 }}
                     animate={inViewVideo ? { x: 0, y: 0, opacity: 1 } : {}}
                     transition={{ duration: 0.5, delay: 0.6 }}
                   >
@@ -311,7 +311,7 @@ function PortfolioSection() {
                   </motion.h3>
                   <motion.p
                     className="bg-custom-black rounded-3xl p-6 shadow-[0_0px_8px_1px_#0aff9d]"
-                    initial={{ x: "-60%", y: "-5%", opacity: 0 }}
+                    initial={{ y: "-5%", opacity: 0 }}
                     animate={inViewVideo ? { x: 0, y: 0, opacity: 1 } : {}}
                     transition={{ duration: 0.5, delay: 0.4 }}
                   >
