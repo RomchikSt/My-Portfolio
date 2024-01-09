@@ -53,7 +53,7 @@ function ExpSection() {
         </motion.p>
       </div>
       <motion.div
-        className="flex m-4 gap-2 flex-col items-start border rounded-3xl border-custom-green mt-8 p-6 bg-custom-black w-9/12 837px:w-3/5 1300px:w-[50rem] shadow-[0_0px_4px_1px_#0aff9d]"
+        className="flex m-4 gap-2 flex-col items-start border rounded-3xl border-custom-green mt-8 p-6 bg-custom-black w-9/12 837px:w-3/5 1300px:w-[50rem] shadow-[0_0px_2px_1px_#0aff9d]"
         ref={refDesc}
         {...descAnimation}
         transition={{ duration: 0.5, delay: 0.3 }}

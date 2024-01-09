@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { useEffect } from "react";
 import { Link } from "react-scroll";
 import { FaHome } from "react-icons/fa";
@@ -32,27 +32,27 @@ function MobileNavSection({
     {
       id: "home",
       text: "Home",
-      icon: <FaHome fill={"#111111"} size={"3.5rem"} />,
+      icon: <FaHome fill={"#0aff9d"} size={"3.5rem"} />,
     },
     {
       id: "about",
       text: "About",
-      icon: <BsFillInfoCircleFill fill={"#111111"} size={"3.5rem"} />,
+      icon: <BsFillInfoCircleFill fill={"#0aff9d"} size={"3.5rem"} />,
     },
     {
       id: "experience",
       text: "Experience",
-      icon: <MdHomeWork fill={"#111111"} size={"4rem"} />,
+      icon: <MdHomeWork fill={"#0aff9d"} size={"4rem"} />,
     },
     {
       id: "portfolio",
       text: "Portfolio",
-      icon: <FaBriefcase fill={"#111111"} size={"3.5rem"} />,
+      icon: <FaBriefcase fill={"#0aff9d"} size={"3.5rem"} />,
     },
     {
       id: "contact",
       text: "Contact",
-      icon: <IoIosMail fill={"#111111"} size={"4rem"} />,
+      icon: <IoIosMail fill={"#0aff9d"} size={"4rem"} />,
     },
   ];
   const burgeSpans = [
@@ -123,15 +123,11 @@ function MobileNavSection({
         className="z-50"
       />
       <motion.label
-        className={`absolute h-[50px] w-[50px] text-center bg-[#0aff9d] rounded-full flex justify-center items-center cursor-pointer z-[51] ${
-          isOpenMobileNav
-            ? "shadow-[0px_0px_1px_2px_#111111]"
-            : "shadow-[0px_0px_1rem_2px_#0aff9d]"
-        }`}
+        className={`absolute h-[50px] w-[50px] text-center bg-[#0aff9d] rounded-full flex justify-center items-center cursor-pointer z-[51] shadow-[0px_0px_1rem_2px_#0aff9d]`}
         htmlFor="active"
         initial={{ x: "40%", opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}
-        transition={{ duration: 1.1, delay: 0.3 }}
+        transition={{ duration: 1.1, delay: 0.1 }}
       >
         <motion.div className="w-[30px] h-[23px] relative">
           {burgeSpans.map((item) => (
@@ -143,33 +139,47 @@ function MobileNavSection({
           ))}
         </motion.div>
       </motion.label>
-      <motion.div
-        className="fixed top-0 left-0 w-full h-full border-2 border-custom-green bg-[#111111] z-[50] shadow-lg"
-        initial={{ opacity: isOpenMobileNav ? 1 : 0 }}
-        animate={{
-          clipPath: isOpenMobileNav
-            ? "circle(75% at 50% 50%)"
-            : "circle(25px at calc(100% - 45px) 45px)",
-          opacity: isOpenMobileNav ? 1 : 0,
-        }}
-      >
-        <ul className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex flex-col items-center justify-center gap-8 z-50">
-          {MENU_ITEMS.map((item, i) => (
-            <motion.li key={i} className="cursor-pointer">
-              <Link
-                to={item.id}
-                smooth
-                duration={900}
-                onClick={handleCloseMobileNav}
-              >
-                <p className="text-6xl font-bold transition-all z-50">
-                  {activeSection === `${item.id}` ? item.icon : item.text}
-                </p>
-              </Link>
-            </motion.li>
-          ))}
-        </ul>
-      </motion.div>
+      <div className="fixed top-0 right-0">
+        <motion.div
+          className="fixed top-0 left-0 w-full h-full bg-[#0aff9d] z-49"
+          initial={{ opacity: isOpenMobileNav ? 1 : 0 }}
+          animate={{
+            clipPath: isOpenMobileNav
+              ? "circle(200% at 50% 50%)"
+              : "circle(25px at calc(100% - 45px) 45px)",
+            opacity: isOpenMobileNav ? 1 : 0,
+          }}
+          transition={{ duration: 0.4 }}
+        />
+        <motion.div
+          className="fixed top-0 right-0 w-full h-full bg-[#111111] z-[50] shadow-lg"
+          initial={{ opacity: isOpenMobileNav ? 1 : 0 }}
+          animate={{
+            clipPath: isOpenMobileNav
+              ? "circle(75% at 50% 50%)"
+              : "circle(25px at calc(100% - 45px) 45px)",
+            opacity: isOpenMobileNav ? 1 : 0,
+          }}
+          transition={{ duration: 0.4 }}
+        >
+          <ul className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex flex-col items-center justify-center gap-8 z-50">
+            {MENU_ITEMS.map((item, i) => (
+              <motion.li key={i} className="cursor-pointer">
+                <Link
+                  to={item.id}
+                  smooth
+                  duration={900}
+                  onClick={handleCloseMobileNav}
+                >
+                  <p className="text-6xl font-bold transition-all z-50 ">
+                    {activeSection === `${item.id}` ? item.icon : item.text}
+                  </p>
+                </Link>
+              </motion.li>
+            ))}
+          </ul>
+        </motion.div>
+      </div>
     </div>
   );
 }
