@@ -23,6 +23,7 @@ export default function Home() {
   }, []);
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     setActiveSection("home");
     if (inViewStart) setActiveSection("home");
     if (inViewAbout) setActiveSection("about");
