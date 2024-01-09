@@ -21,7 +21,7 @@ export default function Home() {
 
   useEffect(() => {
     scroller.scrollTo("home", {
-      duration: 0,
+      duration: 100,
       delay: 0,
       smooth: "easeInOutQuart",
     });
