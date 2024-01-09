@@ -8,10 +8,6 @@ export default function HeadSection() {
         name="description"
         content="Web Developer Portfolio Website ➱ Web Developer specialized in Javascript, React, Typescript ☝ Check out my Github repositories and my projects"
       />
-      <meta
-        name="keywords"
-        content="Web Developer, Portfolio, Website, Javascript, React, Typescript, Node, Git, Vite, Docker, Github"
-      />
       <meta name="author" content="Roma Stakhiv" />
       <meta property="og:title" content="Roma Stakhiv | Web Developer" />
       <meta

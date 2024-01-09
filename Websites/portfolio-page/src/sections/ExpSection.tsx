@@ -59,7 +59,7 @@ function ExpSection() {
         transition={{ duration: 0.5, delay: 0.3 }}
       >
         <div className="flex justify-between w-full">
-          <p className="text-2xl font-semibold">Freelance</p>
+          <p className="text-2xl font-semibold">Self-employe</p>
           <p className="text-xl font-semibold">2023-present</p>
         </div>
         <div className="flex justify-between w-full">
