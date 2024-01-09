@@ -154,14 +154,14 @@ function PortfolioSection() {
                 key={project.id}
                 className="relative flex flex-col justify-center items-center gap-14 1300px:block 1300px:gap-0"
               >
-                <motion.h3
+                <motion.p
                   className="text-4xl font-semibold 1300px:hidden 1300px:p-6"
                   initial={{ opacity: 0 }}
                   animate={inViewVideo ? { opacity: 1 } : {}}
                   transition={{ duration: 0.5, delay: 0 }}
                 >
                   {project.title}
-                </motion.h3>
+                </motion.p>
                 <div className="flex">
                   <motion.div
                     className="flex w-[250px] 450px:w-[355px] 700px:w-[540px] 1700px:w-[640px] 1700px:transition-all hover:shadow-[0px_0px_20px_1px_#0aff9d] 1300px:hover:shadow-[0px_0px_40px_1px_#0aff9d]"
@@ -198,14 +198,14 @@ function PortfolioSection() {
                   }}
                   transition={{ duration: 0.5 }}
                 >
-                  <motion.h3
+                  <motion.p
                     className="hidden p-6 text-2xl text-custom-green font-semibold text-right 1300px:block"
                     initial={{ y: "5%", opacity: 0 }}
                     animate={inViewVideo ? { y: 0, opacity: 1 } : {}}
                     transition={{ duration: 0.5, delay: 0.5 }}
                   >
                     {project.title}
-                  </motion.h3>
+                  </motion.p>
                   <motion.p
                     className="text-left bg-custom-black rounded-3xl p-6 1300px:text-right shadow-[0_0px_1px_1px_#0aff9d]"
                     initial={{ opacity: 0 }}
@@ -257,14 +257,14 @@ function PortfolioSection() {
                 key={project.id}
                 className="relative flex flex-col justify-center items-center gap-14 1300px:block 1300px:gap-0"
               >
-                <motion.h3
+                <motion.p
                   className="text-4xl font-semibold 1300px:hidden 1300px:p-6"
                   initial={{ opacity: 0 }}
                   animate={inViewVideo ? { opacity: 1 } : {}}
                   transition={{ duration: 0.5, delay: 0 }}
                 >
                   {project.title}
-                </motion.h3>
+                </motion.p>
                 <div className="flex 1300px:justify-end">
                   <motion.div
                     className="flex w-[250px] 450px:w-[355px] 700px:w-[540px] 1700px:w-[640px] 1700px:transition-all hover:shadow-[0px_0px_20px_1px_#0aff9d] 1300px:hover:shadow-[0px_0px_40px_1px_#0aff9d]"
@@ -301,14 +301,14 @@ function PortfolioSection() {
                   }}
                   transition={{ duration: 0.5 }}
                 >
-                  <motion.h3
+                  <motion.p
                     className="hidden p-6 text-2xl text-custom-green font-semibold 1300px:block"
                     initial={{ y: "-5%", opacity: 0 }}
                     animate={inViewVideo ? { x: 0, y: 0, opacity: 1 } : {}}
                     transition={{ duration: 0.5, delay: 0.6 }}
                   >
                     {project.title}
-                  </motion.h3>
+                  </motion.p>
                   <motion.p
                     className="bg-custom-black rounded-3xl p-6 shadow-[0_0px_1px_1px_#0aff9d]"
                     initial={{ y: "-5%", opacity: 0 }}
