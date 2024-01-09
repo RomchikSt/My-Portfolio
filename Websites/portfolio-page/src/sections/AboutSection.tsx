@@ -151,14 +151,14 @@ function AboutSection() {
       >
         <div className="flex flex-col items-center 1300px:items-start gap-20 1300px:flex-row 1300px:justify-center 1400px:justify-around 1400px:gap-0">
           <div className="w-9/12 837px:w-3/5 flex flex-col justify-center 1300px:w-5/12">
-            <motion.h3
+            <motion.p
               className="text-2xl text-custom-green font-semibold mb-6"
               ref={refSkill}
               {...headerAnimation}
               transition={{ duration: 0.5, delay: 0.1 }}
             >
               Get to know me!
-            </motion.h3>
+            </motion.p>
             {knowMe.map((text, i) => (
               <motion.p
                 key={i}
@@ -179,9 +179,9 @@ function AboutSection() {
             ))}
           </div>
           <div className="flex-col w-9/12 837px:w-3/5 1300px:w-5/12">
-            <h3 className="text-2xl text-custom-green font-semibold">
+            <p className="text-2xl text-custom-green font-semibold">
               Tech Stack
-            </h3>
+            </p>
             <div className="flex justify-center gap-[3%] mt-8 450px:gap-[5%]">
               {frontStack.map((tech, i) => (
                 <motion.div
@@ -213,14 +213,14 @@ function AboutSection() {
               ))}
             </div>
             <div className="flex flex-col justify-center border rounded-3xl border-custom-green mt-8 p-6 bg-custom-black w-full">
-              <motion.h4
+              <motion.p
                 className="text-xl text-custom-green font-semibold text-start mb-4"
                 ref={refSkill}
                 {...skillAnimation}
                 transition={{ duration: 0.5, delay: 0.1 }}
               >
                 React Tech Stack:
-              </motion.h4>
+              </motion.p>
               <div className="flex flex-wrap">
                 {reactTechStack.map((tech, i) => (
                   <motion.div
