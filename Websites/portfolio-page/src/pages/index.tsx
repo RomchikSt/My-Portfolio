@@ -7,12 +7,14 @@ import { Element } from "react-scroll";
 import { useInView } from "react-intersection-observer";
 import { useEffect, useState, useRef, use } from "react";
 import MobileNavSection from "@/sections/MobileNavSection";
+import ExpSection from "@/sections/ExpSection";
 
 export default function Home() {
   const [isOpenMobileNav, setIsOpenMobileNav] = useState<boolean>(false);
   const [activeSection, setActiveSection] = useState<string>("home");
   const [refStart, inViewStart] = useInView({ threshold: 0.5 });
   const [refAbout, inViewAbout] = useInView({ threshold: 0.5 });
+  const [refExp, inViewExp] = useInView({ threshold: 0.5 });
   const [refPortfolio, inViewPortfolio] = useInView({ threshold: 0.25 });
   const [refContact, inViewContact] = useInView({ threshold: 0.5 });
 
@@ -23,9 +25,10 @@ export default function Home() {
   useEffect(() => {
     if (inViewStart) setActiveSection("home");
     if (inViewAbout) setActiveSection("about");
+    if (inViewExp) setActiveSection("experience");
     if (inViewPortfolio) setActiveSection("portfolio");
     if (inViewContact) setActiveSection("contact");
-  }, [inViewStart, inViewAbout, inViewPortfolio, inViewContact]);
+  }, [inViewStart, inViewAbout, inViewExp, inViewPortfolio, inViewContact]);
 
   const handleChangeMobileNav = (isOpenMobileNav: boolean) => {
     setIsOpenMobileNav(!isOpenMobileNav);
@@ -52,6 +55,11 @@ export default function Home() {
         <Element name="about">
           <div ref={refAbout}>
             <AboutSection />
+          </div>
+        </Element>
+        <Element name="experience">
+          <div ref={refExp}>
+            <ExpSection />
           </div>
         </Element>
         <Element name="portfolio">

@@ -6,6 +6,7 @@ import { FaHome } from "react-icons/fa";
 import { BsFillInfoCircleFill } from "react-icons/bs";
 import { FaBriefcase } from "react-icons/fa";
 import { IoIosMail } from "react-icons/io";
+import { MdHomeWork } from "react-icons/md";
 
 const ReactIcon = styled.div`
   svg {
@@ -32,6 +33,11 @@ function HeaderSection({ activeSection }: { activeSection: string }) {
       icon: <BsFillInfoCircleFill fill={"#0aff9d"} size={"1.4rem"} />,
     },
     {
+      id: "experience",
+      text: "Experience",
+      icon: <MdHomeWork fill={"#0aff9d"} size={"1.6rem"} />,
+    },
+    {
       id: "portfolio",
       text: "Portfolio",
       icon: <FaBriefcase fill={"#0aff9d"} size={"1.4rem"} />,
@@ -40,24 +46,6 @@ function HeaderSection({ activeSection }: { activeSection: string }) {
       id: "contact",
       text: "Contact",
       icon: <IoIosMail fill={"#0aff9d"} size={"1.8rem"} />,
-    },
-  ];
-
-  const contactInfo = [
-    {
-      id: "LinkedIn",
-      link: "https://www.linkedin.com/in/romchik-stakhiv/",
-      icon: <FaLinkedin size={"1.4rem"} />,
-    },
-    {
-      id: "GitHub",
-      link: "https://github.com/RomchikSt",
-      icon: <FaGithub size={"1.4rem"} />,
-    },
-    {
-      id: "Instagram",
-      link: "https://www.instagram.com/romchik_sta/",
-      icon: <FaInstagram size={"1.4rem"} />,
     },
   ];
 
@@ -117,20 +105,6 @@ function HeaderSection({ activeSection }: { activeSection: string }) {
           </motion.li>
         ))}
       </ul>
-      <motion.div
-        className="absolute flex justify-around bottom-8 w-full p-4"
-        initial={{ x: -150 }}
-        animate={{ x: 0 }}
-        transition={{ duration: 0.5, delay: 0.7 }}
-      >
-        {contactInfo.map((info) => (
-          <a key={info.id} href={info.link} target="/">
-            <button>
-              <ReactIcon>{info.icon}</ReactIcon>
-            </button>
-          </a>
-        ))}
-      </motion.div>
     </motion.div>
   );
 }

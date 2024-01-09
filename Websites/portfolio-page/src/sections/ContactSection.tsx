@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import { FaLinkedin, FaGithub, FaInstagram } from "react-icons/fa";
+import { FaLinkedin, FaGithub, FaInstagram, FaTelegram } from "react-icons/fa";
+import { BsSignal } from "react-icons/bs";
 import styled from "styled-components";
 
 const ReactIcon = styled.div`
@@ -51,6 +52,11 @@ function ContactSection() {
       link: "https://www.instagram.com/romchik_sta/",
       icon: <FaInstagram size={"2rem"} />,
     },
+    {
+      id: "Telegram",
+      link: "https://t.me/Romchik_St",
+      icon: <FaTelegram size={"2rem"} />,
+    },
   ];
 
   return (
@@ -73,20 +79,18 @@ function ContactSection() {
           Feel free to Contact with me
         </motion.p>
       </div>
-      <div className="flex flex-col items-center">
+      <div className="flex flex-col items-center mt-24">
         <motion.p
           className="text-xl w-8/12 1300px:w-5/12 text-center"
           ref={refDesc}
           {...descAnimation}
           transition={{ duration: 0.5, delay: 0.1 }}
         >
-          Feel free to contact me – I&apos;m always open for a chat! Send me an
-          email, or find me on LinkedIn or Instagram if that&apos;s more
-          convenient for you. If you have a question, want to collaborate, or
-          have an interesting offer – don&apos;t hesitate to reach out!
+          {`Feel free to contact me – I'm always open for a chat! If you have a question, want to collaborate, or
+          have an interesting offer – don't hesitate to reach out!`}
         </motion.p>
         <motion.button
-          className="pointer-events-auto my-14 w-44 h-12 bg-transparent border rounded-xl border-custom-green ml-1 flex items-center justify-center"
+          className="pointer-events-auto mt-14 mb-8 w-44 h-12 bg-transparent border rounded-xl border-custom-green ml-1 flex items-center justify-center"
           ref={refDesc}
           initial={{ y: "50%", opacity: 0 }}
           animate={
@@ -114,15 +118,17 @@ function ContactSection() {
           </motion.a>
         </motion.button>
         <motion.div
-          className="flex gap-6 flex-col 1024px:hidden"
+          className="flex gap-4 flex-col"
           initial={{ y: "50%", opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.5, delay: 0.7 }}
         >
           <div>
-            <p className="text-center font-semibold text-3xl">Social:</p>
+            <p className="text-center font-semibold text-2xl">
+              Or write me here:
+            </p>
           </div>
-          <div className="flex justify-around w-[10rem]">
+          <div className="flex justify-around w-[14rem]">
             {contactInfo.map((info) => (
               <a key={info.id} href={info.link} target="/">
                 <button>

@@ -31,6 +31,10 @@ function MobileNavSection({
       text: "About",
     },
     {
+      id: "experience",
+      text: "Experience",
+    },
+    {
       id: "portfolio",
       text: "Portfolio",
     },
@@ -137,7 +141,7 @@ function MobileNavSection({
           opacity: isOpenMobileNav ? 1 : 0,
         }}
       >
-        <ul className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex flex-col items-center justify-center gap-20 z-50">
+        <ul className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex flex-col items-center justify-center gap-8 z-50">
           {MENU_ITEMS.map((item, i) => (
             <motion.li key={i} className="cursor-pointer">
               <Link
@@ -146,7 +150,7 @@ function MobileNavSection({
                 duration={900}
                 onClick={handleCloseMobileNav}
               >
-                <p className="bg-black text-6xl py-2 px-10 rounded-[50px] text-white transition-all z-50">
+                <p className="text-6xl text-black font-bold transition-all z-50">
                   {item.text}
                 </p>
               </Link>

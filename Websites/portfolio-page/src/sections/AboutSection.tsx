@@ -36,14 +36,22 @@ function AboutSection() {
 
   const knowMe = [
     {
-      text: `I'm a Web Developer. My work involves building and optimizing the interactive features of websites and web applications, contributing to the success of the overall product. Take a look at some of my diverse projects in the `,
+      text: `I am a Web Developer. My work involves building and optimizing interactive features of websites and web applications, contributing to the success of the end product. Take a look at some of my diverse projects in the  `,
       link: "portfolio",
       textLink: "Portfolio",
     },
     {
-      text: `I'm open to Job opportunities where I can contribute, learn and
-      grow. If you have a good opportunity that matches my skills and
-      experience then don't hesitate to `,
+      text: `My development skills are focused on cross-browser development, ensuring compatibility and optimal functioning of web applications across different browsers and devices. This includes effective adaptation of web applications for desktops, mobile phones, and tablets.`,
+    },
+    {
+      text: `My ability to continuously learn and keep up with the latest technologies allows me to effectively meet the challenges of modern projects, ensuring flexibility and a high level of quality in development.`,
+    },
+    {
+      text: `In my free time, I enjoy playing tennis and chess, which helps me develop strategic thinking and focus. Additionally, I love engaging in outdoor activities, which keeps me energetic and inspired for new projects.
+      `,
+    },
+    {
+      text: `Open to collaboration opportunities where I can contribute, learn, and grow. If you have a good opportunity that matches my skills and experience, don't hesitate to `,
       link: "contact",
       textLink: "contact me",
     },
@@ -105,7 +113,6 @@ function AboutSection() {
     "React Router",
     "React Query",
     "Axios",
-    "Redux Toolkit",
     "Framer Motion",
     "i18next",
     "Next.js",
@@ -145,7 +152,7 @@ function AboutSection() {
         <div className="flex flex-col items-center gap-20 1300px:flex-row 1300px:justify-center 1400px:justify-around 1400px:gap-0">
           <div className="w-9/12 837px:w-3/5 flex flex-col justify-center 1300px:w-5/12">
             <motion.h3
-              className="text-2xl text-custom-green font-semibold"
+              className="text-2xl text-custom-green font-semibold mb-4"
               ref={refSkill}
               {...headerAnimation}
               transition={{ duration: 0.5, delay: 0.1 }}
@@ -161,11 +168,13 @@ function AboutSection() {
                 transition={{ duration: 0.5, delay: 0.2 + i / 10 }}
               >
                 {text.text}
-                <Link to={text.link} smooth duration={500}>
-                  <span className=" text-custom-green cursor-pointer">
-                    {text.textLink}
-                  </span>
-                </Link>
+                {text.textLink ? (
+                  <Link to={text.link} smooth duration={500}>
+                    <span className=" text-custom-green cursor-pointer">
+                      {text.textLink}
+                    </span>
+                  </Link>
+                ) : null}
               </motion.p>
             ))}
           </div>

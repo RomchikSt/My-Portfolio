@@ -137,7 +137,7 @@ function PortfolioSection() {
           transition={{ duration: 0.5, delay: 0.3 }}
         >
           Here you will find some of the personal and clients projects that I
-          created with each project containing full description
+          created with each project containing short description
         </motion.p>
       </div>
       <motion.div
