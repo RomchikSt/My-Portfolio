@@ -149,7 +149,7 @@ function MobileNavSection({
               : "circle(25px at calc(100% - 45px) 45px)",
             opacity: isOpenMobileNav ? 1 : 0,
           }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.5 }}
         />
         <motion.div
           className="fixed top-0 right-0 w-full h-full bg-[#111111] z-[50] shadow-lg"
@@ -160,7 +160,7 @@ function MobileNavSection({
               : "circle(25px at calc(100% - 45px) 45px)",
             opacity: isOpenMobileNav ? 1 : 0,
           }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.5 }}
         >
           <ul className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex flex-col items-center justify-center gap-8 z-50">
             {MENU_ITEMS.map((item, i) => (
