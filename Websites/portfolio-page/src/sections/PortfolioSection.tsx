@@ -207,7 +207,7 @@ function PortfolioSection() {
                     {project.title}
                   </motion.h3>
                   <motion.p
-                    className="text-left bg-custom-black rounded-3xl p-6 1300px:text-right shadow-[0_0px_2px_1px_#0aff9d]"
+                    className="text-left bg-custom-black rounded-3xl p-6 1300px:text-right shadow-[0_0px_1px_1px_#0aff9d]"
                     initial={{ opacity: 0 }}
                     animate={inViewVideo ? { opacity: 1 } : {}}
                     transition={{ duration: 0.5, delay: 0.3 }}
@@ -310,7 +310,7 @@ function PortfolioSection() {
                     {project.title}
                   </motion.h3>
                   <motion.p
-                    className="bg-custom-black rounded-3xl p-6 shadow-[0_0px_2px_1px_#0aff9d]"
+                    className="bg-custom-black rounded-3xl p-6 shadow-[0_0px_1px_1px_#0aff9d]"
                     initial={{ y: "-5%", opacity: 0 }}
                     animate={inViewVideo ? { x: 0, y: 0, opacity: 1 } : {}}
                     transition={{ duration: 0.5, delay: 0.4 }}
