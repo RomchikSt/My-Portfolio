@@ -76,7 +76,7 @@ function ContactSection() {
           {...headerAnimation}
           transition={{ duration: 0.5, delay: 0.2 }}
         >
-          Feel free to Contact with me
+          Feel free to contact with me
         </motion.p>
       </div>
       <div className="flex flex-col items-center mt-24">

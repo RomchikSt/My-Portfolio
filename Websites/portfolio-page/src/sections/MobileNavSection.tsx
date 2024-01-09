@@ -1,15 +1,22 @@
 import { motion } from "framer-motion";
 import { useEffect } from "react";
 import { Link } from "react-scroll";
+import { FaHome } from "react-icons/fa";
+import { BsFillInfoCircleFill } from "react-icons/bs";
+import { FaBriefcase } from "react-icons/fa";
+import { IoIosMail } from "react-icons/io";
+import { MdHomeWork } from "react-icons/md";
 
 type MobileNavSectionProps = {
   isOpenMobileNav: boolean;
+  activeSection: string;
   handleChangeMobileNav: (isOpenMobileNav: boolean) => void;
   handleCloseMobileNav: () => void;
 };
 
 function MobileNavSection({
   isOpenMobileNav,
+  activeSection,
   handleChangeMobileNav,
   handleCloseMobileNav,
 }: MobileNavSectionProps) {
@@ -25,22 +32,27 @@ function MobileNavSection({
     {
       id: "home",
       text: "Home",
+      icon: <FaHome fill={"#111111"} size={"3.5rem"} />,
     },
     {
       id: "about",
       text: "About",
+      icon: <BsFillInfoCircleFill fill={"#111111"} size={"3.5rem"} />,
     },
     {
       id: "experience",
       text: "Experience",
+      icon: <MdHomeWork fill={"#111111"} size={"4rem"} />,
     },
     {
       id: "portfolio",
       text: "Portfolio",
+      icon: <FaBriefcase fill={"#111111"} size={"3.5rem"} />,
     },
     {
       id: "contact",
       text: "Contact",
+      icon: <IoIosMail fill={"#111111"} size={"1.8rem"} />,
     },
   ];
   const burgeSpans = [
@@ -151,7 +163,7 @@ function MobileNavSection({
                 onClick={handleCloseMobileNav}
               >
                 <p className="text-6xl text-black font-bold transition-all z-50">
-                  {item.text}
+                  {activeSection === `${item.id}` ? item.icon : item.text}
                 </p>
               </Link>
             </motion.li>

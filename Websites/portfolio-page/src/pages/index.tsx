@@ -42,6 +42,7 @@ export default function Home() {
     <>
       <HeaderSection activeSection={activeSection} />
       <MobileNavSection
+        activeSection={activeSection}
         isOpenMobileNav={isOpenMobileNav}
         handleChangeMobileNav={handleChangeMobileNav}
         handleCloseMobileNav={handleCloseMobileNav}

@@ -1,24 +1,11 @@
 import { FaLinkedin, FaGithub, FaInstagram } from "react-icons/fa";
 import { motion } from "framer-motion";
 import { Link } from "react-scroll";
-import styled from "styled-components";
 import { FaHome } from "react-icons/fa";
 import { BsFillInfoCircleFill } from "react-icons/bs";
 import { FaBriefcase } from "react-icons/fa";
 import { IoIosMail } from "react-icons/io";
 import { MdHomeWork } from "react-icons/md";
-
-const ReactIcon = styled.div`
-  svg {
-    fill: #f0fdf4;
-    transition: all 0.3s ease-in-out;
-    transform: translateY(0);
-  }
-  svg:hover {
-    fill: #0aff9d;
-    transform: translateY(-5px);
-  }
-`;
 
 function HeaderSection({ activeSection }: { activeSection: string }) {
   const headerListItems = [

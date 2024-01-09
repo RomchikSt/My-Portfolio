@@ -33,7 +33,7 @@ function ExpSection() {
   ];
 
   return (
-    <div className="w-full min-h-screen pt-14 flex flex-col items-center 2100px:h-[60rem]">
+    <div className="w-full min-h-[50vh] pt-14 flex flex-col items-center 2100px:h-[60rem]">
       <div className="text-center flex flex-col items-center w-5/12 mb-12">
         <motion.h2
           className="inline-block text-5xl font-bold py-4 border-b-4 border-custom-green"
@@ -61,7 +61,7 @@ function ExpSection() {
           <p className="text-xl font-semibold text-custom-green">
             React Engineer
           </p>
-          <p className="text-xl font-semibold">Kyiv</p>
+          <p className="text-xl font-semibold">Kyiv, Ukraine</p>
         </div>
         <p className="text-lg">
           Front-End Developer, focused on creating user-friendly interfaces.
