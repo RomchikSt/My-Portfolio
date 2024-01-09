@@ -52,7 +52,7 @@ function MobileNavSection({
     {
       id: "contact",
       text: "Contact",
-      icon: <IoIosMail fill={"#111111"} size={"1.8rem"} />,
+      icon: <IoIosMail fill={"#111111"} size={"3.5rem"} />,
     },
   ];
   const burgeSpans = [

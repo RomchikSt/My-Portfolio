@@ -1,5 +1,5 @@
 /* import { motion } from "framer-motion";
-
+HAVE A BUG WITH THE SCROLL MOUSE IN RANDOM RENDERERS
 function ScrollMouse() {
   return (
     <motion.div
