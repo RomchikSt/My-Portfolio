@@ -162,7 +162,7 @@ function PortfolioSection() {
                 >
                   {project.title}
                 </motion.p>
-                <div className="flex">
+                <div className="flex rounded-2xl overflow-hidden w-[250px] 450px:w-[355px] 700px:w-[540px] 1700px:w-[640px]">
                   <motion.div
                     className="flex w-[250px] 450px:w-[355px] 700px:w-[540px] 1700px:w-[640px] 1700px:transition-all hover:shadow-[0px_0px_20px_1px_#0aff9d] 1300px:hover:shadow-[0px_0px_40px_1px_#0aff9d]"
                     onMouseEnter={() => handleMouseEnter(project.id)}
@@ -172,7 +172,7 @@ function PortfolioSection() {
                     transition={{ duration: 0.75, delay: 0.3 }}
                   >
                     <motion.div
-                      className="absolute w-[250px] h-[140px] 1300px:left-0 1300px:bottom-0 z-10 bg-custom-green-play 450px:h-[200px] 450px:w-[355px] 700px:w-[540px] 1700px:w-[640px] 700px:h-[305px]  1700px:top-0 1700px:h-full"
+                      className="absolute w-[250px] h-[140px] 1300px:left-0 1300px:bottom-0 z-10 bg-custom-green-play 450px:h-[200px] 450px:w-[355px] 700px:w-[540px] 1700px:w-[640px] 700px:h-[305px]  1700px:top-0 1700px:h-full rounded-2xl"
                       initial={{ opacity: 1, scale: 1 }}
                       whileHover={{ opacity: 0, scale: 1.1 }}
                       transition={{ duration: 0.5 }}
@@ -265,9 +265,9 @@ function PortfolioSection() {
                 >
                   {project.title}
                 </motion.p>
-                <div className="flex 1300px:justify-end">
+                <div className="flex 1300px:justify-end rounded-2xl">
                   <motion.div
-                    className="flex w-[250px] 450px:w-[355px] 700px:w-[540px] 1700px:w-[640px] 1700px:transition-all hover:shadow-[0px_0px_20px_1px_#0aff9d] 1300px:hover:shadow-[0px_0px_40px_1px_#0aff9d]"
+                    className="flex w-[250px] 450px:w-[355px] 700px:w-[540px] 1700px:w-[640px] 1700px:transition-all hover:shadow-[0px_0px_20px_1px_#0aff9d] 1300px:hover:shadow-[0px_0px_40px_1px_#0aff9d] rounded-2xl"
                     onMouseEnter={() => handleMouseEnter(project.id)}
                     onMouseLeave={() => handleMouseLeave(project.id)}
                     initial={{ opacity: 0 }}
@@ -275,7 +275,7 @@ function PortfolioSection() {
                     transition={{ duration: 0.5, delay: 0.3 }}
                   >
                     <motion.div
-                      className="absolute w-[250px] h-[140px] 1300px:right-0 1300px:bottom-0 z-10 bg-custom-green-play 450px:w-[355px] 450px:h-[200px] 700px:w-[540px] 1700px:w-[640px] 700px:h-[305px] 1700px:top-0 1700px:h-full"
+                      className="absolute w-[250px] h-[140px] 1300px:right-0 1300px:bottom-0 z-10 bg-custom-green-play 450px:w-[355px] 450px:h-[200px] 700px:w-[540px] 1700px:w-[640px] 700px:h-[305px] 1700px:top-0 1700px:h-full rounded-2xl"
                       initial={{ opacity: 1, scale: 1 }}
                       whileHover={{ opacity: 0, scale: 1.1 }}
                       transition={{ duration: 0.5 }}
@@ -285,6 +285,7 @@ function PortfolioSection() {
                         className="m-auto h-full"
                       />
                     </motion.div>
+
                     <ReactPlayer
                       url="./video/WildOasisTrailer.mp4"
                       playing={playingStatus[project.id]?.playing}
