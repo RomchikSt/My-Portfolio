@@ -20,9 +20,14 @@ export default function Home() {
 
   useEffect(() => {
     window.scrollTo(0, 0);
+    const homeElement = document.querySelector('Element[name="home"]');
+    if (homeElement) {
+      homeElement.scrollIntoView({ behavior: "smooth" });
+    }
   }, []);
 
   useEffect(() => {
+    setActiveSection("home");
     if (inViewStart) setActiveSection("home");
     if (inViewAbout) setActiveSection("about");
     if (inViewExp) setActiveSection("experience");
