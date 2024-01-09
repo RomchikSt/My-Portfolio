@@ -17,13 +17,17 @@ export default function Home() {
   const [refExp, inViewExp] = useInView({ threshold: 0.5 });
   const [refPortfolio, inViewPortfolio] = useInView({ threshold: 0.25 });
   const [refContact, inViewContact] = useInView({ threshold: 0.5 });
+  const startRef = useRef(null);
 
   useEffect(() => {
     window.scrollTo(0, 0);
+    const homeElement = document.getElementById("home");
+    if (homeElement) {
+      homeElement.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
   }, []);
 
   useEffect(() => {
-    window.scrollTo(0, 0);
     setActiveSection("home");
     if (inViewStart) setActiveSection("home");
     if (inViewAbout) setActiveSection("about");
@@ -51,7 +55,7 @@ export default function Home() {
       />
       <div className="max-w-[100rem] mx-auto 1024px:pl-[8rem]">
         <Element name="home">
-          <div ref={refStart}>
+          <div id="home" ref={refStart}>
             <StartSection />
           </div>
         </Element>
