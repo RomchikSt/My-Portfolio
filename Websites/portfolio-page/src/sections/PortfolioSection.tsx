@@ -198,14 +198,14 @@ function PortfolioSection() {
                   }}
                   transition={{ duration: 0.5 }}
                 >
-                  <motion.p
+                  <motion.h3
                     className="hidden p-6 text-2xl text-custom-green font-semibold text-right 1300px:block"
                     initial={{ y: "5%", opacity: 0 }}
                     animate={inViewVideo ? { y: 0, opacity: 1 } : {}}
                     transition={{ duration: 0.5, delay: 0.5 }}
                   >
                     {project.title}
-                  </motion.p>
+                  </motion.h3>
                   <motion.p
                     className="text-left bg-custom-black rounded-3xl p-6 1300px:text-right shadow-[0_0px_1px_1px_#0aff9d]"
                     initial={{ opacity: 0 }}
@@ -301,14 +301,14 @@ function PortfolioSection() {
                   }}
                   transition={{ duration: 0.5 }}
                 >
-                  <motion.p
+                  <motion.h3
                     className="hidden p-6 text-2xl text-custom-green font-semibold 1300px:block"
                     initial={{ y: "-5%", opacity: 0 }}
                     animate={inViewVideo ? { x: 0, y: 0, opacity: 1 } : {}}
                     transition={{ duration: 0.5, delay: 0.6 }}
                   >
                     {project.title}
-                  </motion.p>
+                  </motion.h3>
                   <motion.p
                     className="bg-custom-black rounded-3xl p-6 shadow-[0_0px_1px_1px_#0aff9d]"
                     initial={{ y: "-5%", opacity: 0 }}
