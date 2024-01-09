@@ -60,7 +60,7 @@ function ContactSection() {
   ];
 
   return (
-    <div className="w-full h-screen pt-14 flex flex-col justify-between items-center 2100px:h-[60rem]">
+    <div className="w-full max-h-screen pt-14 flex flex-col justify-between items-center 2100px:h-[60rem]">
       <div className="text-center flex flex-col items-center w-5/12">
         <motion.h2
           className="inline-block text-5xl font-bold py-4 border-b-4 border-custom-green"
