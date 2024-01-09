@@ -20,10 +20,6 @@ export default function Home() {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    const homeElement = document.querySelector('Element[name="home"]');
-    if (homeElement) {
-      homeElement.scrollIntoView({ behavior: "smooth" });
-    }
   }, []);
 
   useEffect(() => {
