@@ -8,6 +8,7 @@ import { useInView } from "react-intersection-observer";
 import { useEffect, useState, useRef, use } from "react";
 import MobileNavSection from "@/sections/MobileNavSection";
 import ExpSection from "@/sections/ExpSection";
+import HeadSection from "./HeadSection";
 
 export default function Home() {
   const [isOpenMobileNav, setIsOpenMobileNav] = useState<boolean>(false);
@@ -28,7 +29,6 @@ export default function Home() {
   }, []);
 
   useEffect(() => {
-    setActiveSection("home");
     if (inViewStart) setActiveSection("home");
     if (inViewAbout) setActiveSection("about");
     if (inViewExp) setActiveSection("experience");
@@ -46,6 +46,7 @@ export default function Home() {
 
   return (
     <>
+      <HeadSection />
       <HeaderSection activeSection={activeSection} />
       <MobileNavSection
         activeSection={activeSection}
