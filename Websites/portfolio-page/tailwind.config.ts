@@ -21,6 +21,9 @@ const config: Config = {
         "custom-black": "#232323",
         "custom-black-main": "#111111",
       },
+      boxShadow: {
+        "3xl": "0 35px 60px -15px rgba(255, 255, 255, 0.9)",
+      },
       screens: {
         "2100px": "2100px",
         "1700px": "1700px",
@@ -30,6 +33,8 @@ const config: Config = {
         "1100px": "1100px",
         "1024px": "1024px",
         "837px": "837px",
+        "700px": "700px",
+        "600px": "600px",
         "450px": "450px",
       },
     },

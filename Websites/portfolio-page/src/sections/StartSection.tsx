@@ -57,7 +57,7 @@ function StartSection() {
         <div className="flex justify-start mt-14">
           <Link to="portfolio" smooth duration={500}>
             <motion.button
-              className="pointer-events-auto w-44 h-12 bg-transparent border rounded-xl border-custom-green ml-1 flex items-center justify-center"
+              className="pointer-events-auto w-44 h-12 bg-transparent border rounded-xl border-custom-green ml-1 flex items-center justify-center "
               initial={{ y: "70%", opacity: 0 }}
               animate={{
                 y: 0,

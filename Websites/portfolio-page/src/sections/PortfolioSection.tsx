@@ -28,6 +28,7 @@ function PortfolioSection() {
   const [isMounted, setIsMounted] = useState<boolean>(false);
   const [playingStatus, setPlayingStatus] = useState<PlayingStatus>({});
   const [textAbsolute, setTextAbsolute] = useState<boolean>(true);
+  const [videoSize, setVideoSize] = useState<number>(360);
   const [refHeader, inViewHeader] = useInView({
     triggerOnce: true,
     threshold: 0.25,
@@ -43,8 +44,22 @@ function PortfolioSection() {
 
   useEffect(() => {
     const handleChangeText = () => {
-      if (window.innerWidth < 1300) setTextAbsolute(false);
-      if (window.innerWidth > 1300) setTextAbsolute(true);
+      if (window.innerWidth < 450) {
+        setVideoSize(140);
+        setTextAbsolute(false);
+      } else if (window.innerWidth >= 450 && window.innerWidth < 700) {
+        setVideoSize(200);
+        setTextAbsolute(false);
+      } else if (window.innerWidth >= 700 && window.innerWidth < 1300) {
+        setVideoSize(305);
+        setTextAbsolute(false);
+      } else if (window.innerWidth >= 1300 && window.innerWidth < 1700) {
+        setVideoSize(305);
+        setTextAbsolute(true);
+      } else if (window.innerWidth >= 1700) {
+        setVideoSize(360);
+        setTextAbsolute(true);
+      }
     };
     handleChangeText();
     window.addEventListener("resize", handleChangeText);
@@ -104,7 +119,7 @@ function PortfolioSection() {
 
   return (
     <>
-      <div className="mx-auto mt-6 text-center flex flex-col items-center py-[5%] 1300px:mb-16">
+      <div className="mx-auto mt-6 text-center flex flex-col items-center py-[5%] mb-8 1300px:mb-16">
         <motion.h2
           className="text-5xl font-bold py-4 border-b-4 border-custom-green"
           ref={refHeader}
@@ -126,7 +141,7 @@ function PortfolioSection() {
         </motion.p>
       </div>
       <motion.div
-        className="mb-16 flex flex-col m-auto max-w-[940px] gap-32"
+        className="mb-16 gap-16 flex flex-col m-auto max-w-[940px] 1300px:gap-32"
         ref={refVideo}
         initial={{ y: "10%", opacity: 0 }}
         animate={inViewVideo ? { y: 0, opacity: 1 } : {}}
@@ -137,7 +152,7 @@ function PortfolioSection() {
             project.id % 2 === 0 ? (
               <div
                 key={project.id}
-                className="relative flex flex-col justify-center items-center 1300px:block"
+                className="relative flex flex-col justify-center items-center gap-14 1300px:block 1300px:gap-0"
               >
                 <motion.h3
                   className="text-4xl font-semibold 1300px:hidden 1300px:p-6"
@@ -149,7 +164,7 @@ function PortfolioSection() {
                 </motion.h3>
                 <div className="flex">
                   <motion.div
-                    className="flex w-[540px] 1700px:w-[640px]"
+                    className="flex w-[250px] 450px:w-[355px] 700px:w-[540px] 1700px:w-[640px] 1700px:transition-all hover:shadow-[0px_0px_40px_1px_#0aff9d] 1300px:hover:shadow-[0px_0px_80px_1px_#0aff9d]"
                     onMouseEnter={() => handleMouseEnter(project.id)}
                     onMouseLeave={() => handleMouseLeave(project.id)}
                     initial={{ x: "-60%", opacity: 0 }}
@@ -157,7 +172,7 @@ function PortfolioSection() {
                     transition={{ duration: 0.75, delay: 0.3 }}
                   >
                     <motion.div
-                      className="absolute top-[28px] right-0 left-0 bottom-0 z-10 bg-custom-green-play h-[305px] 1700px:top-0 1700px:h-full"
+                      className="absolute top-[0px] right-0 left-0 bottom-0 z-10 bg-custom-green-play 700px:h-[305px] shadow-[0_0_20px_1px_#0aff9d] 1300px:shadow-[4px_4px_20px_1px_#0aff9d] hover:shadow-none 1700px:top-0 1700px:h-full"
                       initial={{ opacity: 1, scale: 1 }}
                       whileHover={{ opacity: 0, scale: 1.1 }}
                       transition={{ duration: 0.5 }}
@@ -170,14 +185,15 @@ function PortfolioSection() {
                     <ReactPlayer
                       url="./video/WildOasisTrailer.mp4"
                       playing={playingStatus[project.id]?.playing}
+                      height={videoSize}
                     />
                   </motion.div>
                 </div>
                 <motion.div
-                  className="block 1300px:absolute top-[0] right-[25%] w-[42rem] border-custom-green px-6  transform -translate-x-[30%] -translate-y-[54%] 1300px:w-[36rem] 1300px:p-6 1700px:right-[13%]"
+                  className="block 1300px:absolute top-[0] right-[25%] w-11/12 450px:w-[38rem] 600px:w-[42rem] border-custom-green px-6  transform -translate-x-[30%] -translate-y-[54%] 1300px:w-[36rem] 1300px:p-6 1700px:right-[13%]"
                   animate={{
                     x: playingStatus[project.id]?.animate
-                      ? "70%"
+                      ? `${textAbsolute ? "70%" : "0rem"}`
                       : `${textAbsolute ? "20rem" : "0rem"}`,
                   }}
                   transition={{ duration: 0.5 }}
@@ -191,7 +207,7 @@ function PortfolioSection() {
                     {project.title}
                   </motion.h3>
                   <motion.p
-                    className="text-left bg-custom-black rounded-3xl p-6 1300px:text-right"
+                    className="text-left bg-custom-black rounded-3xl p-6 1300px:text-right shadow-[0_0px_8px_1px_#0aff9d]"
                     initial={{ x: "60%", opacity: 0 }}
                     animate={inViewVideo ? { x: 0, opacity: 1 } : {}}
                     transition={{ duration: 0.5, delay: 0.3 }}
@@ -239,7 +255,7 @@ function PortfolioSection() {
             ) : (
               <div
                 key={project.id}
-                className="relative flex flex-col justify-center items-center 1300px:block"
+                className="relative flex flex-col justify-center items-center gap-14 1300px:block 1300px:gap-0"
               >
                 <motion.h3
                   className="text-4xl font-semibold 1300px:hidden 1300px:p-6"
@@ -251,7 +267,7 @@ function PortfolioSection() {
                 </motion.h3>
                 <div className="flex 1300px:justify-end">
                   <motion.div
-                    className="flex w-[540px] 1700px:w-[640px]"
+                    className="flex w-[250px] 450px:w-[355px] 700px:w-[540px] 1700px:w-[640px] 1700px:transition-all hover:shadow-[0px_0px_40px_1px_#0aff9d] 1300px:hover:shadow-[0px_0px_80px_1px_#0aff9d]"
                     onMouseEnter={() => handleMouseEnter(project.id)}
                     onMouseLeave={() => handleMouseLeave(project.id)}
                     initial={{ x: "60%", opacity: 0 }}
@@ -259,7 +275,7 @@ function PortfolioSection() {
                     transition={{ duration: 0.5, delay: 0.3 }}
                   >
                     <motion.div
-                      className="absolute top-[28px] right-0 left-0 bottom-0 z-10 bg-custom-green-play h-[305px] 1700px:top-0 1700px:h-full"
+                      className="absolute top-[0px] right-0 left-0 bottom-0 z-10 bg-custom-green-play 700px:h-[305px] shadow-[0_0_20px_1px_#0aff9d] 1300px:shadow-[4px_4px_20px_1px_#0aff9d] hover:shadow-none 1700px:top-0 1700px:h-full"
                       initial={{ opacity: 1, scale: 1 }}
                       whileHover={{ opacity: 0, scale: 1.1 }}
                       transition={{ duration: 0.5 }}
@@ -272,14 +288,15 @@ function PortfolioSection() {
                     <ReactPlayer
                       url="./video/WildOasisTrailer.mp4"
                       playing={playingStatus[project.id]?.playing}
+                      height={videoSize}
                     />
                   </motion.div>
                 </div>
                 <motion.div
-                  className="block m-auto 1300px:absolute top-[0%] left-[25%] w-[42rem] border-custom-green px-6  transform -translate-x-[20%] -translate-y-[54%] 1300px:w-[36rem] 1700px:left-[13%]"
+                  className="block m-auto 1300px:absolute top-[0] left-[25%] w-11/12 450px:w-[38rem] 600px:w-[42rem] border-custom-green px-6 transform -translate-x-[30%] -translate-y-[54%] 1300px:w-[36rem] 1300px:p-6 1700px:left-[13%]"
                   animate={{
                     x: playingStatus[project.id]?.animate
-                      ? "-70%"
+                      ? `${textAbsolute ? "-70%" : "0rem"}`
                       : `${textAbsolute ? "-20rem" : "0rem"}`,
                   }}
                   transition={{ duration: 0.5 }}
@@ -293,7 +310,7 @@ function PortfolioSection() {
                     {project.title}
                   </motion.h3>
                   <motion.p
-                    className="bg-custom-black rounded-3xl p-6 h-3/12 "
+                    className="bg-custom-black rounded-3xl p-6 shadow-[0_0px_8px_1px_#0aff9d]"
                     initial={{ x: "-60%", y: "-5%", opacity: 0 }}
                     animate={inViewVideo ? { x: 0, y: 0, opacity: 1 } : {}}
                     transition={{ duration: 0.5, delay: 0.4 }}
