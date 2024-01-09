@@ -54,7 +54,7 @@ function HeaderSection({ activeSection }: { activeSection: string }) {
             animate={{ x: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            <Link to={item.id} smooth duration={900}>
+            <Link to={item.id} smooth duration={1200}>
               <motion.button
                 className="flex items-center justify-center w-16 h-6 relative"
                 initial={{ x: -100 }}
@@ -68,7 +68,7 @@ function HeaderSection({ activeSection }: { activeSection: string }) {
                     opacity: activeSection === `${item.id}` ? 1 : 0,
                     scale: activeSection === `${item.id}` ? 1 : 0.5,
                   }}
-                  transition={{ duration: 0.2, ease: "easeInOut" }}
+                  transition={{ duration: 0.15, ease: "easeInOut" }}
                 >
                   {item.icon}
                 </motion.div>
