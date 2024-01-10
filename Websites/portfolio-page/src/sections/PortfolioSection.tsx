@@ -41,19 +41,10 @@ function PortfolioSection() {
   });
 
   useEffect(() => {
-    setIsMounted(true);
-  }, []);
-
-  useEffect(() => {
     const userAgent = navigator.userAgent;
-
     const isAndroid = /Android/i.test(userAgent);
     const isIOS = /iPhone|iPod/i.test(userAgent);
 
-    setIsMobileDevice(isAndroid || isIOS);
-  }, []);
-
-  useEffect(() => {
     const handleChangeText = () => {
       if (window.innerWidth < 450) {
         setVideoSize(140);
@@ -72,7 +63,10 @@ function PortfolioSection() {
         setTextAbsolute(true);
       }
     };
+
     handleChangeText();
+    setIsMounted(true);
+    setIsMobileDevice(isAndroid || isIOS);
     window.addEventListener("resize", handleChangeText);
     return () => window.removeEventListener("resize", handleChangeText);
   }, []);
