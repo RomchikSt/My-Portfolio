@@ -5,7 +5,9 @@
 ## Description
 
 Fast React Pizza is a web application designed for convenient and hassle-free pizzeria menu browsing and ordering.
-![Screenshot 2023-09-21 at 21 31 07](https://github.com/RomchikSt/Portfolio/assets/140477189/f4588a01-891c-43cd-bdc3-49d79a35cabe)
+
+![Screenshot 2024-01-10 at 22 45 46](https://github.com/RomchikSt/Portfolio/assets/140477189/01f4ccdb-1c88-4825-846e-de0bdbca6ae4)
+
 
 ## Live Demo
 
