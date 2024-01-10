@@ -16,7 +16,7 @@ const AnimatedSpan = styled(motion.span)`
 function ScrollArrow() {
   return (
     <motion.div
-      className="mb-[6rem] absolute left-1/2 bottom-[4rem] -translate-x-1/2 1200px:hidden 1024px:ml-[4rem] 1024px:mb-[4rem]"
+      className="mb-[4rem] absolute left-1/2 bottom-[4rem] -translate-x-1/2 1200px:hidden 1024px:ml-[4rem] 1024px:mb-[4rem]"
       initial={{ y: "50%", opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.5, delay: 0.8 }}

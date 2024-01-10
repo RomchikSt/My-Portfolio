@@ -162,7 +162,7 @@ function MobileNavSection({
           }}
           transition={{ duration: 0.5 }}
         >
-          <ul className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex flex-col items-center justify-center gap-8 z-50">
+          <ul className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex flex-col items-center justify-center gap-8 z-50 overflow-y-auto max-h-screen">
             {MENU_ITEMS.map((item, i) => (
               <motion.li key={i} className="cursor-pointer">
                 <Link

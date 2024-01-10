@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { FaLinkedin, FaGithub, FaInstagram, FaTelegram } from "react-icons/fa";
-import { BsSignal } from "react-icons/bs";
 import styled from "styled-components";
 
 const ReactIcon = styled.div`
@@ -60,7 +59,7 @@ function ContactSection() {
   ];
 
   return (
-    <div className="w-full h-screen pt-14 flex flex-col justify-between items-center 2100px:h-[60rem]">
+    <div className="w-full overflow-y-auto min-h-[50rem] h-screen pt-14 flex flex-col justify-between items-center 2100px:h-[60rem]">
       <div className="text-center flex flex-col items-center w-5/12">
         <motion.h2
           className="inline-block text-5xl font-bold py-4 border-b-4 border-custom-green"
@@ -88,34 +87,73 @@ function ContactSection() {
         >
           {`Let's Connect! If you're interested in web development collaborations, have questions, or just want to exchange ideas, feel free to reach out. I'm open to discussing projects that challenge and expand the boundaries of web technology, and I'm always eager to connect with like-minded individuals. Contact me here or through my social media channels – I'm looking forward to our conversation and the opportunity to collaborate on exciting projects.`}
         </motion.p>
-        <motion.button
-          className="pointer-events-auto mt-14 mb-8 w-44 h-12 bg-transparent border rounded-xl border-custom-green ml-1 flex items-center justify-center"
-          ref={refDesc}
-          initial={{ y: "50%", opacity: 0 }}
-          animate={
-            inViewDesc
-              ? { y: 0, opacity: 1, transition: { duration: 0.5, delay: 0.35 } }
-              : {}
-          }
-          whileHover={{
-            backgroundColor: "#0aff9d",
-            scale: 1.05,
-            transition: { duration: 0.3 },
-          }}
-          transition={{
-            backgroundColor: { duration: 0.3 },
-            scale: { duration: 0.3 },
-          }}
-        >
-          <motion.a
-            href="mailto:roma.stakhiv@gmail.com"
-            className="m-0 absolute top-0 left-0 w-full h-full text-center flex items-center justify-center"
-            initial={{ color: "#FFFFFF" }}
-            whileHover={{ color: "#111111" }}
+        <div className="mt-14 mb-8 flex flex-col gap-6 450px:flex-row">
+          <motion.button
+            className="pointer-events-auto  w-44 h-12 bg-transparent border rounded-xl border-custom-green ml-1 flex items-center justify-center"
+            ref={refDesc}
+            initial={{ y: "50%", opacity: 0 }}
+            animate={
+              inViewDesc
+                ? {
+                    y: 0,
+                    opacity: 1,
+                    transition: { duration: 0.5, delay: 0.35 },
+                  }
+                : {}
+            }
+            whileHover={{
+              backgroundColor: "#0aff9d",
+              scale: 1.05,
+              transition: { duration: 0.3 },
+            }}
+            transition={{
+              backgroundColor: { duration: 0.3 },
+              scale: { duration: 0.3 },
+            }}
           >
-            Say Hello!
-          </motion.a>
-        </motion.button>
+            <motion.a
+              href="mailto:roma.stakhiv@gmail.com"
+              className="m-0 absolute top-0 left-0 w-full h-full text-center flex items-center justify-center"
+              initial={{ color: "#FFFFFF" }}
+              whileHover={{ color: "#111111" }}
+            >
+              Say Hello!
+            </motion.a>
+          </motion.button>
+          <motion.button
+            className="pointer-events-auto w-44 h-12 bg-transparent border rounded-xl border-custom-green ml-1 flex items-center justify-center"
+            ref={refDesc}
+            initial={{ y: "50%", opacity: 0 }}
+            animate={
+              inViewDesc
+                ? {
+                    y: 0,
+                    opacity: 1,
+                    transition: { duration: 0.5, delay: 0.35 },
+                  }
+                : {}
+            }
+            whileHover={{
+              backgroundColor: "#0aff9d",
+              scale: 1.05,
+              transition: { duration: 0.3 },
+            }}
+            transition={{
+              backgroundColor: { duration: 0.3 },
+              scale: { duration: 0.3 },
+            }}
+          >
+            <motion.a
+              href="./img/1111.jpg"
+              download="1111.jpg"
+              className="m-0 absolute top-0 left-0 w-full h-full text-center flex items-center justify-center"
+              initial={{ color: "#FFFFFF" }}
+              whileHover={{ color: "#111111" }}
+            >
+              Download CV
+            </motion.a>
+          </motion.button>
+        </div>
         <motion.div
           className="flex gap-4 flex-col"
           initial={{ y: "50%", opacity: 0 }}

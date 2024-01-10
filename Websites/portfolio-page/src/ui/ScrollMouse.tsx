@@ -1,5 +1,5 @@
-/* import { motion } from "framer-motion";
-HAVE A BUG WITH THE SCROLL MOUSE IN RANDOM RENDERERS
+import { motion } from "framer-motion";
+
 function ScrollMouse() {
   return (
     <motion.div
@@ -17,8 +17,8 @@ function ScrollMouse() {
   );
 }
 
-export default ScrollMouse; */
-import styled, { keyframes } from "styled-components";
+export default ScrollMouse;
+/* import styled, { keyframes } from "styled-components";
 
 const appear = keyframes`
   from {
@@ -74,6 +74,7 @@ const ScrollCircle = styled.div`
 
 function ScrollMouse() {
   return (
+    
     <ScrollMouseContainer>
       <ScrollCircle />
     </ScrollMouseContainer>
@@ -81,3 +82,4 @@ function ScrollMouse() {
 }
 
 export default ScrollMouse;
+ */

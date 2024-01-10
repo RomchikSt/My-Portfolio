@@ -7,9 +7,12 @@ import { Link } from "react-scroll";
 
 function StartSection() {
   const [imgWidth, setImgWidth] = useState<number>(500);
+  const [animation, setAnimation] = useState<boolean>(false);
 
   useEffect(() => {
     const handleResize = () => {
+      if (window.innerHeight > 500) setAnimation(true);
+      if (window.innerHeight < 500) setAnimation(false);
       if (window.innerWidth < 1300) setImgWidth(430);
       if (window.innerWidth > 1300) setImgWidth(500);
     };
@@ -39,7 +42,7 @@ function StartSection() {
 
   return (
     <div
-      className="flex gap-2 justify-center h-full
+      className="flex gap-2 justify-center min-h-[30rem] h-full
     1300px:gap-3 1200px:justify-around  1400px:m-auto "
     >
       <div className="min-h-screen flex flex-col justify-center">
@@ -84,10 +87,12 @@ function StartSection() {
             </motion.button>
           </Link>
         </div>
-        <div>
-          <ScrollMouse />
-          <ScrollArrow />
-        </div>
+        {animation && (
+          <div>
+            <ScrollMouse />
+            <ScrollArrow />
+          </div>
+        )}
       </div>
       <motion.div
         className="hidden items-center 1200px:flex"

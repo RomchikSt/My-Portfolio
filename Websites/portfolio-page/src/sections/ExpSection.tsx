@@ -21,6 +21,27 @@ function ExpSection() {
     animate: inViewDesc ? { y: 0, opacity: 1 } : {},
   };
 
+  const workInfo = [
+    {
+      company: "Self-employe",
+      position: "React Engineer",
+      location: "Kyiv, Ukraine",
+      date: "2023-present",
+      description:
+        "Front-End Developer, focused on creating user-friendly interfaces. Expert in developing responsive UI, optimizing for cross-browser compatibility and adaptation for different screen sizes. Proficient in implementing user interface logic and design principles.",
+      techStack: [
+        "TypeScript",
+        "React",
+        "Redux",
+        "Framer Motion",
+        "i18next",
+        "Material UI",
+        "Git",
+        "GitHub",
+      ],
+    },
+  ];
+
   const reactTechStack = [
     "TypeScript",
     "React",
@@ -52,41 +73,40 @@ function ExpSection() {
           Explore my professional journey
         </motion.p>
       </div>
-      <motion.div
-        className="flex m-4 gap-2 flex-col items-start border rounded-3xl border-custom-green mt-8 p-6 bg-custom-black w-9/12 837px:w-3/5 1300px:w-[50rem]"
-        ref={refDesc}
-        {...descAnimation}
-        transition={{ duration: 0.5, delay: 0.3 }}
-      >
-        <div className="flex justify-between w-full">
-          <p className="text-2xl font-semibold">Self-employe</p>
-          <p className="text-xl font-semibold">2023-present</p>
-        </div>
-        <div className="flex justify-between w-full">
-          <p className="text-xl font-semibold text-custom-green">
-            React Engineer
-          </p>
-          <p className="text-xl font-semibold">Kyiv, Ukraine</p>
-        </div>
-        <p className="text-lg">
-          Front-End Developer, focused on creating user-friendly interfaces.
-          Expert in developing responsive UI, optimizing for cross-browser
-          compatibility and adaptation for different screen sizes. Proficient in
-          implementing user interface logic and design principles.
-        </p>
-        <div className="flex flex-wrap flex-start">
-          {reactTechStack.map((tech, i) => (
-            <motion.div
-              key={tech}
-              transition={{ duration: 0.5, delay: 0.2 + i / 30 }}
-            >
-              <p className="py-1.5 px-3 rounded-2xl m-1 bg-custom bg-custom-black-main">
-                {tech}
+      <div className="flex flex-col items-center" ref={refDesc}>
+        {workInfo.map((work, i) => (
+          <motion.div
+            key={i}
+            className="flex m-4 gap-2 flex-col items-start border rounded-3xl border-custom-green mt-8 p-6 bg-custom-black w-9/12 837px:w-3/5 1300px:w-[50rem]"
+            {...descAnimation}
+            transition={{ duration: 0.5, delay: 0.3 }}
+          >
+            <div className="flex justify-between w-full">
+              <p className="text-2xl font-semibold">{work.company}</p>
+              <p className="text-xl font-semibold">{work.date}</p>
+            </div>
+            <div className="flex justify-between w-full">
+              <p className="text-xl font-semibold text-custom-green">
+                {work.position}
               </p>
-            </motion.div>
-          ))}
-        </div>
-      </motion.div>
+              <p className="text-xl font-semibold">{work.location}</p>
+            </div>
+            <p className="text-lg">{work.description}</p>
+            <div className="flex flex-wrap flex-start">
+              {work.techStack.map((tech, i) => (
+                <motion.div
+                  key={tech}
+                  transition={{ duration: 0.5, delay: 0.2 + i / 30 }}
+                >
+                  <p className="py-1.5 px-3 rounded-2xl m-1 bg-custom bg-custom-black-main">
+                    {tech}
+                  </p>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+        ))}
+      </div>
     </div>
   );
 }
