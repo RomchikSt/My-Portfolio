@@ -18,7 +18,7 @@ export default function HeadSection() {
       <meta property="og:type" content="website" />
       <meta
         property="og:image"
-        content="https://drive.google.com/file/d/10ImGs1vSFY2wPg9yTrRv92CWFdbNxmw1/view?usp=sharing"
+        content="https://github.com/RomchikSt/Portfolio/blob/master/Websites/portfolio-page/public/img/socialImg.png"
       />
       <link rel="canonical" href="https://romchikst.vercel.app/" />
     </Head>
