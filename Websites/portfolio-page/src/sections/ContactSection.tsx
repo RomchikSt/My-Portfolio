@@ -144,8 +144,8 @@ function ContactSection() {
             }}
           >
             <motion.a
-              href="./img/1111.jpg"
-              download="1111.jpg"
+              href="./img/socialImg.png"
+              download="socialImg.png"
               className="m-0 absolute top-0 left-0 w-full h-full text-center flex items-center justify-center"
               initial={{ color: "#FFFFFF" }}
               whileHover={{ color: "#111111" }}

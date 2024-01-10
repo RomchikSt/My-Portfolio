@@ -86,7 +86,7 @@ function PortfolioSection() {
       title: "TopKolesa",
       description:
         "This is a full-stack web application for a tire shop. Offer an intuitive and user-friendly experience for purchasing tires. The website includes advanced filters for easy tire selection and is fully responsive, ensuring optimal performance on all browsers and screen sizes. The platform simplifies the tire buying process with its clear design and efficient functionality.",
-      stack: ["TS", "React", "i18-next", "M Ui", "MySQL"],
+      stack: ["TS", "React", "i18-next", "M Ui", "Framer Motion", "MySQL"],
       githubLink: "",
       gitHubIcon: <RiGithubFill size={30} />,
       link: "",
@@ -98,7 +98,14 @@ function PortfolioSection() {
       title: "Portfolio v.1",
       description:
         "This portfolio-CV website showcases my professional journey and creative projects. Featuring animations, video trailers of my work, a brief introduction about myself, and an overview of my professional experience, the site is a comprehensive representation of my skills and achievements. Fully responsive and optimized for all browsers and screen sizes.",
-      stack: ["TS", "React", "Next.js", "Tailwind", "Framer Motion"],
+      stack: [
+        "TS",
+        "React",
+        "Next.js",
+        "Tailwind",
+        "i18-next",
+        "Framer Motion",
+      ],
       githubLink: "",
       gitHubIcon: <RiGithubFill size={30} />,
       link: "",
@@ -215,7 +222,7 @@ function PortfolioSection() {
                   >
                     {project.description}
                   </motion.p>
-                  <div className="flex flex-row justify-center m-3 gap-6 1300px:justify-end">
+                  <div className="flex flex-row justify-center m-3 gap-4 1300px:justify-end">
                     {project.stack.map((tech) => (
                       <motion.p
                         key={tech}
@@ -319,7 +326,7 @@ function PortfolioSection() {
                     >
                       {project.description}
                     </motion.p>
-                    <div className="flex flex-row justify-center m-3 gap-6 1300px:justify-start ">
+                    <div className="flex flex-row justify-center m-3 gap-4 1300px:justify-start ">
                       {project.stack.map((tech) => (
                         <motion.p
                           key={tech}

@@ -27,7 +27,7 @@ function StartSection() {
       className: "text-xl text-custom-green pb-1 pl-1",
     },
     {
-      text: "Roma Stakhiv",
+      text: "Roman Stakhiv",
       className: "text-7xl font-bold",
     },
     {

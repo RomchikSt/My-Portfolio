@@ -3,7 +3,7 @@ import Head from "next/head";
 export default function HeadSection() {
   return (
     <Head>
-      <title>Roma Stakhiv | Web Developer</title>
+      <title>Roman Stakhiv | Web Developer</title>
       <meta
         name="description"
         content="Web Developer Portfolio Website ➱ Web Developer specialized in Javascript, React, Typescript ☝ Check out my Github repositories and my projects"
