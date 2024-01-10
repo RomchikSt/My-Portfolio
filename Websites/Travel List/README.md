@@ -5,7 +5,8 @@
 ## Description
 
 A simple and intuitive app that ensures you don't forget anything for your trip.
-![Screenshot 2023-09-21 at 22 41 48](https://github.com/RomchikSt/Portfolio/assets/140477189/e397d4ba-e3b2-4eac-8826-4d650ab9b19a)
+![Screenshot 2024-01-10 at 22 57 36](https://github.com/RomchikSt/Portfolio/assets/140477189/75969b5b-cef9-4f85-b961-8c46cb474502)
+
 
 ## Live Demo
 

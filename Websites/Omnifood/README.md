@@ -5,7 +5,8 @@
 ## Description
 
 Omnifood is a startup website dedicated to curating food menus using AI. But not only provide personalized menu selections also ensure timely delivery to customers.
-![Screenshot 2023-09-21 at 17 21 44](https://github.com/RomchikSt/Portfolio/assets/140477189/3ab6730e-761a-45da-8736-9e84de2a3117)
+
+![Screenshot 2024-01-10 at 22 50 54](https://github.com/RomchikSt/Portfolio/assets/140477189/b761b95e-4102-4000-945a-6a55849ee2c3)
 
 ## Live Demo
 
