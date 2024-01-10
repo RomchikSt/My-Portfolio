@@ -188,7 +188,7 @@ function PortfolioSection() {
                     animate={inViewVideo ? { opacity: 1 } : {}}
                     transition={{ duration: 0.75, delay: 0.3 }}
                   >
-                    {isAndroidDevice && (
+                    {!isAndroidDevice && (
                       <motion.div
                         className="absolute w-[250px] h-[140px] 1300px:left-0 1300px:bottom-0 z-10 bg-custom-green-play 450px:h-[200px] 450px:w-[355px] 700px:w-[540px] 1700px:w-[640px] 700px:h-[305px]  1700px:top-0 1700px:h-full rounded-2xl"
                         initial={{ opacity: 1, scale: 1 }}
@@ -294,17 +294,19 @@ function PortfolioSection() {
                       animate={inViewVideo ? { opacity: 1 } : {}}
                       transition={{ duration: 0.5, delay: 0.3 }}
                     >
-                      <motion.div
-                        className="absolute w-[250px] h-[140px] 1300px:right-0 1300px:bottom-0 z-10 bg-custom-green-play 450px:w-[355px] 450px:h-[200px] 700px:w-[540px] 1700px:w-[640px] 700px:h-[305px] 1700px:top-0 1700px:h-full rounded-2xl"
-                        initial={{ opacity: 1, scale: 1 }}
-                        whileHover={{ opacity: 0, scale: 1.1 }}
-                        transition={{ duration: 0.5 }}
-                      >
-                        <IoPlayCircleOutline
-                          size={"7rem"}
-                          className="m-auto h-full"
-                        />
-                      </motion.div>
+                      {!isAndroidDevice && (
+                        <motion.div
+                          className="absolute w-[250px] h-[140px] 1300px:right-0 1300px:bottom-0 z-10 bg-custom-green-play 450px:w-[355px] 450px:h-[200px] 700px:w-[540px] 1700px:w-[640px] 700px:h-[305px] 1700px:top-0 1700px:h-full rounded-2xl"
+                          initial={{ opacity: 1, scale: 1 }}
+                          whileHover={{ opacity: 0, scale: 1.1 }}
+                          transition={{ duration: 0.5 }}
+                        >
+                          <IoPlayCircleOutline
+                            size={"7rem"}
+                            className="m-auto h-full"
+                          />
+                        </motion.div>
+                      )}
                       <ReactPlayer
                         url="./video/WildOasisTrailer.mp4"
                         playing={playingStatus[project.id]?.playing}
