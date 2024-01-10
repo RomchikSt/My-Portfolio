@@ -5,7 +5,7 @@
 ## Description
 
 Encrypt and decrypt your text with various methods including Caesar, Reverse, Substitution, Atbash, and Vigenère ciphers.
-![Screenshot 2023-09-21 at 16 51 08](https://github.com/RomchikSt/Portfolio/assets/140477189/7042c5c5-744e-43c6-b4df-995bdd2cda6e)
+![Screenshot 2024-01-10 at 22 41 21](https://github.com/RomchikSt/Portfolio/assets/140477189/4c3622f4-0efb-4bb7-9b90-d52baae84a9a)
 
 ## Live Demo
 
