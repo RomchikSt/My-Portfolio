@@ -5,7 +5,9 @@
 ## Description
 
 Forkify is a recipe finder wich a convenient and user-friendly web application that allows users to search for a variety of recipes. Powered by the Forkify API, the site offers a rich collection of dishes to explore. Not only can users browse through available recipes, but they can also get detailed instructions, adjust servings, bookmark their favorites, and even add their own unique recipes!
-![Screenshot 2023-09-21 at 18 05 30](https://github.com/RomchikSt/Portfolio/assets/140477189/00510122-225c-4224-8bdd-b6acaaba06a2)
+
+![Screenshot 2024-01-10 at 22 48 04](https://github.com/RomchikSt/Portfolio/assets/140477189/90ffefd3-1b78-430f-8260-20463f28b11c)
+
 
 ## Live Demo
 
