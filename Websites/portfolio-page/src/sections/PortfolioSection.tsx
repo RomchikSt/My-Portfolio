@@ -29,7 +29,7 @@ function PortfolioSection() {
   const [playingStatus, setPlayingStatus] = useState<PlayingStatus>({});
   const [textAbsolute, setTextAbsolute] = useState<boolean>(true);
   const [videoSize, setVideoSize] = useState<number>(360);
-  const [isAndroidDevice, setIsAndroidDevice] = useState<boolean>(false);
+  const [isMobileDevice, setIsMobileDevice] = useState<boolean>(false);
 
   const [refHeader, inViewHeader] = useInView({
     triggerOnce: true,
@@ -45,10 +45,12 @@ function PortfolioSection() {
   }, []);
 
   useEffect(() => {
-    const isAndroid = () => {
-      return /Android/i.test(navigator.userAgent);
-    };
-    setIsAndroidDevice(isAndroid());
+    const userAgent = navigator.userAgent;
+
+    const isAndroid = /Android/i.test(userAgent);
+    const isIOS = /iPhone|iPod/i.test(userAgent);
+
+    setIsMobileDevice(isAndroid || isIOS);
   }, []);
 
   useEffect(() => {
@@ -188,7 +190,7 @@ function PortfolioSection() {
                     animate={inViewVideo ? { opacity: 1 } : {}}
                     transition={{ duration: 0.75, delay: 0.3 }}
                   >
-                    {!isAndroidDevice && (
+                    {!isMobileDevice && (
                       <motion.div
                         className="absolute w-[250px] h-[140px] 1300px:left-0 1300px:bottom-0 z-10 bg-custom-green-play 450px:h-[200px] 450px:w-[355px] 700px:w-[540px] 1700px:w-[640px] 700px:h-[305px]  1700px:top-0 1700px:h-full rounded-2xl"
                         initial={{ opacity: 1, scale: 1 }}
@@ -294,7 +296,7 @@ function PortfolioSection() {
                       animate={inViewVideo ? { opacity: 1 } : {}}
                       transition={{ duration: 0.5, delay: 0.3 }}
                     >
-                      {!isAndroidDevice && (
+                      {!isMobileDevice && (
                         <motion.div
                           className="absolute w-[250px] h-[140px] 1300px:right-0 1300px:bottom-0 z-10 bg-custom-green-play 450px:w-[355px] 450px:h-[200px] 700px:w-[540px] 1700px:w-[640px] 700px:h-[305px] 1700px:top-0 1700px:h-full rounded-2xl"
                           initial={{ opacity: 1, scale: 1 }}
