@@ -113,7 +113,7 @@ function MobileNavSection({
   ];
 
   return (
-    <div className="fixed top-[30px] right-[80px] 1024px:hidden z-50">
+    <div className="fixed top-[20px] right-[70px] 1024px:hidden z-50">
       <input
         type="checkbox"
         id="active"
@@ -123,7 +123,7 @@ function MobileNavSection({
         className="z-50"
       />
       <motion.label
-        className={`absolute h-[50px] w-[50px] text-center bg-[#0aff9d] rounded-full flex justify-center items-center cursor-pointer z-[51] shadow-[0px_0px_1rem_2px_#0aff9d]`}
+        className={`absolute h-[50px] w-[50px] text-center bg-[#f0fdf4] rounded-full flex justify-center items-center cursor-pointer z-[51] shadow-[0px_0px_0.5rem_2px_#f0fdf4]`}
         htmlFor="active"
         initial={{ x: "40%", opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}

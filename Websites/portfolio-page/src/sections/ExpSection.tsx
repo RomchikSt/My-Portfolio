@@ -23,7 +23,7 @@ function ExpSection() {
 
   const workInfo = [
     {
-      company: "Self-employe",
+      company: "Self-employed",
       position: "React Engineer",
       location: "Kyiv, Ukraine",
       date: "2023-present",

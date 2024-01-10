@@ -101,11 +101,12 @@ function StartSection() {
         transition={{ duration: 1, delay: 0.1 }}
       >
         <Image
-          src="/img/1111.jpg"
+          src="/img/mainPhoto.jpg"
           alt="Roma Stakhiv on the photo"
           width={imgWidth}
           height={400}
           priority
+          style={{ height: "auto", width: "auto" }}
         />
       </motion.div>
     </div>

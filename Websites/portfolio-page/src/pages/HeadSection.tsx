@@ -19,6 +19,7 @@ export default function HeadSection() {
         content="https://portfolio-git-master-rs-def.vercel.app/"
       />
       <meta property="og:type" content="website" />
+      <meta property="og:image" content="./img/socialImg.png" />
       <link
         rel="canonical"
         href="https://portfolio-git-master-rs-def.vercel.app/"

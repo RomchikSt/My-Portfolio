@@ -80,7 +80,7 @@ function PortfolioSection() {
     });
   };
 
-  const PortfolioProjects = [
+  const portfolioProjects = [
     {
       id: 0,
       title: "TopKolesa",
@@ -148,7 +148,7 @@ function PortfolioSection() {
         transition={{ duration: 0.75, delay: 0.3 }}
       >
         {isMounted &&
-          PortfolioProjects.map((project) =>
+          portfolioProjects.map((project) =>
             project.id % 2 === 0 ? (
               <div
                 key={project.id}
