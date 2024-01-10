@@ -6,7 +6,9 @@
 
 "Guess My Number!" is a simple web-based game where the user has to guess a random number between 1 and 20.
 
-<img width="755" alt="Screenshot 2023-09-21 at 14 23 22" src="https://github.com/RomchikSt/Portfolio/assets/140477189/98e8881a-a638-49bc-82e5-c7ef8fb5cd1e">
+<img width="755" alt="Guess My Number!" src="https://github.com/RomchikSt/Portfolio/assets/140477189/3b8f58b0-eb56-4de6-9dfa-af614eaf86e6">
+
+
 
 ## Live Demo
 
