@@ -4,7 +4,10 @@
 
 ## Description
 
-"Pig Game" is a classic dice game where two players compete to reach 100 points first. The game adds an element of strategy by allowing players to "hold" their current points, adding them to their score, or risk it all by rolling the dice again.![Screenshot 2023-09-21 at 15 22 28](https://github.com/RomchikSt/Portfolio/assets/140477189/7eb5702b-62e0-4665-829e-5584692bddcd)
+"Pig Game" is a classic dice game where two players compete to reach 100 points first. The game adds an element of strategy by allowing players to "hold" their current points, adding them to their score, or risk it all by rolling the dice again.
+
+<img width="755" alt="Pig Game" src="https://github.com/RomchikSt/Portfolio/assets/140477189/310635ea-441e-4d34-850d-db0bee0218e0">
+
 
 ## Live Demo
 
