@@ -5,7 +5,8 @@
 ## Description
 
 Dive into a comprehensive quiz designed to test your expertise in HTML, CSS, JS, and React. Whether you're a newbie or a seasoned developer, QuizMaster offers a chance to brush up on your skills and measure where you stand.
-![Screenshot 2023-10-20 at 23 04 10](https://github.com/RomchikSt/Portfolio/assets/140477189/9f679613-4e92-4988-921e-671e2e21b769)
+![Screenshot 2024-01-10 at 22 52 54](https://github.com/RomchikSt/Portfolio/assets/140477189/755d1ca9-3732-4a28-aca3-9ea0124f6e9b)
+
 
 
 
