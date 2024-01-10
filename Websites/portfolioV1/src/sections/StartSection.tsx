@@ -43,7 +43,7 @@ function StartSection() {
   return (
     <div
       className="flex gap-2 justify-center min-h-[30rem] h-full
-    1300px:gap-3 1200px:justify-around  1400px:m-auto "
+    1300px:gap-3 1200px:justify-around 1400px:m-auto "
     >
       <div className="min-h-screen flex flex-col justify-center">
         {introductionText.map((item, i) => (

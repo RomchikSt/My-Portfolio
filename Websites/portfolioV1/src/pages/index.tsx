@@ -18,7 +18,6 @@ export default function Home() {
   const [refExp, inViewExp] = useInView({ threshold: 0.5 });
   const [refPortfolio, inViewPortfolio] = useInView({ threshold: 0.25 });
   const [refContact, inViewContact] = useInView({ threshold: 0.5 });
-  const startRef = useRef(null);
 
   useEffect(() => {
     scroller.scrollTo("home", {

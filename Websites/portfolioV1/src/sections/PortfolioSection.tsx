@@ -103,14 +103,7 @@ function PortfolioSection() {
       title: "Portfolio v.1",
       description:
         "This portfolio-CV website showcases my professional journey and creative projects. Featuring animations, video trailers of my work, a brief introduction about myself, and an overview of my professional experience, the site is a comprehensive representation of my skills and achievements. Fully responsive and optimized for all browsers and screen sizes.",
-      stack: [
-        "TS",
-        "React",
-        "Next.js",
-        "Tailwind",
-        "i18-next",
-        "Framer Motion",
-      ],
+      stack: ["TS", "React", "Next.js", "Tailwind", "Framer Motion"],
       githubLink: "",
       gitHubIcon: <RiGithubFill size={30} />,
       link: "",
