@@ -1,5 +1,7 @@
 import { FaFilter } from "react-icons/fa";
+import { useDispatch, useSelector } from "react-redux";
 import styled from "styled-components";
+import { setFilter } from "../features/map/mapSlice";
 
 const StyledButton = styled.button`
   position: absolute;
@@ -15,11 +17,18 @@ const StyledButton = styled.button`
   align-items: center;
   z-index: 1000;
   border: 1px solid #111111;
+  box-shadow: 0 0.4rem 1.2rem #111111;
 `;
 
 function FilterBottom() {
+  const dispatch = useDispatch();
+
+  const handleFilterOpen = () => {
+    dispatch(setFilter(true));
+  };
+
   return (
-    <StyledButton>
+    <StyledButton onClick={handleFilterOpen}>
       <FaFilter size={"2.2rem"} />
     </StyledButton>
   );

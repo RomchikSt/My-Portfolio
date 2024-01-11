@@ -14,6 +14,7 @@ const StyledButton = styled.button`
   align-items: center;
   z-index: 1000;
   border: 1px solid #111111;
+  box-shadow: 0 0.4rem 1.2rem #111111;
 `;
 
 const StyledImage = styled.img`

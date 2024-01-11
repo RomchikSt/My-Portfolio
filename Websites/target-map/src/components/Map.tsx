@@ -1,34 +1,42 @@
-import { useState } from "react";
-import { MapContainer, Marker, TileLayer, Popup } from "react-leaflet";
-import { GiDeathZone } from "react-icons/gi";
+import { MapContainer, Marker, TileLayer, Popup, useMap } from "react-leaflet";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
+import { useSelector } from "react-redux";
+import { selectZoom } from "../features/map/mapSelectors";
+import { useEffect } from "react";
+
+function ZoomUpdater() {
+  const map = useMap();
+  const zoom = useSelector(selectZoom);
+
+  useEffect(() => {
+    map.setZoom(zoom);
+  }, [zoom, map]);
+
+  return null;
+}
 
 function Map() {
-  const [target, setTarget] = useState<number[]>([55.751244, 37.618423]);
-  const [zoom, setZoom] = useState<number>(10);
-
   const deathZoneIcon = new L.Icon({
     iconUrl:
-      "https://raw.githubusercontent.com/RomchikSt/full-portfolio/master/Websites/target-map/public/death.png",
+      "https://raw.githubusercontent.com/RomchikSt/full-portfolio/master/Websites/target-map/public/mainTarget.png",
     iconSize: [35, 35],
   });
 
   return (
     <MapContainer
       style={{ width: "100%", height: "100vh" }}
-      zoom={zoom}
-      center={target}
+      zoom={10}
+      center={[55.751244, 37.618423]}
       scrollWheelZoom={true}
-      fadeAnimation={true}
-      markerZoomAnimation={true}
       zoomControl={false}
     >
+      <ZoomUpdater />
       <TileLayer
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
       />
-      <Marker position={target} icon={deathZoneIcon}>
+      <Marker position={[55.751244, 37.618423]} icon={deathZoneIcon}>
         <Popup>
           A pretty CSS3 popup. <br /> Easily customizable.
         </Popup>

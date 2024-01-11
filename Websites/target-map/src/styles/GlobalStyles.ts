@@ -12,6 +12,7 @@ const GlobalStyles = createGlobalStyle`
   padding: 0;
   margin: 0;
   transition: background-color 0.3s, border 0.3s;
+  background-color: var(--bg-color);
 }
 
 html {
@@ -22,6 +23,7 @@ body {
   font-family: "Roboto", sans-serif;
   transition: color 0.3s, background-color 0.3s;
   font-size: 1.6rem;
+  
 }
 
 input,
