@@ -2,15 +2,8 @@ import { createGlobalStyle } from "styled-components";
 
 const GlobalStyles = createGlobalStyle`
 :root {
-  &, &.light-mode{
-  
   
 }
-  &.dark-mode{
-    
-}
-}
-
 
 *,
 *::before,
@@ -18,8 +11,6 @@ const GlobalStyles = createGlobalStyle`
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-
-  /* Creating animations for dark mode */
   transition: background-color 0.3s, border 0.3s;
 }
 
@@ -28,8 +19,8 @@ html {
 }
 
 body {
-  font-family: "Poppins", sans-serif;
-
+  font-family: "Roboto", sans-serif;
+  transition: color 0.3s, background-color 0.3s;
   font-size: 1.6rem;
 }
 
@@ -47,25 +38,6 @@ button {
 
 *:disabled {
   cursor: not-allowed;
-}
-
-/* select:disabled,
-input:disabled {
-  background-color: var(--color-grey-200);
-  color: var(--color-grey-500);
-} */
-
-/* input:focus,
-button:focus,
-textarea:focus,
-select:focus {
-  outline: 2px solid var(--color-brand-600);
-  outline-offset: -1px;
-} */
-
-
-button:has(svg) {
-  line-height: 0;
 }
 
 a {
@@ -86,6 +58,10 @@ h5,
 h6 {
   overflow-wrap: break-word;
   hyphens: auto;
+}
+
+img {
+  max-width: 100%;
 }
 
 `;
