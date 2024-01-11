@@ -9,7 +9,8 @@ function Map() {
   const [zoom, setZoom] = useState<number>(10);
 
   const deathZoneIcon = new L.Icon({
-    iconUrl: "https://static.thenounproject.com/png/3194193-200.png",
+    iconUrl:
+      "https://raw.githubusercontent.com/RomchikSt/full-portfolio/master/Websites/target-map/public/death.png",
     iconSize: [35, 35],
   });
 
