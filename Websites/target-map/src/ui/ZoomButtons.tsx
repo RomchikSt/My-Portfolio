@@ -18,7 +18,7 @@ const ButtonContainer = styled.div`
 `;
 
 const StyledButton = styled.button`
-  height: 3.8rem;
+  height: 3.9rem;
   border: none;
   background-color: #fef2f2;
   cursor: pointer;

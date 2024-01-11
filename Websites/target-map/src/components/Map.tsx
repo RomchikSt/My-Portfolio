@@ -9,8 +9,8 @@ function Map() {
   const [zoom, setZoom] = useState<number>(10);
 
   const deathZoneIcon = new L.Icon({
-    iconUrl: "https://img.icons8.com/plasticine/100/exterior.png", // Тут потрібно вказати шлях до зображення іконки
-    iconSize: [35, 35], // Розмір іконки
+    iconUrl: "https://static.thenounproject.com/png/3194193-200.png",
+    iconSize: [35, 35],
   });
 
   return (
