@@ -3,11 +3,13 @@ import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 type MapState = {
   zoom: number;
   filter: boolean;
+  changeLanguage: string;
 };
 
 const initialState: MapState = {
   zoom: 10,
   filter: false,
+  changeLanguage: "UA",
 };
 
 export const mapSlice = createSlice({
@@ -20,7 +22,10 @@ export const mapSlice = createSlice({
     setFilter: (state, action: PayloadAction<boolean>) => {
       state.filter = action.payload;
     },
+    setChangeLanguage: (state, action: PayloadAction<string>) => {
+      state.changeLanguage = action.payload;
+    },
   },
 });
 
-export const { setZoom, setFilter } = mapSlice.actions;
+export const { setZoom, setFilter, setChangeLanguage } = mapSlice.actions;

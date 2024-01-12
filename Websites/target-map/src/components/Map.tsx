@@ -1,13 +1,28 @@
 import { MapContainer, Marker, TileLayer, Popup, useMap } from "react-leaflet";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { selectZoom } from "../features/map/mapSelectors";
 import { useEffect } from "react";
+import { setZoom } from "../features/map/mapSlice";
 
 function ZoomUpdater() {
   const map = useMap();
+  const dispatch = useDispatch();
   const zoom = useSelector(selectZoom);
+
+  useEffect(() => {
+    const updateZoomInRedux = () => {
+      const newZoom = map.getZoom();
+      dispatch(setZoom(newZoom));
+    };
+
+    map.on("zoomend", updateZoomInRedux);
+
+    return () => {
+      map.off("zoomend", updateZoomInRedux);
+    };
+  }, [map, dispatch]);
 
   useEffect(() => {
     map.setZoom(zoom);

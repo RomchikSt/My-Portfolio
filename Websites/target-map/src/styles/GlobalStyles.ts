@@ -5,6 +5,8 @@ const GlobalStyles = createGlobalStyle`
   
 }
 
+
+
 *,
 *::before,
 *::after {
@@ -13,7 +15,7 @@ const GlobalStyles = createGlobalStyle`
   margin: 0;
   transition: background-color 0.3s, border 0.3s;
   background-color: var(--bg-color);
-}
+}                 
 
 html {
   font-size: 62.5%;
