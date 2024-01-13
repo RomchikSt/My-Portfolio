@@ -1,11 +1,12 @@
 import styled from "styled-components";
 import { motion } from "framer-motion";
 import { searchInputVariants } from "../animations/variants";
+import { useTranslation } from "react-i18next";
 
 const SearchContainer = styled(motion.div)`
   position: absolute;
   display: flex;
-  z-index: 1000;
+  z-index: 999;
   align-items: center;
   border: 1px solid #111111;
   background-color: #fef2f2;
@@ -37,6 +38,7 @@ type SearchInputProps = {
 };
 
 function SearchInput({ top, left, right, bottom, onClick }: SearchInputProps) {
+  const { t } = useTranslation();
   return (
     <SearchContainer
       variants={searchInputVariants}
@@ -49,7 +51,7 @@ function SearchInput({ top, left, right, bottom, onClick }: SearchInputProps) {
         type="text"
         id="search"
         name="search"
-        placeholder="Search..."
+        placeholder={t("search")}
       />
     </SearchContainer>
   );

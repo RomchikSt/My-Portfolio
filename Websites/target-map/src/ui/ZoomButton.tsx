@@ -2,6 +2,8 @@ import styled from "styled-components";
 import { FaPlus, FaMinus } from "react-icons/fa";
 import { motion } from "framer-motion";
 import { mapButtonVarints } from "../animations/variants";
+import { useSelector } from "react-redux";
+import { selectZoom } from "../features/map/mapSelectors";
 
 const ButtonContainer = styled(motion.div)`
   position: absolute;
@@ -9,11 +11,10 @@ const ButtonContainer = styled(motion.div)`
   flex-direction: column;
   bottom: 3rem;
   right: 2rem;
-  z-index: 999;
+  z-index: 1000;
   width: 4rem;
   height: 8rem;
   border-radius: 4rem;
-  overflow: hidden;
   gap: 0.1rem;
   background-color: #111111;
   border: 1px solid #111111;
@@ -24,15 +25,14 @@ const ButtonContainer = styled(motion.div)`
 const StyledButton = styled.button`
   height: 3.9rem;
   border: none;
-  background-color: #fef2f2;
+  background-color: ${(props) => (props.$zoom ? "#d3d3d3" : "#fef2f2")};
   display: flex;
   justify-content: center;
   align-items: center;
   transition: all 0.3s ease-in-out;
 
   &:hover {
-    color: #fef2f2;
-    background-color: #111111;
+    font-size: 2rem;
   }
 
   &:active {
@@ -48,6 +48,8 @@ type StandartMapButtonProps = {
 };
 
 function ZoomButton({ zoomPlus, zoomMinus }: StandartMapButtonProps) {
+  const zoom = useSelector(selectZoom);
+
   return (
     <ButtonContainer
       variants={mapButtonVarints}
@@ -56,10 +58,24 @@ function ZoomButton({ zoomPlus, zoomMinus }: StandartMapButtonProps) {
       exit="exit"
       transition={{ type: "easeInOut", duration: 1 }}
     >
-      <StyledButton onClick={zoomPlus}>
+      <StyledButton
+        $zoom={zoom === 18}
+        onClick={zoomPlus}
+        style={{
+          borderTopLeftRadius: "4rem",
+          borderTopRightRadius: "4rem",
+        }}
+      >
         <FaPlus />
       </StyledButton>
-      <StyledButton onClick={zoomMinus}>
+      <StyledButton
+        $zoom={zoom === 3}
+        onClick={zoomMinus}
+        style={{
+          borderBottomLeftRadius: "4rem",
+          borderBottomRightRadius: "4rem",
+        }}
+      >
         <FaMinus />
       </StyledButton>
     </ButtonContainer>

@@ -13,7 +13,6 @@ const StyledButton = styled(motion.button)`
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 9999;
   border: 1px solid #111111;
   box-shadow: 0 0.4rem 1.2rem #111111;
   transition: all 0.3s ease-in-out;
@@ -34,6 +33,7 @@ const StyledButton = styled(motion.button)`
 type StandartMapButtonProps = {
   children: React.ReactNode;
   onClick?: () => void;
+  zIndex?: number;
   top?: string;
   left?: string;
   right?: string;
@@ -42,6 +42,7 @@ type StandartMapButtonProps = {
 
 function StandartMapButton({
   children,
+  zIndex,
   top,
   left,
   right,
@@ -55,7 +56,7 @@ function StandartMapButton({
       animate="visible"
       exit="exit"
       onClick={onClick}
-      style={{ top, left, right, bottom }}
+      style={{ zIndex, top, left, right, bottom }}
     >
       {children}
     </StyledButton>
