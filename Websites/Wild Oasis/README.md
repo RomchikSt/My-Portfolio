@@ -5,7 +5,8 @@
 ## Description
 
 The Wild Oasis is a full-stack hotel management application, with the backend powered by Supabase. Designed to streamline the intricate tasks of hotel operations, this platform facilitates real-time room tracking, swift guest reservations, check-in and check-out processes, and generates insightful statistics about room occupancy and guest behavior.
-![Screenshot 2023-09-22 at 09 09 11](https://github.com/RomchikSt/Portfolio/assets/140477189/c5aadd1d-9a84-4425-9ae4-2e9a54984409)
+
+![Screenshot 2024-01-17 at 15 48 26](https://github.com/RomchikSt/other-portfolio-projects/assets/140477189/a7f8381c-51c5-4eab-8576-f35a23d3e9c8)
 
 
 ## Live Demo
