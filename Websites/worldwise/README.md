@@ -6,6 +6,9 @@
 
 WorldWise is an application designed for travelers. It allows users to pinpoint locations they've visited on a map, provide specific details about their visits, and keep track of both cities and countries they've been to.
 
+![Screenshot 2024-01-17 at 15 55 22](https://github.com/RomchikSt/other-portfolio-projects/assets/140477189/713e78fd-fa4a-4d56-b219-5ac9cf0401fb)
+
+
 ## Install and Run the Project
 
 1. Clone or download the repository.
