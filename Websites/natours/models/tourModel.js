@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 const slugify = require('slugify');
-const validator = require('validator');
+//const validator = require('validator');
 
 const tourSchema = new mongoose.Schema(
   {
@@ -10,7 +10,7 @@ const tourSchema = new mongoose.Schema(
       unique: true,
       maxlength: [40, 'A tour must have less or equal than 40 characters'],
       minlength: [10, 'A tour must have more or equal than 10 characters'],
-      validate: [validator.isAlpha, 'Tour name must only contain characters'], // validator is a library
+      //validate: [validator.isAlpha, 'Tour name must only contain characters'], // validator is a library
     },
     slug: String, // a string that is used in the URL
     duration: {
@@ -94,16 +94,6 @@ tourSchema.pre('save', function (next) {
   next();
 });
 
-// tourSchema.pre('save', function (next) {
-//   console.log('Will save document...');
-//   next();
-// });
-
-// tourSchema.pre('save', function (doc, next) {
-//   console.log(doc);
-//   next();
-// });
-
 //QUERY MIDDLEWARE
 tourSchema.pre(/^find/, function (next) {
   this.find({ secretTour: { $ne: true } });
@@ -113,7 +103,7 @@ tourSchema.pre(/^find/, function (next) {
 
 tourSchema.post(/^find/, function (docs, next) {
   console.log(`Query took ${Date.now() - this.start} milliseconds`);
-  console.log(docs);
+  /* console.log(docs); */
   next();
 });
 
