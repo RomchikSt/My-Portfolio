@@ -1,9 +1,9 @@
 {
   "expo": {
-    "name": "AwesomeProject",
-    "slug": "AwesomeProject",
+    "name": "MealApp",
+    "slug": "MealApp",
     "version": "1.0.0",
-    "orientation": "portrait",
+    "orientation": "default",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
     "splash": {
@@ -13,11 +13,9 @@
     },
     "assetBundlePatterns": ["**/*"],
     "ios": {
-      "jsEngine": "hermes",
       "supportsTablet": true
     },
     "android": {
-      "jsEngine": "hermes",
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
