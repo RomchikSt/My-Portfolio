@@ -4,6 +4,7 @@ import {
   Platform,
   SafeAreaView,
   StatusBar,
+  Text,
 } from "react-native";
 import CategoriesScreen from "./screens/CategoriesScreen";
 import MealsOverviewScreen from "./screens/MealsOverviewScreen";
