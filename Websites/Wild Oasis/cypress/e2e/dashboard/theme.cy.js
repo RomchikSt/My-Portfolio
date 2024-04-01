@@ -2,7 +2,7 @@
 
 describe("test Dark Mode", () => {
   it("test theme", () => {
-    cy.visit("https://rstp-wild-oasis.netlify.app/");
+    cy.visit("http://localhost:5174/");
     cy.get(".sc-eLSjS").click();
     cy.contains("Romchik Stakhiv");
     cy.url().should("include", "dashboard");
