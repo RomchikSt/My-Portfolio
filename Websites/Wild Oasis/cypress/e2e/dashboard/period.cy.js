@@ -2,7 +2,7 @@
 
 describe("test periods", () => {
   it("last 7 days - Default", () => {
-    cy.visit("http://localhost:5174/");
+    cy.visit("http://localhost:5173/");
     cy.get(".sc-eLSjS").click();
     cy.get(".sc-iBAaJG > .sc-ftLKQv")
       .invoke("text")
@@ -26,7 +26,7 @@ describe("test periods", () => {
   });
 
   it("last 30 days", () => {
-    cy.visit("http://localhost:5174/");
+    cy.visit("http://localhost:5173/");
     cy.get(".sc-eLSjS").click();
     cy.contains("Romchik Stakhiv");
     cy.get(".sc-bcPKhP > :nth-child(2)").click();
@@ -53,7 +53,7 @@ describe("test periods", () => {
   });
 
   it("last 90 days", () => {
-    cy.visit("http://localhost:5174/");
+    cy.visit("http://localhost:5173/");
     cy.get(".sc-eLSjS").click();
     cy.get(".sc-bcPKhP > :nth-child(3)").click();
     cy.url().should("include", "last=90");
@@ -78,7 +78,7 @@ describe("test periods", () => {
       });
   });
   it("last 7 days", () => {
-    cy.visit("http://localhost:5174/");
+    cy.visit("http://localhost:5173/");
     cy.get(".sc-eLSjS").click();
     cy.get(".sc-bcPKhP > :nth-child(2)").click();
     cy.get(".sc-bcPKhP > :nth-child(1)").click();
