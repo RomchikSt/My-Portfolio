@@ -10,7 +10,7 @@ describe("test Login Form", () => {
       .and("have.css", "background-color", "rgb(79, 70, 229)");
   });
 
-  it.only("Incorect Email", () => {
+  it("Incorect Email", () => {
     cy.get("#email").type("123");
     cy.url().should("include", "login");
   });
@@ -38,6 +38,10 @@ describe("test Login Form", () => {
     cy.get(".sc-eLSjS").click();
     cy.contains("Romchik Stakhiv");
     cy.url().should("include", "dashboard");
+    cy.get(".sc-hlDEJj > :nth-child(1) > .sc-ftLKQv").should(
+      "contain",
+      "Dashboard"
+    );
     cy.get(":nth-child(3) > .sc-GFXod").click();
     cy.url().should("include", "login");
   });

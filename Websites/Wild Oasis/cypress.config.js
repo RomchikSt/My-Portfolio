@@ -6,5 +6,7 @@ export default defineConfig({
       // implement node event listeners here
     },
     specPattern: "cypress/e2e/**/*.{js,jsx,ts,tsx,feature}",
+    viewportWidth: 1920,
+    viewportHeight: 1080,
   },
 });
